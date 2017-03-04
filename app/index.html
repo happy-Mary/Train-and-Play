@@ -23,11 +23,21 @@
 </head>
 
 <body ng-controller="MainController">
+    <header class="header">
+        <div class="logo">
+            <h1><a href="/">train&play</a></h1>
+        </div>
+        <button>вход</button>
+    </header>
     <!--MAIN CONTAINER-->
-    <div class="main">
+    <!--in app.js settings for views-->
+    <div ng-view>
         HELLO!!!
 
     </div>
+    <footer class="footer">
+
+    </footer>
     <!--SCRIPTS-->
     <script src="bower_components\angular\angular.min.js"></script>
     <script src="js/app.js"></script>
