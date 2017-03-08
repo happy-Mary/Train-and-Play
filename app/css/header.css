@@ -1,0 +1,56 @@
+header {
+  background: url("../images/bg-header.jpg") no-repeat;
+  background-size: cover;
+}
+header .logo {
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 100%;
+}
+header .logo a {
+  display: block;
+  line-height: 5.3rem;
+}
+nav {
+  display: flex;
+}
+.reg {
+  margin-top: auto;
+  margin-bottom: auto;
+  text-align: right;
+}
+.header button {
+  padding: 0.5rem 0.7rem 0.5rem 2.8rem;
+  background-image: url("../images/enter.png");
+  background-repeat: no-repeat;
+  background-position: 1rem 0.5rem;
+}
+.intro {
+  text-align: center;
+  color: #fff;
+  padding-bottom: 6.5rem;
+}
+.intro h1 {
+  font-size: 2.5rem;
+  font-family: "Proxima Nova Bold", sans-serif;
+}
+.intro p {
+  font-size: 1.2rem;
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 3.6rem;
+}
+.intro button {
+  padding: 0.6rem 1.3rem;
+  font-size: 1.1rem;
+}
+@media (max-width: 992px) {
+  .reg {
+    width: 100%;
+  }
+  .intro p {
+    width: 80%;
+  }
+}

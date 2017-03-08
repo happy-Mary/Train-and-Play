@@ -1,8 +1,9 @@
 // variables LESS
 @textWhite: #fff;
 @textBlack: #000;
-@darkPink: #eb5f8e;
+@darkPink: #eb5f8e;  
 @borderButton: #cf507b;
+@bg-header: url("../images/bg-header.jpg");
 
 // reset.css
 html, body, div, span, applet, object, iframe,
@@ -35,12 +36,13 @@ body {
     height: 100%;
     color: black;
     background: white;
-    font-family: sans-serif; /* FIND TRAIN&PLAY */
+    font-family:  "Proxima Nova Regular", sans-serif;
     font-size: 100%;
-    line-height: 1.15; 
+    line-height: 1.4; 
    -ms-text-size-adjust: 100%; 
    -webkit-text-size-adjust: 100%;
 }
+
 ol, ul, li {
     list-style: none;
 }
@@ -100,6 +102,16 @@ html {
         }
     }
 }
+h1 {
+    margin-bottom: 4rem;
+}
+h2 {
+    margin-bottom: 4.5rem;
+}
+
+h3 {
+    margin-bottom: 1.6rem;
+}
 
 .pink_text {
     color: @darkPink;
@@ -107,14 +119,22 @@ html {
 }
 
 .btn-pink {
-    // padding: 0.3em 0.8em;
     background: @darkPink;
     border-radius: 0;
+    border: 2px solid @darkPink;
     border-bottom: 2px solid @borderButton;
     color: @textWhite;
     text-transform: uppercase;
     cursor: pointer;
     }
+
+.btn-pink:hover,
+.btn-pink:focus {
+    color: @textWhite;
+    border: 2px solid @darkPink;
+    border-bottom: 2px solid @borderButton;
+
+}
 
 .btn-white {
     background: white;
@@ -145,13 +165,17 @@ html {
     padding-bottom: 6.5rem;
 }
 // отступы у контейнеров по бокам
-.header, .footer, .section {
-    padding-left: 2rem;
-    padding-right: 2rem;
-}
+// .header, .footer, .section {
+//     padding-left: 2rem;
+//     padding-right: 2rem;
+// }
 .text-center {
     text-align: center;
 }
 .hidden {
     display: none;
+}
+
+.uppercase {
+    text-transform: uppercase;
 }
