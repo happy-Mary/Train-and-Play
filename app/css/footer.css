@@ -1,0 +1,17 @@
+.footer {
+  background: url("../images/bg-header.jpg") no-repeat;
+  background-size: cover;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+.footer .footer-links {
+  padding-bottom: 5.3rem;
+}
+.footer .footer-like {
+  padding-bottom: 2.3rem;
+}
+.footer .footer-copyright {
+  font-size: 0.7rem;
+}
