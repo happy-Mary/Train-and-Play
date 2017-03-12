@@ -1,9 +1,12 @@
 var tpApp = angular.module("tpApp", ["ngRoute"]);
 
-// SPA - pages
-tpApp.config(function($routeProvider) {
+// // SPA - pages
+tpApp.config(['$routeProvider', function($routeProvider) {
     $routeProvider
-        .when("/", { templateUrl: "templates/pages/main.html" })
+        .when("/main", { templateUrl: "templates/pages/main.html" })
         .when("/landing", { templateUrl: "templates/pages/landing.html" })
-        .when("/user", { templateUrl: "templates/pages/user.html" });
-});
+        .when("/user", { templateUrl: "templates/pages/user.html" })
+        .otherwise({
+            redirectTo: '/main'
+        });
+}]);
