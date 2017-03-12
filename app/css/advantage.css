@@ -3,6 +3,9 @@
   background-size: cover;
   color: #fff;
 }
+.advantage-subtitle {
+  display: inline-block;
+}
 .advantage .container div h3 {
   text-align: left;
   padding-left: 4rem;
