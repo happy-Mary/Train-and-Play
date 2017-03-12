@@ -13,3 +13,21 @@
 .advantage .container div p:nth-of-type(1) {
   margin-bottom: 5rem;
 }
+.startnow {
+  background: url("../images/bg-header.jpg") no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+}
+.startnow p {
+  margin: 0 auto;
+  padding-bottom: 3.6rem;
+}
+.startnow .pink_text {
+  font-size: 2.4rem;
+}
+.startnow .btn-pink {
+  padding: 0.6rem 1.3rem;
+  font-size: 1.1rem;
+}
