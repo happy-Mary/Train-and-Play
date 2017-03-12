@@ -6,12 +6,17 @@
   font-size: 1.15rem;
   font-weight: bold;
 }
-.footer .footer-links {
+.footer-links {
   padding-bottom: 5.3rem;
 }
-.footer .footer-like {
+.footer-like {
   padding-bottom: 2.3rem;
 }
-.footer .footer-copyright {
+.footer-copyright {
   font-size: 0.7rem;
+}
+.footer-social {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
 }
