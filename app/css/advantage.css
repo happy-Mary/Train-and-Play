@@ -6,6 +6,9 @@
 .advantage-subtitle {
   display: inline-block;
 }
+.advantage-subtitle img {
+  display: inline-block !important;
+}
 .advantage .container div h3 {
   text-align: left;
   padding-left: 4rem;
@@ -25,9 +28,33 @@
   padding-bottom: 3.6rem;
 }
 .startnow .pink_text {
-  font-size: 2.4rem;
+  font-size: 3.4rem;
 }
 .startnow .btn-pink {
   padding: 0.6rem 1.3rem;
   font-size: 1.1rem;
+}
+.howitworks_icon {
+  margin-bottom: 50px;
+}
+.howitworks {
+  background: url("../images/dashes.png") no-repeat;
+  background-size: 1100px;
+  background-position: center 38%;
+}
+.howitworks .row:first-child {
+  background: url("../images/airplane.png") no-repeat;
+  background-size: 70px;
+  background-position: 89% -1%;
+}
+.howitworks h3 {
+  text-transform: none;
+}
+@media (max-width: 1300px) {
+  .howitworks {
+    background: none;
+  }
+  .howitworks .row:first-child {
+    background: none;
+  }
 }

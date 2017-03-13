@@ -25,7 +25,7 @@ gulp.task('html', function () {
         //.pipe(gulpif('*.js', uglify()))
         //.pipe(gulpif('*.css', cleanCSS()))
         //.pipe(assets.restore())
-        .pipe(gulp.dest('dist'))
+        //.pipe(gulp.dest('dist'))
         .pipe(connect.reload());
 
 });
@@ -39,9 +39,9 @@ gulp.task('css', function () {
             browsers: ['last 2 versions', '> 1%', 'IE 10'],
             cascade: true
         }))
-    .pipe(cleanCSS({compatibility: 'ie8'}))
+    //.pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(rename('bundle.min.css'))
-    .pipe(gulp.dest('dist/css')) 
+    .pipe(gulp.dest('app/css')) 
     .pipe(connect.reload()); 
 });
 
@@ -74,7 +74,7 @@ gulp.task('bower', function () {
 //watch
 gulp.task('watch', function(){
     gulp.watch('app/src/**/*.less', ['less'])
-    gulp.watch('app/css/*.css', ['css'])
+    // gulp.watch('app/css/*.css', ['css'])
     gulp.watch('app/*.html', ['html'])
     // gulp.watch('bower.json', ['bower'])
 }); 
