@@ -10,27 +10,25 @@ header .logo {
   height: 100%;
 }
 header .logo a {
-  display: block;
-  line-height: 5.3rem;
+  width: 50%;
+  display: inline-block;
+  line-height: 3rem;
 }
-nav {
-  display: flex;
-}
-.reg {
-  margin-top: auto;
-  margin-bottom: auto;
+header .reg {
   text-align: right;
 }
-.header button {
+header .reg button {
   padding: 0.5rem 0.7rem 0.5rem 2.8rem;
   background-image: url("../images/enter.png");
   background-repeat: no-repeat;
-  background-position: .7rem 0.7rem;
+  background-position: .7rem center;
+  display: inline-block;
 }
 .intro {
   text-align: center;
   color: #fff;
   padding-bottom: 6.5rem;
+  padding-top: 5.3rem;
 }
 .intro h1 {
   font-size: 2.5rem;
@@ -45,17 +43,4 @@ nav {
 .intro button {
   padding: 0.6rem 1.3rem;
   font-size: 1.1rem;
-}
-@media (max-width: 992px) {
-  .reg {
-    width: 100%;
-  }
-  .intro p {
-    width: 80%;
-  }
-}
-@media (min-width: 1300px) {
-  body {
-    font-size: 120%;
-  }
 }

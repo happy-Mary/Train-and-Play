@@ -151,6 +151,7 @@ h4 {
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
+  line-height: 1.4;
 }
 h1 {
   margin-bottom: 4rem;
@@ -192,7 +193,7 @@ h3 {
   font-size: 2rem;
 }
 .header {
-  height: 5.3rem;
+  padding: 1.6rem 0;
 }
 .footer {
   padding-top: 5.3rem;
