@@ -50,11 +50,3 @@
 .howitworks h3 {
   text-transform: none;
 }
-@media (max-width: 1300px) {
-  .howitworks {
-    background: none;
-  }
-  .howitworks .row:first-child {
-    background: none;
-  }
-}

@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/advantage.css">
+    <link rel="stylesheet" href="css/media.css">
     <!-- <link rel="stylesheet" href="css/bundle.min.css"> -->
 
     <!-- FONTS -->
@@ -40,19 +41,19 @@
         <div class="container">
             <!--permanent header-->
             <nav class="header row">
-                <div class="logo uppercase col-md-2 col-xs-12">
+                <div class="logo uppercase col-xs-12 col-sm-6">
                     <a href="#main">TRAINANDPLAY</a>
                 </div>
-                <div class="reg col-md-2 col-md-offset-8 col-xs-12">
+                <div class="reg col-xs-12 col-sm-6">
                     <button class=" btn-pink ">войти</button>
                 </div>
             </nav>
-            <!--remove div.intro by ang/js when page's not main-->
-            <div class="row intro ">
+            <!--remove div.intro when page's not main-->
+            <div class="row intro" ng-if=getLoc()>
                 <h1 class="uppercase">train and play</h1>
                 <p>Наш проект нацелен на тех, кто хочет учиться и быть лучше.<br/> Если у Вас есть свободное время и желание, чтобы прокачать свои навыки или попробовать себя в чем-то новом - наш проект для Вас. Вы можете учиться самомтоятельно или с помощью
                     компетентного тренера.<br/>Удачи!</p>
-                <button class="btn-pink uppercase"><a href="#landing">начать обучение</a></button>
+                <a href="#landing"><button class="btn-pink uppercase">начать обучение</button></a>
 
             </div>
 
@@ -63,7 +64,7 @@
     <!--in app.js settings for views-->
     <div ng-view>
 
-	<!-- CONTENT -->
+        <!-- CONTENT -->
     </div>
 
     <footer class="footer container-fluid">
@@ -97,7 +98,7 @@
     </footer>
 
     <!--SCRIPTS-->
-    <!--<script src="bower_components/jquery/dist/jquery.min.js"></script>-->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <!--angular files-->
     <script src="bower_components/angular/angular.min.js"></script>

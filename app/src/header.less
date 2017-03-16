@@ -3,9 +3,7 @@
 header {
     background: @bg-header no-repeat;
     background-size: cover;
-}
-
-header .logo {
+    .logo {
         color: @textWhite;
         font-family: @openSans;
         font-size: 1.2rem;
@@ -13,32 +11,30 @@ header .logo {
         height: 100%;
 
         a {
-            display: block;
-            line-height: 5.3rem;
+            width: 50%;
+            display: inline-block;
+            line-height: 3rem;
         }
-}
+    }
 
-nav {
-    display: flex;
-}
+    .reg {
+         text-align: right;
 
-.reg {
-    margin-top: auto;
-    margin-bottom: auto;
-    text-align: right;
-}
-
-.header button {
-    padding: 0.5rem 0.7rem 0.5rem 2.8rem;
-    background-image: url("../images/enter.png");
-    background-repeat: no-repeat;
-    background-position: .7rem 0.7rem;
+        button {
+            padding: 0.5rem 0.7rem 0.5rem 2.8rem;
+            background-image: url("../images/enter.png");
+            background-repeat: no-repeat;
+            background-position: .7rem center;
+            display: inline-block;
+        }
+    }
 }
 
 .intro {
     text-align: center;
     color: #fff;
     padding-bottom: 6.5rem;
+    padding-top: 5.3rem;
 
     h1 {
     font-size: 2.5rem;
@@ -59,17 +55,5 @@ nav {
 }
 
 
-@media(max-width:992px){
-    .reg {
-        width: 100%;
-        // text-align: center;
-    }
 
-    .intro p {width: 80%;}
-}
 
-@media(min-width:1300px){
-    body {
-        font-size: 120%;
-    }
-}
