@@ -11,6 +11,14 @@
     background: none;
   }
 }
+@media (max-width: 1200px) {
+  .howitworks .adv {
+    padding-bottom: 4rem;
+  }
+  .howitworks .adv:last-child {
+    padding-bottom: 0;
+  }
+}
 @media (max-width: 1023px) {
   body {
     font-size: 95%;
