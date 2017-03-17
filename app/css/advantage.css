@@ -50,3 +50,44 @@
 .howitworks h3 {
   text-transform: none;
 }
+.trainings .slider-item {
+  height: 320px;
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 1.5px 2.6px 4.8px 0.3px rgba(0, 0, 0, 0.2);
+  width: 220px;
+}
+.trainings .slider-item img {
+  width: 100%;
+}
+.trainings .slider-item .slider-description {
+  font-size: 14px;
+  padding: 20px;
+}
+.trainings .slider-item .slider-description p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #463c79;
+  text-align: center;
+  text-transform: none;
+  padding-bottom: 30px;
+}
+.trainings .slider-item .completed {
+  line-height: 14px;
+  float: left;
+  opacity: 0.3;
+}
+.trainings .slider-item .completed img {
+  width: 15px;
+  margin-right: 10px;
+}
+.trainings .slider-item .views {
+  line-height: 14px;
+  float: right;
+  opacity: 0.3;
+}
+.trainings .slider-item .views img {
+  width: 15px;
+  margin-right: 10px;
+}
