@@ -180,6 +180,7 @@ h3 {
 .btn-white:focus,
 .btn-white:active {
   height: 30px;
+  padding: 6px 20px;
   background: white;
   border: 1px solid #463C79;
   font-size: 14px;
@@ -199,10 +200,13 @@ h3 {
   background-color: #A3A0A0;
 }
 .btn-circle {
-  height: 82px;
-  width: 82px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   background-color: #EB5F8E;
+  background-image: url("../images/sl-arrow.png");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .btn-circle:hover,
 .btn-circle:focus,

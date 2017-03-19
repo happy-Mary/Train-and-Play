@@ -141,6 +141,7 @@ h3 {
  .btn-white:focus,
  .btn-white:active {
     height: 30px;
+    padding: 6px 20px;
     background: white;
     border: 1px solid @btnWhiteBorder; 
     font-size: 14px;
@@ -156,15 +157,19 @@ h3 {
 }
 
 .btn-circle {
-    height: 82px;
-    width: 82px;
+    height: 40px;
+    width: 40px;
     border-radius: 50%;
     background-color: @btnPink;
+    background-image: url("@{pathImg}/sl-arrow.png");
+    background-repeat: no-repeat;
+    background-position: center;
     &:hover, &:focus, &:active {
         background-color: @btnCircleHov;
     }
 
 }
+
 
 
 // main project title
