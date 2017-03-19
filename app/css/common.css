@@ -115,7 +115,6 @@ select {
 a,
 button {
   cursor: pointer;
-  background: #eb5f8e;
 }
 a,
 a:active,
@@ -125,9 +124,6 @@ a:hover {
   outline-width: 0;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
-}
-button a {
-  display: block;
 }
 small {
   font-size: 80%;
@@ -166,24 +162,52 @@ h3 {
   color: #eb5f8e;
   font-size: 1.8rem;
 }
-.btn-pink {
-  background: #eb5f8e;
+.btn-pink,
+.btn-pink:focus,
+.btn-pink:active {
+  background-color: #EB5F8E;
   border-radius: 0;
-  border: 2px solid #eb5f8e;
-  border-bottom: 2px solid #cf507b;
+  border-bottom: 2px solid #D1517C;
   color: #fff;
   text-transform: uppercase;
-  cursor: pointer;
 }
-.btn-pink:hover,
-.btn-pink:focus {
+.btn-pink:hover {
+  background-color: #FF71A1;
   color: #fff;
-  border: 2px solid #eb5f8e;
-  border-bottom: 2px solid #cf507b;
+  border-bottom: 2px solid #DC5F89;
 }
-.btn-white {
+.btn-white,
+.btn-white:focus,
+.btn-white:active {
+  height: 30px;
   background: white;
-  border: 1px solid black;
+  border: 1px solid #463C79;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.btn-white:hover,
+.btn-white:focus:hover,
+.btn-white:active:hover {
+  border: 2px solid #5C4AB7;
+}
+.btn-arrow {
+  background-color: #D1D1D1;
+}
+.btn-arrow:hover,
+.btn-arrow:focus,
+.btn-arrow:active {
+  background-color: #A3A0A0;
+}
+.btn-circle {
+  height: 82px;
+  width: 82px;
+  border-radius: 50%;
+  background-color: #EB5F8E;
+}
+.btn-circle:hover,
+.btn-circle:focus,
+.btn-circle:active {
+  background-color: #F6719E;
 }
 .maintitle {
   font-size: 2.5rem;
