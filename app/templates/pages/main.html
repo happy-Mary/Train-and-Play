@@ -87,6 +87,22 @@
                 <div class="views"><img src="images/icons/views.png">996</div> 
             </div>
           </div>
+          <div class="slider-item">
+            <img src="images/slider/batman2.png">
+            <div class="slider-description">
+                <p>Основные принципы дизайна в Готем Сити</p>
+                <div class="completed"> <img src="images/icons/completed.png">669</div>
+                <div class="views"><img src="images/icons/views.png">996</div> 
+            </div>
+          </div>
+          <div class="slider-item">
+            <img src="images/slider/batman.png">
+            <div class="slider-description">
+                <p>Основные принципы дизайна в Готем Сити</p>
+                <div class="completed"> <img src="images/icons/completed.png">669</div>
+                <div class="views"><img src="images/icons/views.png">996</div> 
+            </div>
+          </div>
         </div>
 </section>
 
@@ -104,12 +120,13 @@
     <div></div>
 </section>
 
-
-// <script type="text/javascript">
-// $(document).ready(function(){
-//  $('.slider').slick({
-//     slidesToShow: 3
-//   });
-// });
-
-// </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+         $('.slider').slick({
+            infinite: true,
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            variableWidth: true
+          });
+        });
+    </script>
