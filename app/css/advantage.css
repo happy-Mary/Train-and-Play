@@ -51,11 +51,9 @@
   text-transform: none;
 }
 .trainings .slider-item {
-  height: 320px;
   background-color: white;
   border-radius: 3px;
   box-shadow: 1.5px 2.6px 4.8px 0.3px rgba(0, 0, 0, 0.2);
-  width: 220px;
 }
 .trainings .slider-item img {
   width: 100%;
@@ -64,14 +62,15 @@
   font-size: 14px;
   padding: 20px;
 }
-.trainings .slider-item .slider-description p {
+.trainings .slider-item .slider-description .slider-text {
   font-size: 16px;
   font-weight: 400;
   line-height: 18px;
   color: #463c79;
   text-align: center;
   text-transform: none;
-  padding-bottom: 30px;
+  padding-bottom: 30px !important;
+  margin-bottom: 0rem !important;
 }
 .trainings .slider-item .completed {
   line-height: 14px;
@@ -79,6 +78,7 @@
   opacity: 0.3;
 }
 .trainings .slider-item .completed img {
+  display: inline-block;
   width: 15px;
   margin-right: 10px;
 }
@@ -88,6 +88,7 @@
   opacity: 0.3;
 }
 .trainings .slider-item .views img {
+  display: inline-block;
   width: 15px;
   margin-right: 10px;
 }
