@@ -1,0 +1,49 @@
+tpApp.controller("ModalFormCtrl", function($scope) {
+    // управление табами
+    $scope.item = "registr";
+    $scope.setTab = function() {
+        if ($scope.item === "registr") {
+            $scope.item = "enter"
+        } else {
+            $scope.item = "registr"
+        }
+        return $scope.item;
+    }
+
+    $scope.getError = function(error) {
+        console.log(name);
+        if (angular.isDefined(error)) {
+            if (error.required) {
+                return "Поле не должно быть пустым";
+            } else if (error.email) {
+                return "Некорректный адрес электронной почты";
+            } else if (error.pattern) {
+                return "Некорректный пароль";
+            } else if (error.minlength) {
+                return "Слишком короткий пароль"
+            } else if (error.maxlength) {
+                return "Слишком длинный пароль"
+            }
+        }
+    }
+
+    $scope.comparePass = function(error) {
+        if (angular.isDefined(error) && error.pattern) {
+            return "Пароли не совпадают";
+        } else if (angular.isDefined(error) && error.required) {
+            return "Поле не должно быть пустым";
+        }
+    }
+
+
+    // регулярка для пароля
+    $scope.regexPass = '\\d+';
+
+    $scope.formReg = {};
+
+    $scope.saveData = function() {
+        console.log(JSON.stringify($scope.formReg));
+        // console.log("Confirming password" + $scope.formReg.Pass);
+    }
+
+});

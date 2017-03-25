@@ -68,7 +68,6 @@
 }
 .modal-container form label {
   display: block;
-  height: 53px;
 }
 .modal-container form label:nth-child(1) {
   margin-top: 13px;
@@ -78,8 +77,8 @@
 .modal-container form span {
   display: block;
 }
-.modal-container form span {
-  font-size: 10px;
+.modal-container form div.message {
+  font-size: 12px;
   height: 18px;
 }
 .modal-container form input {
@@ -88,6 +87,9 @@
   height: 35px;
   padding: 10px;
   padding-left: 0;
+}
+.modal-container form input[type="email"] {
+  height: 40px;
 }
 .modal-container form .or {
   padding: 0;
@@ -139,4 +141,24 @@
 .modal-container form .reg-away > a:hover,
 .modal-container form .forgot-link {
   border-bottom: 1px solid #cccbd5;
+}
+.modal-container form {
+  /* Правило для всех элементов, с которыми не взаимодействовал пользователь*/
+  /* Правило для всех элементов, которые прошли проверку после взаимодействия с пользователем */
+  /* Данное правило распространяется на все элементы с которыми взаимодействовал прользователь и которые не прошли проверку */
+}
+.modal-container form .ng-pristine {
+  border-bottom: 1px solid #bac4d7;
+}
+.modal-container form .ng-valid.ng-dirty {
+  border-bottom-color: green;
+}
+.modal-container form .ng-invalid.ng-dirty {
+  border-bottom-color: red;
+}
+.modal-container form .mes-valid {
+  color: green;
+}
+.modal-container form .mes-invalid {
+  color: red;
 }
