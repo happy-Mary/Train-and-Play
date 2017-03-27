@@ -1,4 +1,4 @@
-tpApp.controller("ModalFormCtrl", function($scope) {
+tpApp.controller("ModalFormCtrl", ['$scope', '$http', function($scope, $http) {
     // управление табами
     $scope.item = "registr";
     $scope.setTab = function() {
@@ -9,16 +9,16 @@ tpApp.controller("ModalFormCtrl", function($scope) {
         }
         return $scope.item;
     }
+    $scope.textMail = document.querySelector("input[type='email']");
 
     $scope.getError = function(error) {
-        console.log(name);
         if (angular.isDefined(error)) {
             if (error.required) {
                 return "Поле не должно быть пустым";
             } else if (error.email) {
                 return "Некорректный адрес электронной почты";
             } else if (error.pattern) {
-                return "Некорректный пароль";
+                return "Некорректное значение";
             } else if (error.minlength) {
                 return "Слишком короткий пароль"
             } else if (error.maxlength) {
@@ -41,9 +41,11 @@ tpApp.controller("ModalFormCtrl", function($scope) {
 
     $scope.formReg = {};
 
+    // отправка формы
     $scope.saveData = function() {
-        console.log(JSON.stringify($scope.formReg));
-        // console.log("Confirming password" + $scope.formReg.Pass);
+        console.log($scope.formReg);
+        delete $scope.formReg.confPass;
+        console.log(angular.toJson($scope.formReg));
     }
 
-});
+}]);

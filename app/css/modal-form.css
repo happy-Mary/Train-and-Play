@@ -10,7 +10,7 @@
   /*common form styles*/
 }
 .modal-container .modal-mes {
-  height: 540px;
+  min-height: 545px;
   width: 434px;
   background-color: #fff;
   margin: 0 auto;
@@ -80,6 +80,12 @@
 .modal-container form div.message {
   font-size: 12px;
   height: 18px;
+}
+.modal-container form div.regServerMes {
+  font-size: 12px;
+  height: 12px;
+  text-align: center;
+  color: red;
 }
 .modal-container form input {
   border-bottom: 1px solid #bac4d7;
