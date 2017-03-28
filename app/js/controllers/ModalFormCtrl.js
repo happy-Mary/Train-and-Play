@@ -1,4 +1,6 @@
-tpApp.controller("ModalFormCtrl", ['$scope', '$http', function($scope, $http) {
+tpApp.controller("ModalFormCtrl", function($scope, $http) {
+
+    $scope.PostDataResponse = "Post test message";
     // управление табами
     $scope.item = "registr";
     $scope.setTab = function() {
@@ -8,9 +10,9 @@ tpApp.controller("ModalFormCtrl", ['$scope', '$http', function($scope, $http) {
             $scope.item = "registr"
         }
         return $scope.item;
-    }
-    $scope.textMail = document.querySelector("input[type='email']");
+    };
 
+    // validation functions
     $scope.getError = function(error) {
         if (angular.isDefined(error)) {
             if (error.required) {
@@ -25,7 +27,7 @@ tpApp.controller("ModalFormCtrl", ['$scope', '$http', function($scope, $http) {
                 return "Слишком длинный пароль"
             }
         }
-    }
+    };
 
     $scope.comparePass = function(error) {
         if (angular.isDefined(error) && error.pattern) {
@@ -33,19 +35,38 @@ tpApp.controller("ModalFormCtrl", ['$scope', '$http', function($scope, $http) {
         } else if (angular.isDefined(error) && error.required) {
             return "Поле не должно быть пустым";
         }
-    }
+    };
 
 
-    // регулярка для пароля
+    // regexp for password and email 
+    // TODO: change regexp for password
     $scope.regexPass = '\\d+';
-
+    $scope.regexEmail = '[a-zA-Z0-9_.]+\@[a-zA-Z0-9_]+\.[a-zA-Z]{2,4}$';
     $scope.formReg = {};
 
     // отправка формы
     $scope.saveData = function() {
-        console.log($scope.formReg);
-        delete $scope.formReg.confPass;
-        console.log(angular.toJson($scope.formReg));
-    }
+        // data for server
+        $scope.postNewUser = {};
+        for (var key in $scope.formReg) {
+            $scope.postNewUser[key] = $scope.formReg[key];
+        }
+        delete $scope.postNewUser.confPass;
 
-}]);
+        console.log($scope.formReg);
+        console.log(angular.toJson($scope.postNewUser));
+        // post 
+        $http.post('localhost:8080/tnp/users/registration/', $scope.postNewUser).success(function(data) {
+            console.log("Server had our data");
+            $scope.PostDataResponse = data;
+        }).error(function(data) {
+            console.log("Server is not happy");
+            $scope.PostDataResponse = "ERROR";
+        });
+
+
+    };
+});
+
+
+// headers: { 'Content-Type': 'application/json' }

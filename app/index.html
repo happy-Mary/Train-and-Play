@@ -44,7 +44,7 @@
             <div>
                 <form name="registerForm" class="reg-form" ng-submit="saveData(formReg)" novalidate>
                     <label>
-                    <input type="email" placeholder="E-mail" name="regEmail" ng-model="formReg.Email" required ng-pattern="/[a-zA-Z0-9_.]+\@[a-zA-Z0-9_]+\.[a-zA-Z]{2,4}$/">
+                    <input type="email" placeholder="E-mail" name="regEmail" ng-model="formReg.email" required ng-pattern="regexEmail">
                     <div class="message" ng-class="registerForm.regEmail.$valid ? 'mes-valid' : 'mes-invalid'">
                     <span ng-if ="registerForm.regEmail.$invalid && registerForm.regEmail.$dirty">
                         {{getError(registerForm.regEmail.$error)}}
@@ -53,20 +53,19 @@
                 </label>
                     <label>
 
-                    <input type="password" placeholder="Пароль"  name="regPass" ng-model="formReg.Pass" 
-                      ng-pattern="regexPass" ng-minlength="8" ng-maxlength="20" required>
+                    <input type="password" placeholder="Пароль"  name="regPass" ng-model="formReg.password" 
+                      ng-pattern="regexPass" ng-minlength="5" ng-maxlength="20" required>
                     <div class="message" ng-class="registerForm.regPass.$valid ? 'mes-valid' : 'mes-invalid'">
                     <span ng-if ="registerForm.regPass.$invalid && registerForm.regPass.$dirty">{{getError(registerForm.regPass.$error)}}</span>
                     </div>
                 </label>
                     <label>
-                    <input type="password" placeholder="Подтвердите пароль"   name="regConfPass"  ng-model="formReg.confPass" ng-pattern="formReg.Pass" required>
+                    <input type="password" placeholder="Подтвердите пароль"   name="regConfPass"  ng-model="formReg.confPass" ng-pattern="formReg.password" required>
                     <div class="message" ng-class="registerForm.regConfPass.$valid ? 'mes-valid' : 'mes-invalid'">
-                    <!--<span ng-if ="registerForm.regConfPass.$invalid && registerForm.regConfPass.$dirty">{{getError(registerForm.regConfPass.$error)}}</span>-->
                     <span ng-if ="registerForm.regConfPass.$dirty">{{comparePass(registerForm.regConfPass.$error)}}</span>
                     </div>
                     </label>
-                    <div class="regServerMes">Собщение от сервера</div>
+                    <div class="regServerMes">{{ PostDataResponse }}</div>
                     <p class="or"><span>или</span></p>
                     <div class="reg-social">
                         <a href="#"><img src="images/icons/vk.svg" alt="social"></a>
