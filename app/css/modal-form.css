@@ -10,7 +10,7 @@
   /*common form styles*/
 }
 .modal-container .modal-mes {
-  min-height: 545px;
+  height: 545px;
   width: 434px;
   background-color: #fff;
   margin: 0 auto;
