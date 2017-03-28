@@ -19,8 +19,8 @@
     <meta name="robots" content="index, follow">
 
     <!--CSS-->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css"> -->
+    <!--<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/var.css">
     <link rel="stylesheet" href="css/common.css">
@@ -52,7 +52,6 @@
                     </div>
                 </label>
                     <label>
-
                     <input type="password" placeholder="Пароль"  name="regPass" ng-model="formReg.password" 
                       ng-pattern="regexPass" ng-minlength="5" ng-maxlength="20" required>
                     <div class="message" ng-class="registerForm.regPass.$valid ? 'mes-valid' : 'mes-invalid'">
@@ -77,7 +76,6 @@
                     <p class="reg-away">Уже есть учетная запись? <a href="#" ng-click="setTab()">Войти</a></p>
                 </form>
             </div>
-
 
             <!-- enter -->
             <input type="radio" name="mod-radio" class="tab-radio" id="tab-renter" value="enter" ng-model="item">
