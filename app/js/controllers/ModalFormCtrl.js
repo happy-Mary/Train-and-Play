@@ -40,41 +40,40 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
 
     // regexp for password and email 
     // TODO: change regexp for password
-    $scope.regexPass = '\\d+';
-    $scope.regexEmail = '[a-zA-Z0-9_.]+\@[a-zA-Z0-9_]+\.[a-zA-Z]{2,4}$';
+    $scope.regexPass = '^[a-z0-9_-]+$';
+    // $scope.regexPass = '((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{5,20})';
+    $scope.regexEmail = '[a-zA-Z0-9_.]+\@[a-zA-Z0-9_]+\.[a-zA-Z]{2,6}$';
     $scope.formReg = {};
 
     // отправка формы
-    $scope.saveData = function() {
-        // data for server
+    $scope.addNewUser = function() {
         $scope.postNewUser = {};
         for (var key in $scope.formReg) {
             $scope.postNewUser[key] = $scope.formReg[key];
         }
         delete $scope.postNewUser.confPass;
-        console.log($scope.formReg);
-        console.log(angular.toJson($scope.postNewUser));
+        // console.log($scope.formReg);
+        // console.log(angular.toJson($scope.postNewUser));
 
         // post 
-        // $http.post('/tnp/users/registration/', $scope.postNewUser).success(function(data) {
+        // $http.post('/tnp/users/registration/', angular.toJson($scope.postNewUser)).success(function(data) {
         //     console.log("Server had our data");
         //     $scope.PostDataResponse = data;
         // }).error(function(data) {
         //     console.log("Server is not happy");
+        //     console.log(data);
         //     $scope.PostDataResponse = "ERROR";
         // });
 
-        $http.post('/tnp/users/registration/', $scope.postNewUser).then(function(response) {
+
+        $http.post('/tnp/users/registration/', angular.toJson($scope.postNewUser)).then(function(response) {
             $scope.PostDataResponse = response.data;
             console.log("Server had our data");
         }, function(response) {
             console.log("Server is not happy");
             $scope.PostDataResponse = response.status + " " + response.statusText;
         });
-
-
     };
+
+
 });
-
-
-// headers: { 'Content-Type': 'application/json' }

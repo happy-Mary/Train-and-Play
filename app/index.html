@@ -38,11 +38,12 @@
     <div class="modal-container" ng-controller="ModalFormCtrl">
         <!--put different content here ??? -->
         <div class="modal-mes">
-            <!-- registr -->
+            <!-- REGISTRATION -->
             <input type="radio" name="mod-radio" class="tab-radio" id="tab-reg" value="registr" ng-model="item">
             <label for="tab-reg">регистрация</label>
+            <!--content-->
             <div>
-                <form name="registerForm" class="reg-form" ng-submit="saveData(formReg)" novalidate>
+                <form name="registerForm" class="reg-form" ng-submit="addNewUser(formReg)" novalidate>
                     <label>
                     <input type="email" placeholder="E-mail" name="regEmail" ng-model="formReg.email" required ng-pattern="regexEmail">
                     <div class="message" ng-class="registerForm.regEmail.$valid ? 'mes-valid' : 'mes-invalid'">
@@ -81,7 +82,7 @@
             <input type="radio" name="mod-radio" class="tab-radio" id="tab-renter" value="enter" ng-model="item">
             <label for="tab-renter">вход</label>
             <div>
-                <form action="post" name="enterForm" class="reg-form">
+                <form action="post" name="enterForm" class="enter-form" ng-submit="saveData(formReg)" novalidate>
                     <label>
                     <input type="email" placeholder="E-mail" required>
                     <div class="message">

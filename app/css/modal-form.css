@@ -12,7 +12,6 @@
 .modal-container .modal-mes {
   height: 550px;
   width: 434px;
-  background-color: #fff;
   margin: 0 auto;
   margin-top: 70px;
   position: relative;
@@ -48,6 +47,7 @@
   position: absolute;
   top: 70px;
   width: 100%;
+  background-color: #fff;
 }
 .modal-container .modal-mes .close-icon {
   background-image: url("../images/icons/close-mod.svg");
@@ -64,7 +64,6 @@
   margin: 0 auto;
   font-size: 16px;
   padding-bottom: 30px;
-  background-color: #fff;
   /*for email, password*/
 }
 .modal-container form label {
@@ -149,23 +148,23 @@
 .modal-container form .forgot-link {
   border-bottom: 1px solid #cccbd5;
 }
-.modal-container form {
-  /* Правило для всех элементов, с которыми не взаимодействовал пользователь*/
-  /* Правило для всех элементов, которые прошли проверку после взаимодействия с пользователем */
-  /* Данное правило распространяется на все элементы с которыми взаимодействовал прользователь и которые не прошли проверку */
-}
-.modal-container form .ng-pristine {
+.modal-container form.reg-form .ng-pristine,
+.modal-container form.enter-form .ng-pristine {
   border-bottom: 1px solid #bac4d7;
 }
-.modal-container form .ng-valid.ng-dirty {
+.modal-container form.reg-form .ng-valid.ng-dirty,
+.modal-container form.enter-form .ng-valid.ng-dirty {
   border-bottom-color: green;
 }
-.modal-container form .ng-invalid.ng-dirty {
+.modal-container form.reg-form .ng-invalid.ng-dirty,
+.modal-container form.enter-form .ng-invalid.ng-dirty {
   border-bottom-color: red;
 }
-.modal-container form .mes-valid {
+.modal-container form.reg-form .mes-valid,
+.modal-container form.enter-form .mes-valid {
   color: green;
 }
-.modal-container form .mes-invalid {
+.modal-container form.reg-form .mes-invalid,
+.modal-container form.enter-form .mes-invalid {
   color: red;
 }

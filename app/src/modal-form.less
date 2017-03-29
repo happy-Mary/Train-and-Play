@@ -13,7 +13,6 @@
 		.modal-mes {
 			height: 550px;
 			width: 434px;
-			background-color: #fff;
 			margin: 0 auto;
 			margin-top: 70px;
 			position: relative;
@@ -54,6 +53,7 @@
 				position: absolute;
 				top: 70px;
 				width: 100%;
+				background-color: #fff;
 			}
 
 			.close-icon {
@@ -74,7 +74,6 @@
 		margin: 0 auto;
 		font-size: 16px;
 		padding-bottom: 30px;
-		background-color: #fff;
 
 		label {
 		display: block;
@@ -168,20 +167,16 @@
 	}
 
 	//Form VALIDATION
-	form {
-		/* Правило для всех элементов, с которыми не взаимодействовал пользователь*/
+	form.reg-form, form.enter-form {
 		.ng-pristine {
 			border-bottom: 1px solid @formBorder;
 		}
-		/* Правило для всех элементов, которые прошли проверку после взаимодействия с пользователем */
 		.ng-valid.ng-dirty {
 			border-bottom-color: @formValid;
 		}
-		 /* Данное правило распространяется на все элементы с которыми взаимодействовал прользователь и которые не прошли проверку */
 		.ng-invalid.ng-dirty {
 			border-bottom-color: @formInvalid;
 		}
-		// messsage color
 		.mes-valid {color: @formValid;}
 		.mes-invalid {color: @formInvalid;}
 
