@@ -64,7 +64,6 @@ input, button, select {
 
 a, button {
     cursor: pointer;
-    background: #eb5f8e;
 }
 
 a,
@@ -77,11 +76,6 @@ a:hover {
   -webkit-text-decoration-skip: objects;
 }
 
-button {
-    a {
-        display: block;
-    }
-}
 
 small {
   font-size: 80%;
@@ -125,29 +119,58 @@ h3 {
     color: @darkPink;
     font-size: 1.8rem;
 }
-
-.btn-pink {
-    background: @darkPink;
+// BUTTONS 
+.btn-pink,
+.btn-pink:focus,
+.btn-pink:active {
+    background-color: @btnPink;
     border-radius: 0;
-    border: 2px solid @darkPink;
-    border-bottom: 2px solid @borderButton;
+    border-bottom: 2px solid @btnPinkBorder;
     color: @textWhite;
     text-transform: uppercase;
-    cursor: pointer;
     }
 
-.btn-pink:hover,
-.btn-pink:focus {
+.btn-pink:hover
+ {
+    background-color: @btnPinkHov;
     color: @textWhite;
-    border: 2px solid @darkPink;
-    border-bottom: 2px solid @borderButton;
-
+    border-bottom: 2px solid @btnPinkHovBorder;
 }
 
-.btn-white {
+ .btn-white,
+ .btn-white:focus,
+ .btn-white:active {
+    height: 30px;
+    padding: 6px 20px;
     background: white;
-    border: 1px solid black; 
+    border: 1px solid @btnWhiteBorder; 
+    font-size: 14px;
+    text-transform: uppercase;
+    &:hover {
+        border: 2px solid @btnWhiteHovBorder;
+    }
 }
+
+.btn-arrow {
+    background-color: #D1D1D1;
+        &:hover, &:focus, &:active { background-color: #A3A0A0;}
+}
+
+.btn-circle {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: @btnPink;
+    background-image: url("@{pathImg}/sl-arrow.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    &:hover, &:focus, &:active {
+        background-color: @btnCircleHov;
+    }
+
+}
+
+
 
 // main project title
 .maintitle {
