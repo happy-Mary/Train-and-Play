@@ -52,16 +52,24 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
             $scope.postNewUser[key] = $scope.formReg[key];
         }
         delete $scope.postNewUser.confPass;
-
         console.log($scope.formReg);
         console.log(angular.toJson($scope.postNewUser));
+
         // post 
-        $http.post('localhost:8080/tnp/users/registration/', $scope.postNewUser).success(function(data) {
+        // $http.post('/tnp/users/registration/', $scope.postNewUser).success(function(data) {
+        //     console.log("Server had our data");
+        //     $scope.PostDataResponse = data;
+        // }).error(function(data) {
+        //     console.log("Server is not happy");
+        //     $scope.PostDataResponse = "ERROR";
+        // });
+
+        $http.post('/tnp/users/registration/', $scope.postNewUser).then(function(response) {
+            $scope.PostDataResponse = response.data;
             console.log("Server had our data");
-            $scope.PostDataResponse = data;
-        }).error(function(data) {
+        }, function(response) {
             console.log("Server is not happy");
-            $scope.PostDataResponse = "ERROR";
+            $scope.PostDataResponse = response.status + " " + response.statusText;
         });
 
 

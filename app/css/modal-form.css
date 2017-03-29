@@ -10,7 +10,7 @@
   /*common form styles*/
 }
 .modal-container .modal-mes {
-  height: 545px;
+  height: 550px;
   width: 434px;
   background-color: #fff;
   margin: 0 auto;
@@ -64,6 +64,7 @@
   margin: 0 auto;
   font-size: 16px;
   padding-bottom: 30px;
+  background-color: #fff;
   /*for email, password*/
 }
 .modal-container form label {
