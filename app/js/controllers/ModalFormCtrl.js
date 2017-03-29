@@ -1,6 +1,6 @@
 tpApp.controller("ModalFormCtrl", function($scope, $http) {
 
-    $scope.PostDataResponse = "Post test message";
+    $scope.PostDataResponse = "Server message";
     // управление табами
     $scope.item = "registr";
     $scope.setTab = function() {
@@ -37,34 +37,22 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
         }
     };
 
-
     // regexp for password and email 
-    // TODO: change regexp for password
     $scope.regexPass = '^[a-z0-9_-]+$';
     // $scope.regexPass = '((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{5,20})';
     $scope.regexEmail = '[a-zA-Z0-9_.]+\@[a-zA-Z0-9_]+\.[a-zA-Z]{2,6}$';
-    $scope.formReg = {};
+    $scope.formRegData = {};
+    $scope.formEnterData = {};
 
-    // отправка формы
+    // registration data
     $scope.addNewUser = function() {
         $scope.postNewUser = {};
-        for (var key in $scope.formReg) {
-            $scope.postNewUser[key] = $scope.formReg[key];
+        for (var key in $scope.formRegData) {
+            $scope.postNewUser[key] = $scope.formRegData[key];
         }
         delete $scope.postNewUser.confPass;
-        // console.log($scope.formReg);
+        // console.log($scope.formRegData);
         // console.log(angular.toJson($scope.postNewUser));
-
-        // post 
-        // $http.post('/tnp/users/registration/', angular.toJson($scope.postNewUser)).success(function(data) {
-        //     console.log("Server had our data");
-        //     $scope.PostDataResponse = data;
-        // }).error(function(data) {
-        //     console.log("Server is not happy");
-        //     console.log(data);
-        //     $scope.PostDataResponse = "ERROR";
-        // });
-
 
         $http.post('/tnp/users/registration/', angular.toJson($scope.postNewUser)).then(function(response) {
             $scope.PostDataResponse = response.data;
@@ -75,5 +63,25 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
         });
     };
 
+
+    //enter data
+    $scope.enterUser = function() {
+        // data for server
+        $scope.postUser = {};
+        for (var key in $scope.formEnterData) {
+            $scope.postUser[key] = $scope.formEnterData[key];
+        }
+        delete $scope.postUser.confPass;
+        // console.log($scope.formEnterData);
+        // console.log(angular.toJson($scope.postUser));
+
+        $http.post('/tnp/users/login/', angular.toJson($scope.postUser)).then(function(response) {
+            $scope.PostDataResponse = response.data;
+            console.log("Server had our data");
+        }, function(response) {
+            console.log("Server is not happy");
+            $scope.PostDataResponse = response.status + " " + response.statusText;
+        });
+    };
 
 });
