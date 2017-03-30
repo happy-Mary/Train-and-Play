@@ -1,65 +1,65 @@
-.advantage {
+#mainpage .advantage {
   background: url("../images/bg-header.jpg") no-repeat;
   background-size: cover;
   color: #fff;
 }
-.advantage-subtitle {
+#mainpage .advantage-subtitle {
   display: inline-block;
 }
-.advantage-subtitle img {
+#mainpage .advantage-subtitle img {
   display: inline-block !important;
 }
-.advantage .container div h3 {
+#mainpage .advantage .container div h3 {
   text-align: left;
   padding-left: 4rem;
 }
-.advantage .container div p:nth-of-type(1) {
+#mainpage .advantage .container div p:nth-of-type(1) {
   margin-bottom: 5rem;
 }
-.startnow {
+#mainpage .startnow {
   background: url("../images/bg-header.jpg") no-repeat;
   background-size: cover;
   color: #fff;
   text-align: center;
   font-size: 2rem;
 }
-.startnow p {
+#mainpage .startnow p {
   margin: 0 auto;
   padding-bottom: 3.6rem;
 }
-.startnow .pink_text {
+#mainpage .startnow .pink_text {
   font-size: 3.4rem;
 }
-.startnow .btn-pink {
+#mainpage .startnow .btn-pink {
   padding: 0.6rem 1.3rem;
   font-size: 1.1rem;
 }
-.howitworks_icon {
+#mainpage .howitworks_icon {
   margin-bottom: 50px;
 }
-.howitworks {
+#mainpage .howitworks {
   background: url("../images/dashes.png") no-repeat;
   background-size: 1100px;
   background-position: center 38%;
 }
-.howitworks .row:first-child {
+#mainpage .howitworks .row:first-child {
   background: url("../images/airplane.png") no-repeat;
   background-size: 70px;
   background-position: 89% -1%;
 }
-.howitworks h3 {
+#mainpage .howitworks h3 {
   text-transform: none;
 }
-.trainings .slider-item {
+#mainpage .trainings .slider-item {
   position: relative;
   background-color: white;
   border-radius: 3px;
   box-shadow: 1.5px 2.6px 4.8px 0.3px rgba(0, 0, 0, 0.2);
 }
-.trainings .slider-item img {
+#mainpage .trainings .slider-item img {
   width: 100%;
 }
-.trainings .slider-item .btn-circle {
+#mainpage .trainings .slider-item .btn-circle {
   opacity: 0;
   position: absolute;
   z-index: 100;
@@ -67,11 +67,11 @@
   top: 50%;
   transform: translate(-50%, -200%);
 }
-.trainings .slider-item .slider-description {
+#mainpage .trainings .slider-item .slider-description {
   font-size: 14px;
   padding: 20px;
 }
-.trainings .slider-item .slider-description .slider-text {
+#mainpage .trainings .slider-item .slider-description .slider-text {
   font-size: 16px;
   font-weight: 400;
   line-height: 18px;
@@ -80,31 +80,63 @@
   padding-bottom: 30px !important;
   margin-bottom: 0rem !important;
 }
-.trainings .slider-item .slider-description:after {
+#mainpage .trainings .slider-item .slider-description:after {
   content: "";
   display: block;
   clear: both;
 }
-.trainings .slider-item .completed {
+#mainpage .trainings .slider-item .completed {
   line-height: 14px;
   float: left;
   opacity: 0.3;
 }
-.trainings .slider-item .completed img {
+#mainpage .trainings .slider-item .completed img {
   display: inline-block;
   width: 15px;
   margin-right: 10px;
 }
-.trainings .slider-item .views {
+#mainpage .trainings .slider-item .views {
   line-height: 14px;
   float: right;
   opacity: 0.3;
 }
-.trainings .slider-item .views img {
+#mainpage .trainings .slider-item .views img {
   display: inline-block;
   width: 15px;
   margin-right: 10px;
 }
-.trainings .slider-item .clear {
-  clear: both;
+#mainpage .trainings .slider-item .active-text {
+  color: #463c79;
+}
+#mainpage .reviews .slider-item {
+  position: relative;
+}
+#mainpage .reviews .slider-item .userimage {
+  position: absolute;
+  border-radius: 50%;
+  display: block;
+  top: 0px;
+  left: 20px;
+}
+#mainpage .reviews .slider-item .username {
+  color: #555;
+  font-family: "Proxima Nova";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 20px;
+  padding-left: 100px;
+  padding-bottom: 10px;
+}
+#mainpage .reviews .slider-item .review-text {
+  width: 220px;
+  height: 320px;
+  padding: 40px 20px 20px 20px;
+  background-color: #463c79;
+  border-radius: 3px;
+  box-shadow: 1.5px 2.6px 4.8px 0.3px rgba(0, 0, 0, 0.2);
+  color: #fffefe;
+  font-family: "Proxima Nova";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
 }

@@ -4,22 +4,18 @@ $(document).ready(function(){
 	  function() {
 	    $(this).find('.slider-img').fadeTo(5, 0.3);
 	    $(this).find('.btn-circle').fadeTo(5, 1);
+	    $(this).find('.slider-text').addClass('active-text');
 	  }, 
 	  function() {
 	    $(this).find('.slider-img').fadeTo(5, 1);
 	    $(this).find('.btn-circle').fadeTo(5, 0);
+	    $(this).find('.slider-text').removeClass('active-text');
 	  }
 	);
 });
 
 
 
-
-
-// $('.slider-item').hover(function(){
-// 	$('.slider-img').fadeTo(50, 0.2);
-// 	$('.btn-circle').fadeTo(50, 1);
-// });
 
 
 
