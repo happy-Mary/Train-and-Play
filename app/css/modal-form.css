@@ -1,19 +1,22 @@
 .modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   margin: 0;
   padding-top: 5px;
-  background-color: #232232;
-  opacity: .8;
+  background-color: rgba(35, 34, 50, 0.8);
   font-family: "Proxima Nova Regular";
   color: #696969;
+  z-index: 1000;
   /*common form styles*/
 }
 .modal-container .modal-mes {
   height: 550px;
   width: 434px;
   margin: 0 auto;
-  margin-top: 70px;
+  margin-top: 4%;
   position: relative;
 }
 .modal-container .modal-mes .tab-radio {
@@ -50,7 +53,7 @@
   background-color: #fff;
 }
 .modal-container .modal-mes .close-icon {
-  background-image: url("../images/icons/close-mod.svg");
+  background-image: url("../images/icons/close-mod.png");
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;

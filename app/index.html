@@ -19,11 +19,15 @@
     <meta name="robots" content="index, follow">
 
     <!--CSS-->
-    <!--<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
-    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/var.css">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/advantage.css">
+    <link rel="stylesheet" href="css/media.css">
     <link rel="stylesheet" href="css/modal-form.css">
     <!-- <link rel="stylesheet" href="css/bundle.min.css"> -->
 
@@ -34,91 +38,64 @@
 </head>
 
 <body ng-controller="MainController">
-    <!-- tempoparily form window lives here -->
-    <div class="modal-container" ng-controller="ModalFormCtrl">
-        <!--put different content here ??? -->
-        <div class="modal-mes">
-            <!-- REGISTRATION -->
-            <input type="radio" name="mod-radio" class="tab-radio" id="tab-reg" value="registr" ng-model="item">
-            <label for="tab-reg">регистрация</label>
-            <!--content-->
-            <div>
-                <form name="registerForm" class="reg-form" ng-submit="addNewUser(formRegData)" novalidate>
-                    <label>
-                        <input type="email" placeholder="E-mail" name="regEmail" ng-model="formRegData.email" required ng-pattern="regexEmail">
-                        <div class="message" ng-class="registerForm.regEmail.$valid ? 'mes-valid' : 'mes-invalid'">
-                        <span ng-if ="registerForm.regEmail.$invalid && registerForm.regEmail.$dirty">
-                        {{getError(registerForm.regEmail.$error)}}
-                        </span>
-                        </div>
-                    </label>
-                    <label>
-                        <input type="password" placeholder="Пароль"  name="regPass" ng-model="formRegData.password" 
-                        ng-pattern="regexPass" ng-minlength="5" ng-maxlength="20" required>
-                        <div class="message" ng-class="registerForm.regPass.$valid ? 'mes-valid' : 'mes-invalid'">
-                        <span ng-if ="registerForm.regPass.$invalid && registerForm.regPass.$dirty">{{getError(registerForm.regPass.$error)}}</span>
-                        </div>
-                    </label>
-                    <label>
-                    <input type="password" placeholder="Подтвердите пароль"   name="regConfPass"  ng-model="formRegData.confPass" ng-pattern="formData.password" required>
-                    <div class="message" ng-class="registerForm.regConfPass.$valid ? 'mes-valid' : 'mes-invalid'">
-                    <span ng-if ="registerForm.regConfPass.$dirty">{{comparePass(registerForm.regConfPass.$error)}}</span>
-                    </div>
-                    </label>
-                    <div class="regServerMes">{{ PostDataResponse }}</div>
-                    <p class="or"><span>или</span></p>
-                    <div class="reg-social">
-                        <a href="#"><img src="images/icons/vk.svg" alt="social"></a>
-                        <a href="#"><img src="images/icons/fb.svg" alt="social"></a>
-                        <a href="#"><img src="images/icons/google.svg" alt="social"></a>
-                    </div>
-                    <button class="btn-pink" type="submit" ng-disabled="registerForm.$invalid">регистрация</button>
-                    <p class="reg-away">Уже есть учетная запись? <a href="#" ng-click="setTab()">Войти</a></p>
-                </form>
+    <header class="container-fluid">
+        <div class="container">
+            <!--permanent header-->
+            <nav class="header row">
+                <div class="logo uppercase col-xs-12 col-sm-6">
+                    <a href="#main">TRAINANDPLAY</a>
+                </div>
+                <div class="reg col-xs-12 col-sm-6">
+                    <button class="btn-pink" ng-click="showModal()">войти</button>
+                </div>
+            </nav>
+            <!--remove div.intro when page's not main-->
+            <div class="row intro" ng-if=getLoc()>
+                <h1 class="uppercase">train and play</h1>
+                <p>Наш проект нацелен на тех, кто хочет учиться и быть лучше.<br/> Если у Вас есть свободное время и желание, чтобы прокачать свои навыки или попробовать себя в чем-то новом - наш проект для Вас. Вы можете учиться самомтоятельно или с помощью
+                    компетентного тренера.<br/>Удачи!</p>
+                <a href="#landing"><button class="btn-pink uppercase">начать обучение</button></a>
             </div>
 
-            <!-- ENTER -->
-            <input type="radio" name="mod-radio" class="tab-radio" id="tab-renter" value="enter" ng-model="item">
-            <label for="tab-renter">вход</label>
-            <!--content-->
-            <div>
-                <form name="enterForm" class="enter-form" ng-submit="enterUser(formEnterData)" novalidate>
-                    <label>
-                        <input type="email" placeholder="E-mail" name="enterEmail" ng-model="formEnterData.email" required ng-pattern="regexEmail">
-                        <div class="message" ng-class="enterForm.enterEmail.$valid ? 'mes-valid' : 'mes-invalid'">
-                            <span ng-if ="enterForm.enterEmail.$invalid && enterForm.enterEmail.$dirty">
-                            {{getError(enterForm.enterEmail.$error)}}
-                            </span>
-                        </div>
-                    </label>
-                    <label>
-                        <input type="password" placeholder="Пароль"  name="enterPass" ng-model="formEnterData.password" 
-                        ng-pattern="regexPass" ng-minlength="5" ng-maxlength="20" required>
-                        <div class="message" ng-class="enterForm.enterPass.$valid ? 'mes-valid' : 'mes-invalid'">
-                            <span ng-if ="enterForm.enterPass.$invalid && enterForm.enterPass.$dirty">
-                            {{getError(enterForm.enterPass.$error)}}
-                            </span>
-                        </div>
-                    </label>
-
-                    <div class="regServerMes">{{ PostDataResponse }}</div>
-                    <p class="or"><span>или</span></p>
-                    <div class="reg-social">
-                        <a href="#"><img src="images/icons/vk.svg" alt="social"></a>
-                        <a href="#"><img src="images/icons/fb.svg" alt="social"></a>
-                        <a href="#"><img src="images/icons/google.svg" alt="social"></a>
-                    </div>
-                    <button class="btn-pink" type="submit" ng-disabled="enterForm.$invalid">войти</button>
-                    <p class="reg-away"><a href="#" class="forgot-link">Забыли пароль?</a></p>
-                    <p class="reg-away">Hет учетной записи? <a href="#" ng-click="setTab()">Зарегистрироваться</a></p>
-                </form>
-            </div>
-            <div class="close-icon"></div>
         </div>
+    </header>
+    <!--modal-window-->
+    <modal-window></modal-window>
 
+    <!--MAIN CONTAINER-->
+    <div ng-view>
+        <!-- CONTENT -->
     </div>
 
-
+    <footer class="footer container-fluid">
+        <div class="container">
+            <div class="row footer-links">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">trainandplay</div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-lg-offset-2 col-md-offset-0 col-sm-offset-0 col-xs-12">О проекте</div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">Игротренинги</div>
+                <div class="col-lg-3 col-md-5 col-sm-5 col-xs-12 col-md-offset-1 col-sm-offset-1">Ваши идеи и предложения</div>
+            </div>
+            <div class="row footer-like">
+                <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                    <p class="text-center">Нравится? Поделись с друзьями</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-lg-offset-5 col-md-2 col-md-offset-5 col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
+                    <div class="footer-social">
+                        <img class="img-responsive" src="images/social-vk.png">
+                        <img class="img-responsive" src="images/social-fb.png">
+                        <img class="img-responsive" src="images/social-gl.png">
+                    </div>
+                </div>
+            </div>
+            <div class="row footer-copyright">
+                <div class="col-lg-3 col-lg-offset-9 col-md-4 col-md-offset-8 col-sm-4 col-sm-offset-8 col-xs-10 col-xs-offset-1">
+                    <p class="text-center">© 2017. Train and Play. Все права защищены</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!--SCRIPTS-->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -127,8 +104,9 @@
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="libs/angular-route/angular-route.min.js"></script>
     <!--native js-->
-    <script src="js/app.js"></script>
-    <script src="js/controllers/MainController.js"></script>
+    <script src="js/app.js "></script>
+    <script src="js/controllers/MainController.js "></script>
+    <script src="js/directives/modalDirective.js"></script>
     <script src="js/controllers/ModalFormCtrl.js"></script>
 </body>
 
