@@ -51,8 +51,6 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
             $scope.postNewUser[key] = $scope.formRegData[key];
         }
         delete $scope.postNewUser.confPass;
-        // console.log($scope.formRegData);
-        // console.log(angular.toJson($scope.postNewUser));
 
         $http.post('/tnp/users/registration/', angular.toJson($scope.postNewUser)).then(function(response) {
             $scope.PostDataResponse = response.data;
@@ -86,4 +84,4 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
 
 });
 
-// TODO: parse and take outstring from response.data
+// TODO: write logic for register confirmation or error.message

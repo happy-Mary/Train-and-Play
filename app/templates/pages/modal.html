@@ -23,12 +23,12 @@
                         </div>
                     </label>
                 <label>
-                    <input type="password" placeholder="Подтвердите пароль"   name="regConfPass"  ng-model="formRegData.confPass" ng-pattern="formData.password" required>
+                    <input type="password" placeholder="Подтвердите пароль"   name="regConfPass"  ng-model="formRegData.confPass" ng-pattern="formRegData.password" required>
                     <div class="message" ng-class="registerForm.regConfPass.$valid ? 'mes-valid' : 'mes-invalid'">
                     <span ng-if ="registerForm.regConfPass.$dirty">{{comparePass(registerForm.regConfPass.$error)}}</span>
                     </div>
-                    </label>
-                <div class="regServerMes">{{ PostDataResponse }}</div>
+                </label>
+                <div class="regServerMes">{{ PostDataResponse.message }}</div>
                 <p class="or"><span>или</span></p>
                 <div class="reg-social">
                     <a href="#"><img src="images/icons/vk.png" alt="social"></a>
@@ -64,7 +64,7 @@
                         </div>
                     </label>
 
-                <div class="regServerMes">{{ PostDataResponse }}</div>
+                <div class="regServerMes">{{ PostDataResponse.message }}</div>
                 <p class="or"><span>или</span></p>
                 <div class="reg-social">
                     <a href="#"><img src="images/icons/vk.png" alt="vkontakte"></a>
