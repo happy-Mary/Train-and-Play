@@ -1,5 +1,5 @@
 @import url("var.less");
-
+#mainpage {
 .advantage {
     background: @bg-header no-repeat;
     background-size: cover;
@@ -63,5 +63,115 @@
     h3{
         text-transform: none;
     }
+}
+
+.trainings {
+
+   .slider-item {
+        // height: 320px;
+        // width: 220px; 
+        position:relative;       
+        background-color: white;
+        border-radius: 3px;
+        box-shadow: 1.5px 2.6px 4.8px 0.3px rgba(0, 0, 0, 0.2);
+        img {
+            width: 100%;
+        }
+
+        .btn-circle {
+            opacity: 0;
+            position: absolute;
+            z-index: 100;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -200%);
+        }
+
+        .slider-description {
+            font-size: 14px;
+            padding: 20px;
+            .slider-text {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 18px;
+                // color: @darkPink;
+                text-align: center;
+                text-transform: none;
+                padding-bottom: 30px !important;
+                margin-bottom: 0rem !important;
+            }
+        }
+        .slider-description:after {
+                content: "";
+                display: block;
+                clear: both; 
+        }
+
+        .completed {
+            img {
+                display:inline-block;
+                width: 15px;
+                margin-right: 10px;
+            }
+            line-height: 14px;
+            float: left;
+            opacity: 0.3;
+        }
+
+        .views {
+            img {
+                display:inline-block;
+                width: 15px;
+                margin-right: 10px;
+            }
+            line-height: 14px;
+            float: right;
+            opacity: 0.3;
+        }
+
+        .active-text {
+            color: @textViolet;
+        }
+    } 
+}
+
+.reviews {
+    .slider-item {
+        position: relative;
+        .userimage {
+            position: absolute;
+            border-radius: 50%;
+            display: block;
+            top:0px;
+            left:20px;
+
+        }
+        .username {
+            color: #555;
+            font-family: "Proxima Nova";
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 20px;
+            padding-left: 100px;
+            padding-bottom: 10px;
+        }
+        .review-text {
+            width: 220px;
+            height: 320px;
+            padding: 40px 20px 20px 20px;
+            background-color: #463c79;
+            border-radius: 3px;
+            box-shadow: 1.5px 2.6px 4.8px 0.3px rgba(0, 0, 0, 0.2);
+            color: #fffefe;
+            font-family: "Proxima Nova";
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20px;
+        }
+
+    }
+
+}
+
 }
 
