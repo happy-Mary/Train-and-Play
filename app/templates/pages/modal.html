@@ -1,11 +1,16 @@
 <div class="modal-container" ng-controller="ModalFormCtrl" ng-show="modalOpen">
     <!--put different content here ??? -->
     <div class="modal-mes">
-        <!-- REGISTRATION -->
-        <input type="radio" name="mod-radio" class="tab-radio" id="tab-reg" value="registr" ng-model="item">
-        <label for="tab-reg">регистрация</label>
-        <!--content-->
-        <div>
+        <form class="tabs">
+            <!-- REGISTRATION -->
+            <input type="radio" name="mod-radio" class="tab-radio" id="tab-reg" value="registr" ng-model="item">
+            <label for="tab-reg">регистрация</label>
+            <!-- ENTER -->
+            <input type="radio" name="mod-radio" class="tab-radio" id="tab-enter" value="enter" ng-model="item">
+            <label for="tab-enter">вход</label>
+        </form>
+        <!--content reg-->
+        <div class="auth-form" ng-show="item == 'registr'">
             <form name="registerForm" class="reg-form" ng-submit="addNewUser(formRegData)" novalidate>
                 <label>
                         <input type="email" placeholder="E-mail" name="regEmail" ng-model="formRegData.email" required ng-pattern="regexEmail">
@@ -36,15 +41,12 @@
                     <a href="#"><img src="images/icons/google.png" alt="social"></a>
                 </div>
                 <button class="btn-pink" type="submit" ng-disabled="registerForm.$invalid">регистрация</button>
-                <p class="reg-away">Уже есть учетная запись? <a href="#" ng-click="setTab()">Войти</a></p>
+                <p class="reg-away">Уже есть учетная запись? <a href="#" ng-click="item = 'enter'">Войти</a></p>
             </form>
         </div>
 
-        <!-- ENTER -->
-        <input type="radio" name="mod-radio" class="tab-radio" id="tab-renter" value="enter" ng-model="item">
-        <label for="tab-renter">вход</label>
-        <!--content-->
-        <div>
+        <!--content enter-->
+        <div class="auth-form" ng-show="item == 'enter'">
             <form name="enterForm" class="enter-form" ng-submit="enterUser(formEnterData)" novalidate>
                 <label>
                         <input type="email" placeholder="E-mail" name="enterEmail" ng-model="formEnterData.email" required ng-pattern="regexEmail">
@@ -73,7 +75,7 @@
                 </div>
                 <button class="btn-pink" type="submit" ng-disabled="enterForm.$invalid">войти</button>
                 <p class="reg-away"><a href="#" class="forgot-link">Забыли пароль?</a></p>
-                <p class="reg-away">Hет учетной записи? <a href="#" ng-click="setTab()">Зарегистрироваться</a></p>
+                <p class="reg-away">Hет учетной записи? <a href="#" ng-click="item = 'registr'">Зарегистрироваться</a></p>
             </form>
         </div>
         <div class="close-icon" ng-click="closeModal()"></div>

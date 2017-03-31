@@ -1,16 +1,7 @@
 tpApp.controller("ModalFormCtrl", function($scope, $http) {
 
-    $scope.PostDataResponse = "Server message";
-    // управление табами
+    // управление переключением табов
     $scope.item = "registr";
-    $scope.setTab = function() {
-        if ($scope.item === "registr") {
-            $scope.item = "enter"
-        } else {
-            $scope.item = "registr"
-        }
-        return $scope.item;
-    };
 
     // validation functions
     $scope.getError = function(error) {
@@ -43,6 +34,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     $scope.regexEmail = '[a-zA-Z0-9_.]+\@[a-zA-Z0-9_]+\.[a-zA-Z]{2,6}$';
     $scope.formRegData = {};
     $scope.formEnterData = {};
+    $scope.PostDataResponse = "Server message";
 
     // registration data
     $scope.addNewUser = function() {
