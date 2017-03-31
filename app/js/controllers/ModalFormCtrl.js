@@ -1,4 +1,6 @@
 tpApp.controller("ModalFormCtrl", function($scope, $http) {
+    // partial views for diffrent modal content
+    $scope.modalContent = "../../templates/partials/reg-enter.html";
 
     // управление переключением табов
     $scope.item = "registr";

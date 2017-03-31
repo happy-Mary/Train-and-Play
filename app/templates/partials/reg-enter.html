@@ -1,0 +1,78 @@
+<form class="tabs">
+    <!-- REGISTRATION -->
+    <input type="radio" name="mod-radio" class="tab-radio" id="tab-reg" value="registr" ng-model="item">
+    <label for="tab-reg">регистрация</label>
+    <!-- ENTER -->
+    <input type="radio" name="mod-radio" class="tab-radio" id="tab-enter" value="enter" ng-model="item">
+    <label for="tab-enter">вход</label>
+</form>
+<!--content reg-->
+<div class="auth-form" ng-show="item == 'registr'">
+    <form name="registerForm" class="reg-form" ng-submit="addNewUser(formRegData)" novalidate>
+        <label>
+                        <input type="email" placeholder="E-mail" name="regEmail" ng-model="formRegData.email" required ng-pattern="regexEmail">
+                        <div class="message" ng-class="registerForm.regEmail.$valid ? 'mes-valid' : 'mes-invalid'">
+                        <span ng-if ="registerForm.regEmail.$invalid && registerForm.regEmail.$dirty">
+                        {{getError(registerForm.regEmail.$error)}}
+                        </span>
+                        </div>
+                    </label>
+        <label>
+                        <input type="password" placeholder="Пароль"  name="regPass" ng-model="formRegData.password" 
+                        ng-pattern="regexPass" ng-minlength="5" ng-maxlength="20" required>
+                        <div class="message" ng-class="registerForm.regPass.$valid ? 'mes-valid' : 'mes-invalid'">
+                        <span ng-if ="registerForm.regPass.$invalid && registerForm.regPass.$dirty">{{getError(registerForm.regPass.$error)}}</span>
+                        </div>
+                    </label>
+        <label>
+                    <input type="password" placeholder="Подтвердите пароль"   name="regConfPass"  ng-model="formRegData.confPass" ng-pattern="formRegData.password" required>
+                    <div class="message" ng-class="registerForm.regConfPass.$valid ? 'mes-valid' : 'mes-invalid'">
+                    <span ng-if ="registerForm.regConfPass.$dirty">{{comparePass(registerForm.regConfPass.$error)}}</span>
+                    </div>
+                </label>
+        <div class="regServerMes">{{ PostDataResponse.message }}</div>
+        <p class="or"><span>или</span></p>
+        <div class="reg-social">
+            <a href="#"><img src="images/icons/vk.png" alt="social"></a>
+            <a href="#"><img src="images/icons/fb.png" alt="social"></a>
+            <a href="#"><img src="images/icons/google.png" alt="social"></a>
+        </div>
+        <button class="btn-pink" type="submit" ng-disabled="registerForm.$invalid">регистрация</button>
+        <p class="reg-away">Уже есть учетная запись? <a href="#" ng-click="item = 'enter'">Войти</a></p>
+    </form>
+</div>
+
+<!--content enter-->
+<div class="auth-form" ng-show="item == 'enter'">
+    <form name="enterForm" class="enter-form" ng-submit="enterUser(formEnterData)" novalidate>
+        <label>
+                        <input type="email" placeholder="E-mail" name="enterEmail" ng-model="formEnterData.email" required ng-pattern="regexEmail">
+                        <div class="message" ng-class="enterForm.enterEmail.$valid ? 'mes-valid' : 'mes-invalid'">
+                            <span ng-if ="enterForm.enterEmail.$invalid && enterForm.enterEmail.$dirty">
+                            {{getError(enterForm.enterEmail.$error)}}
+                            </span>
+                        </div>
+                    </label>
+        <label>
+                        <input type="password" placeholder="Пароль"  name="enterPass" ng-model="formEnterData.password" 
+                        ng-pattern="regexPass" ng-minlength="5" ng-maxlength="20" required>
+                        <div class="message" ng-class="enterForm.enterPass.$valid ? 'mes-valid' : 'mes-invalid'">
+                            <span ng-if ="enterForm.enterPass.$invalid && enterForm.enterPass.$dirty">
+                            {{getError(enterForm.enterPass.$error)}}
+                            </span>
+                        </div>
+                    </label>
+
+        <div class="regServerMes">{{ PostDataResponse.message }}</div>
+        <p class="or"><span>или</span></p>
+        <div class="reg-social">
+            <a href="#"><img src="images/icons/vk.png" alt="vkontakte"></a>
+            <a href="#"><img src="images/icons/fb.png" alt="facebook"></a>
+            <a href="#"><img src="images/icons/google.png" alt="google"></a>
+        </div>
+        <button class="btn-pink" type="submit" ng-disabled="enterForm.$invalid">войти</button>
+        <p class="reg-away"><a href="#" class="forgot-link">Забыли пароль?</a></p>
+        <p class="reg-away">Hет учетной записи? <a href="#" ng-click="item = 'registr'">Зарегистрироваться</a></p>
+    </form>
+</div>
+<div class="close-icon" ng-click="closeModal()"></div>
