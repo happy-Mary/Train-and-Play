@@ -29,7 +29,10 @@
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/advantage.css">
     <link rel="stylesheet" href="css/media.css">
+
     <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/modal-form.css">
+    <!-- <link rel="stylesheet" href="css/bundle.min.css"> -->
 
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Nova+Flat" rel="stylesheet">
@@ -46,7 +49,7 @@
                     <a href="#main">TRAINANDPLAY</a>
                 </div>
                 <div class="reg col-xs-12 col-sm-6">
-                    <button class=" btn-pink ">войти</button>
+                    <button class="btn-pink" ng-click="showModal()">войти</button>
                 </div>
             </nav>
             <!--remove div.intro when page's not main-->
@@ -59,11 +62,11 @@
 
         </div>
     </header>
+    <!--modal-window-->
+    <modal-window></modal-window>
 
     <!--MAIN CONTAINER-->
-    <!--in app.js settings for views-->
     <div ng-view>
-
         <!-- CONTENT -->
     </div>
 
@@ -110,6 +113,8 @@
 
 
     <script src="js/controllers/MainController.js "></script>
+    <script src="js/directives/modalDirective.js"></script>
+    <script src="js/controllers/ModalFormCtrl.js"></script>
 </body>
 
 </html>

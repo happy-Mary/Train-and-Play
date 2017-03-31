@@ -11,4 +11,8 @@ tpApp.controller("MainController", function($scope, $location) {
         }
     }
 
+    $scope.showModal = function() {
+        $scope.modalOpen = true;
+    }
+
 });
