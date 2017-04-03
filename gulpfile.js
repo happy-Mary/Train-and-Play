@@ -35,15 +35,14 @@ gulp.task('html', function() {
 gulp.task('css', function() {
     return gulp.src('app/css/*.css')
         .pipe(gcmq())
-        .pipe(concatCss("bundle.css")) //как назвать файл
         .pipe(autoprefixer({
             browsers: ['last 2 versions', '> 1%', 'IE 10'],
             cascade: true
         }))
-        .pipe(cleanCSS({ compatibility: 'ie8' }))
-        .pipe(rename('bundle.min.css'))
-        .pipe(gulp.dest('app/css'))
-        .pipe(connect.reload())
+        //.pipe(concatCss("bundle2.css")) 
+        // .pipe(cleanCSS({ compatibility: 'ie8' }))
+        // .pipe(rename('bundle.min.css'))
+        .pipe(gulp.dest('app/css-dist'))
         .pipe(notify("DONE!"));
 
 });
@@ -58,11 +57,12 @@ gulp.task('connect', function() {
 
 //less
 gulp.task('less', function() {
-    return gulp.src('app/src/**/*.less') // где лежит лесс
+    return gulp.src('app/src/**/*.less') 
         .pipe(less({
             paths: [path.join(__dirname, 'less', 'includes')]
         }))
-        .pipe(gulp.dest('app/css')); // куда складывать css
+        .pipe(gulp.dest('app/css'))
+        .pipe(connect.reload()); // теперь при изменениях в лессе работает лайврелоад
 });
 
 //bower
@@ -77,7 +77,7 @@ gulp.task('bower', function() {
 //watch
 gulp.task('watch', function() {
     gulp.watch('app/src/**/*.less', ['less'])
-        // gulp.watch('app/css/*.css', ['css'])
+    gulp.watch('app/css/*.css', ['css'])
     gulp.watch('app/*.html', ['html']);
     // gulp.watch('bower.json', ['bower'])
 });
