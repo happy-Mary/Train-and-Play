@@ -11,8 +11,12 @@ tpApp.controller("MainController", function($scope, $location) {
         }
     }
 
-    $scope.showModal = function() {
+    $scope.regEnterContent = "../../templates/partials/reg-enter.html";
+    $scope.showModalAuth = function() {
+        console.log("OPENING WINDOW");
         $scope.modalOpen = true;
+        $scope.modalPath = $scope.regEnterContent;
+
     }
 
 });

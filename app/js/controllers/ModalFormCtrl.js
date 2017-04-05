@@ -1,6 +1,14 @@
 tpApp.controller("ModalFormCtrl", function($scope, $http) {
+
     // partial views for diffrent modal content
-    $scope.modalContent = "../../templates/partials/reg-enter.html";
+    $scope.regEnterContent = "../../templates/partials/reg-enter.html";
+    $scope.regFinishContent = "../../templates/partials/reg-finish.html";
+    // $scope.modalPath = $scope.regEnterContent;  
+
+    // func for changing partial view inside modal window
+    $scope.changeModalContent = function(partialVariable) {
+        $scope.modalPath = partialVariable;
+    }
 
     // управление переключением табов
     $scope.item = "registr";
@@ -9,10 +17,12 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     $scope.getError = function(error) {
         if (angular.isDefined(error)) {
             if (error.required) {
-                return "Поле не должно быть пустым";
+                return "Обязательно для заполнения";
             } else if (error.email) {
                 return "Некорректный адрес электронной почты";
             } else if (error.pattern) {
+                // write function validation for each feald and replace text: 
+                // Некорректный адрес электронной почты
                 return "Некорректное значение";
             } else if (error.minlength) {
                 return "Слишком короткий пароль"
@@ -24,9 +34,9 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
 
     $scope.comparePass = function(error) {
         if (angular.isDefined(error) && error.pattern) {
-            return "Пароли не совпадают";
+            return "Введенные пароли не совпадают";
         } else if (angular.isDefined(error) && error.required) {
-            return "Поле не должно быть пустым";
+            return "Обязательно для заполнения";
         }
     };
 
@@ -52,6 +62,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
         }, function(response) {
             console.log("Server is not happy");
             $scope.PostDataResponse = response.status + " " + response.statusText;
+            $scope.changeModalContent($scope.regFinishContent);
         });
     };
 

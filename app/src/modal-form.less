@@ -45,14 +45,47 @@
 				text-transform: capitalize;
 			}
 
+
 			.tab-radio:checked+label {
 				background-color: #463c79;
 				font-family: "Proxima Nova Bold";
 			}
 
+			.confirm_reg,
 			.auth-form {
 				width: 100%;
 				background-color: #fff;
+			}
+
+			// confirm reg
+			.mes_header {
+				background-color: #352e59;
+				color: #fff;
+				text-align: center;
+				height: 70px;
+				 p {
+					 line-height: 70px;
+					 font-size: 24px;
+				 }
+			}
+
+			.confirm_reg {
+				text-align: center;
+				padding: 30px 0;
+				p {
+					font-size: 14px;
+					line-height: 24px;
+					text-align: center;
+				}
+			}
+			
+			button {
+			width: 202px;
+			height: 45px;
+			font-size: 18px;
+			margin: 0 auto;
+			margin-top: 30px;
+			box-sizing: border-box;
 			}
 
 			.close-icon {
@@ -96,7 +129,7 @@
 			color: red;
 		}
 
-/*for email, password*/
+/*for email, password, button*/
 		input {
 			border-bottom: 1px solid @formBorder;
 			width: 100%;

@@ -8,6 +8,7 @@ tpApp.directive("modalWindow", function() {
             // $scope.modalOpen = true;
             $scope.closeModal = function() {
                 $scope.modalOpen = false;
+                $scope.modalPath = undefined;
             }
         }
     }
