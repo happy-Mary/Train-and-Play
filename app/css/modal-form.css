@@ -44,9 +44,37 @@
   background-color: #463c79;
   font-family: "Proxima Nova Bold";
 }
+.modal-container .modal-mes .confirm_reg,
 .modal-container .modal-mes .auth-form {
   width: 100%;
   background-color: #fff;
+}
+.modal-container .modal-mes .mes_header {
+  background-color: #352e59;
+  color: #fff;
+  text-align: center;
+  height: 70px;
+}
+.modal-container .modal-mes .mes_header p {
+  line-height: 70px;
+  font-size: 24px;
+}
+.modal-container .modal-mes .confirm_reg {
+  text-align: center;
+  padding: 30px 0;
+}
+.modal-container .modal-mes .confirm_reg p {
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+}
+.modal-container .modal-mes button {
+  width: 202px;
+  height: 45px;
+  font-size: 18px;
+  margin: 0 auto;
+  margin-top: 30px;
+  box-sizing: border-box;
 }
 .modal-container .modal-mes .close-icon {
   background-image: url("../images/icons/close-mod.png");
@@ -65,7 +93,7 @@
   font-size: 16px;
   padding-bottom: 30px;
   padding-top: 13px;
-  /*for email, password*/
+  /*for email, password, button*/
 }
 .modal-container .auth-form > form label {
   display: block;

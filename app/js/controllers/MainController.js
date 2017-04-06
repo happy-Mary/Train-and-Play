@@ -11,8 +11,13 @@ tpApp.controller("MainController", function($scope, $location) {
         }
     }
 
-    $scope.showModal = function() {
-        $scope.modalOpen = true;
-    }
+    // content for first showing modalwindow
+   $scope.authWindow = "../../templates/partials/reg-enter.html";
 
+    // open modal window and give it first view
+    $scope.showModalWindow = function(content) {
+        $scope.modalOpen = true;
+        // calling modalDirective.js 
+        $scope.openModal(content);
+    }
 });
