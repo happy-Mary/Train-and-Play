@@ -37,7 +37,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     // regexp for password and email 
     $scope.regexPass = '^[a-z0-9_-]+$';
     // $scope.regexPass = '((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{5,20})';
-    $scope.regexEmail = '[a-zA-Z0-9_.]+\@[a-zA-Z0-9_]+\.[a-zA-Z]{2,6}$';
+    $scope.regexEmail = '[a-zA-Z0-9_.-]+\@[a-zA-Z0-9_]+\.[a-zA-Z]{2,6}$';
     $scope.formRegData = {};
     $scope.formEnterData = {};
     $scope.PostDataResponse = "Server message";
