@@ -383,25 +383,11 @@
   },
   "css": [
     "print.less",
-    "code.less",
     "grid.less",
     "responsive-utilities.less",
     "media.less",
     "responsive-embed.less"
   ],
-  "js": [
-    "alert.js",
-    "button.js",
-    "carousel.js",
-    "dropdown.js",
-    "modal.js",
-    "tooltip.js",
-    "popover.js",
-    "tab.js",
-    "affix.js",
-    "collapse.js",
-    "scrollspy.js",
-    "transition.js"
-  ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=ef219ac093b86c5654ce96771c44a34e"
+  "js": [],
+  "customizerUrl": "http://getbootstrap.com/customize/?id=d27efd760564a43ba40094ccf4817ca9"
 }

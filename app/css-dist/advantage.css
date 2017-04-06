@@ -1,0 +1,170 @@
+#mainpage .advantage {
+  background: url("../images/bg-header.jpg") no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+#mainpage .advantage-subtitle {
+  display: inline-block;
+}
+
+#mainpage .advantage-subtitle img {
+  display: inline-block !important;
+}
+
+#mainpage .advantage .container div h3 {
+  text-align: left;
+  padding-left: 4rem;
+}
+
+#mainpage .advantage .container div p:nth-of-type(1) {
+  margin-bottom: 5rem;
+}
+
+#mainpage .startnow {
+  background: url("../images/bg-header.jpg") no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#mainpage .startnow p {
+  margin: 0 auto;
+  padding-bottom: 3.6rem;
+}
+
+#mainpage .startnow .pink_text {
+  font-size: 3.4rem;
+}
+
+#mainpage .startnow .btn-pink {
+  padding: 0.6rem 1.3rem;
+  font-size: 1.1rem;
+}
+
+#mainpage .howitworks_icon {
+  margin-bottom: 50px;
+}
+
+#mainpage .howitworks {
+  background: url("../images/dashes.png") no-repeat;
+  background-size: 1100px;
+  background-position: center 38%;
+}
+
+#mainpage .howitworks .row:first-child {
+  background: url("../images/airplane.png") no-repeat;
+  background-size: 70px;
+  background-position: 89% -1%;
+}
+
+#mainpage .howitworks h3 {
+  text-transform: none;
+}
+
+#mainpage .trainings .slider-item {
+  position: relative;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 1.5px 2.6px 4.8px 0.3px rgba(0, 0, 0, 0.2);
+}
+
+#mainpage .trainings .slider-item img {
+  width: 100%;
+}
+
+#mainpage .trainings .slider-item .btn-circle {
+  opacity: 0;
+  position: absolute;
+  z-index: 100;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -200%);
+          transform: translate(-50%, -200%);
+}
+
+#mainpage .trainings .slider-item .slider-description {
+  font-size: 14px;
+  padding: 20px;
+}
+
+#mainpage .trainings .slider-item .slider-description .slider-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+  text-transform: none;
+  padding-bottom: 30px !important;
+  margin-bottom: 0rem !important;
+}
+
+#mainpage .trainings .slider-item .slider-description:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#mainpage .trainings .slider-item .completed {
+  line-height: 14px;
+  float: left;
+  opacity: 0.3;
+}
+
+#mainpage .trainings .slider-item .completed img {
+  display: inline-block;
+  width: 15px;
+  margin-right: 10px;
+}
+
+#mainpage .trainings .slider-item .views {
+  line-height: 14px;
+  float: right;
+  opacity: 0.3;
+}
+
+#mainpage .trainings .slider-item .views img {
+  display: inline-block;
+  width: 15px;
+  margin-right: 10px;
+}
+
+#mainpage .trainings .slider-item .active-text {
+  color: #463c79;
+}
+
+#mainpage .reviews .slider-item {
+  position: relative;
+}
+
+#mainpage .reviews .slider-item .userimage {
+  position: absolute;
+  border-radius: 50%;
+  display: block;
+  top: 0px;
+  left: 20px;
+}
+
+#mainpage .reviews .slider-item .username {
+  color: #555;
+  font-family: "Proxima Nova";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 20px;
+  padding-left: 100px;
+  padding-bottom: 10px;
+}
+
+#mainpage .reviews .slider-item .review-text {
+  width: 220px;
+  height: 320px;
+  padding: 40px 20px 20px 20px;
+  background-color: #463c79;
+  border-radius: 3px;
+  box-shadow: 1.5px 2.6px 4.8px 0.3px rgba(0, 0, 0, 0.2);
+  color: #fffefe;
+  font-family: "Proxima Nova";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
