@@ -6,10 +6,18 @@ tpApp.directive("modalWindow", function() {
         controller: function($scope) {
             $scope.modalOpen = false;
             // $scope.modalOpen = true;
+            
             $scope.closeModal = function() {
                 $scope.modalOpen = false;
-                $scope.modalPath = undefined;
             }
+
+             $scope.openModal = function(contentModal) {
+                 $scope.modalPath = contentModal;
+             }
+
+             $scope.openRegFinish = function() {
+                $scope.modalPath = "../../templates/partials/reg-finish.html";
+             }
         }
     }
 });

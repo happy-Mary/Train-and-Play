@@ -1,14 +1,8 @@
 tpApp.controller("ModalFormCtrl", function($scope, $http) {
 
     // partial views for diffrent modal content
-    $scope.regEnterContent = "../../templates/partials/reg-enter.html";
-    $scope.regFinishContent = "../../templates/partials/reg-finish.html";
-    // $scope.modalPath = $scope.regEnterContent;  
 
-    // func for changing partial view inside modal window
-    $scope.changeModalContent = function(partialVariable) {
-        $scope.modalPath = partialVariable;
-    }
+
 
     // управление переключением табов
     $scope.item = "registr";
@@ -59,10 +53,17 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
         $http.post('/tnp/users/registration/', angular.toJson($scope.postNewUser)).then(function(response) {
             $scope.PostDataResponse = response.data;
             console.log("Server had our data");
+            if($scope.PostDataResponse.urlForMail !== "") {
+                $scope.openRegFinish();
+            }
+
         }, function(response) {
             console.log("Server is not happy");
             $scope.PostDataResponse = response.status + " " + response.statusText;
-            $scope.changeModalContent($scope.regFinishContent);
+            
+            // $scope.PostDataResponse = {};
+            // $scope.PostDataResponse.urlForMail = "https://www.google.by";
+            // $scope.openRegFinish();
         });
     };
 

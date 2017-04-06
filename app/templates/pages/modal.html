@@ -1,9 +1,5 @@
-<div class="modal-container" ng-controller="ModalFormCtrl" ng-show="modalOpen">
-    <div class="modal-mes" ng-include="modalPath">
+<div class="modal-container" ng-show="modalOpen">
+    <div class="modal-mes"  ng-controller="ModalFormCtrl"  ng-include="modalPath">
         <!--modal content loads here-->
     </div>
 </div>
-
-<!-- if it's not an enter button -> ng-click="showModal() and set new partial-view in ModalCtrl-->
-<!-- HOW TO Change default partial-view if we'll need other content in this window -->
-<!-- передавать view в showModal() -->
