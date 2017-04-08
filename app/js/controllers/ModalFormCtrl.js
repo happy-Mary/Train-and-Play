@@ -34,12 +34,14 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
         }
     };
 
+
     // regexp for password and email 
     $scope.regexPass = '^[a-z0-9_-]+$';
     // $scope.regexPass = '((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{5,20})';
     $scope.regexEmail = '[a-zA-Z0-9_.-]+\@[a-zA-Z0-9_]+\.[a-zA-Z]{2,6}$';
     $scope.formRegData = {};
     $scope.formEnterData = {};
+    $scope.recoverPassData = {};
     $scope.PostDataResponse = "Server message";
 
     // registration data
@@ -53,14 +55,14 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
         $http.post('/tnp/users/registration/', angular.toJson($scope.postNewUser)).then(function(response) {
             $scope.PostDataResponse = response.data;
             console.log("Server had our data");
-            if($scope.PostDataResponse.urlForMail !== "") {
+            if ($scope.PostDataResponse.urlForMail !== "") {
                 $scope.openRegFinish();
             }
 
         }, function(response) {
             console.log("Server is not happy");
             $scope.PostDataResponse = response.status + " " + response.statusText;
-            
+
             // $scope.PostDataResponse = {};
             // $scope.PostDataResponse.urlForMail = "https://www.google.by";
             // $scope.openRegFinish();
@@ -91,3 +93,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
 });
 
 // TODO: write logic for register confirmation or error.message
+
+$scope.recoverPass = function() {
+
+}

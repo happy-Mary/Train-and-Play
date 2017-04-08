@@ -1,0 +1,13 @@
+<div class="mes_header">
+    <p>Восстановление пароля</p>
+</div>
+<div class="confirm_reg">
+    <p>Введите Ваш зарегистрированный E-mail <br/>и Вы получите письмо с инструкциями</p>
+    <form name="recoverPass" ng-submit="recoverPass(recoverPassData)" novalidate ng-model="recoverPassData.email">
+        <label>
+        <input type="email" placeholder="E-mail">
+        </label>
+        <button class="btn-pink" type="submit">отправить</button>
+    </form>
+</div>
+<div class="close-icon" ng-click="closeModal()" ng-disabled="recoverPass.$invalid"></div>
