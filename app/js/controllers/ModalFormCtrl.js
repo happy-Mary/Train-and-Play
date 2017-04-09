@@ -73,15 +73,9 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     //enter data
     $scope.enterUser = function() {
         // data for server
-        $scope.postUser = {};
-        for (var key in $scope.formEnterData) {
-            $scope.postUser[key] = $scope.formEnterData[key];
-        }
-        delete $scope.postUser.confPass;
         // console.log($scope.formEnterData);
-        // console.log(angular.toJson($scope.postUser));
 
-        $http.post('/tnp/users/login/', angular.toJson($scope.postUser)).then(function(response) {
+        $http.post('/tnp/users/login/', angular.toJson($scope.formEnterData)).then(function(response) {
             $scope.PostDataResponse = response.data;
             console.log("Server had our data");
         }, function(response) {
@@ -95,5 +89,11 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
 // TODO: write logic for register confirmation or error.message
 
 $scope.recoverPass = function() {
-
+    $http.post('/tnp/users/passrecovery/', angular.toJson($scope.recoverPassData)).then(function(response) {
+        console.log("Server had our data");
+        $scope.PostDataResponse = response.data;
+        if ($scope.PostDataResponse.urlForMail !== "") {
+            $scope.openPassRecoverFinish();
+        }
+    });
 }

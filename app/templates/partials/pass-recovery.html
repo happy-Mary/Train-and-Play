@@ -3,11 +3,16 @@
 </div>
 <div class="confirm_reg">
     <p>Введите Ваш зарегистрированный E-mail <br/>и Вы получите письмо с инструкциями</p>
-    <form name="recoverPass" ng-submit="recoverPass(recoverPassData)" novalidate ng-model="recoverPassData.email">
+    <form name="recoverPass" ng-submit="recoverPass(recoverPassData)" novalidate>
         <label>
-        <input type="email" placeholder="E-mail">
+            <input type="email" placeholder="E-mail" name="recoverPassEmail"  ng-model="recoverPassData.email">
+            <span ng-if ="recoverPass.recoverPassEmail.$invalid && recoverPass.recoverPassEmail.$dirty">
+                {{getError(enterForm.enterEmail.$error)}}
+            </span>
         </label>
-        <button class="btn-pink" type="submit">отправить</button>
+        <a ng-href="{{PostDataResponse.urlForMail}}" title="confirm registration" target="_blank">
+            <button class="btn-pink" ng-click="closeModal()">отправить</button>
+        </a>
     </form>
 </div>
 <div class="close-icon" ng-click="closeModal()" ng-disabled="recoverPass.$invalid"></div>
