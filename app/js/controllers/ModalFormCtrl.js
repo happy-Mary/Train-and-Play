@@ -61,7 +61,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
 
         }, function(response) {
             console.log("Server is not happy");
-            $scope.PostDataResponse = response.status + " " + response.statusText;
+            console.log($scope.PostDataResponse = response.status + " " + response.statusText);
 
             // $scope.PostDataResponse = {};
             // $scope.PostDataResponse.urlForMail = "https://www.google.by";
