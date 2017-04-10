@@ -51,8 +51,8 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
             $scope.postNewUser[key] = $scope.formRegData[key];
         }
         delete $scope.postNewUser.confPass;
-
-        $http.post('/tnp/users/registration/', angular.toJson($scope.postNewUser)).then(function(response) {
+        // '/tnp/users/registration/'
+        $http.post('/tnpapi/users', angular.toJson($scope.postNewUser)).then(function(response) {
             $scope.PostDataResponse = response.data;
             console.log("Server had our data");
             if ($scope.PostDataResponse.urlForMail !== "") {
