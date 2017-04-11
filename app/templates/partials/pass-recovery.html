@@ -6,9 +6,11 @@
     <form name="recoverPass" ng-submit="recoverPass(recoverPassData)" novalidate>
         <label>
             <input type="email" placeholder="E-mail" name="recoverPassEmail"  ng-model="recoverPassData.email">
+            <div class="message" ng-class="recoverPass.recoverPassEmail.$valid ? 'mes-valid' : 'mes-invalid'">
             <span ng-if ="recoverPass.recoverPassEmail.$invalid && recoverPass.recoverPassEmail.$dirty">
-                {{getError(enterForm.enterEmail.$error)}}
+                {{getError(recoverPass.recoverPassEmail.$error)}}
             </span>
+            </div>
         </label>
         <a ng-href="{{PostDataResponse.urlForMail}}" title="confirm registration" target="_blank">
             <button class="btn-pink" ng-click="closeModal()">отправить</button>
