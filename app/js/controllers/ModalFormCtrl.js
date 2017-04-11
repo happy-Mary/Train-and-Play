@@ -2,8 +2,6 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
 
     // partial views for diffrent modal content
 
-
-
     // управление переключением табов
     $scope.item = "registr";
 
@@ -84,10 +82,15 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
         });
     };
 
+    $scope.recoverPass = function() {
+        $http.post('/tnp/users/passrecovery/', angular.toJson($scope.recoverPassData)).then(function(response) {
+            console.log("Server had our data");
+            $scope.PostDataResponse = response.data;
+            if ($scope.PostDataResponse.urlForMail !== "") {
+                $scope.openPassRecoverFinish();
+            }
+        });
+    };
+
+
 });
-
-// TODO: write logic for register confirmation or error.message
-
-$scope.recoverPass = function() {
-
-}
