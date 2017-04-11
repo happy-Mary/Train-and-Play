@@ -88,9 +88,10 @@
             <a href="# "><img src="images/icons/fb.png " alt="facebook "></a>
             <a href="# "><img src="images/icons/google.png " alt="google "></a>
         </div>
-        <button class="btn-pink " type="submit " ng-disabled="enterForm.$invalid ">войти</button>
-        <p class="reg-away "><a href="#" class="forgot-link ">Забыли пароль?</a></p>
-        <p class="reg-away ">Hет учетной записи? <a href="# " ng-click="item='registr' ">Зарегистрироваться</a></p>
+
+        <button class="btn-pink" type="submit" ng-disabled="enterForm.$invalid">войти</button>
+        <p class="reg-away"><a ng-click="openPassRecover()" class="forgot-link">Забыли пароль?</a></p>
+        <p class="reg-away">Hет учетной записи? <a href="#" ng-click="item = 'registr'">Зарегистрироваться</a></p>
     </form>
 </div>
 <div class="close-icon " ng-click="closeModal() "></div>

@@ -87,32 +87,39 @@
   height: 18px;
   cursor: pointer;
 }
+.modal-container .confirm_reg > form,
 .modal-container .auth-form > form {
   width: 87%;
   margin: 0 auto;
   font-size: 16px;
   padding-bottom: 30px;
   padding-top: 13px;
-  /*for email, password, button*/
 }
+.modal-container .confirm_reg > form label,
 .modal-container .auth-form > form label {
   display: block;
 }
+.modal-container .confirm_reg > form input,
 .modal-container .auth-form > form input,
+.modal-container .confirm_reg > form button,
 .modal-container .auth-form > form button,
+.modal-container .confirm_reg > form span,
 .modal-container .auth-form > form span {
   display: block;
 }
+.modal-container .confirm_reg > form div.message,
 .modal-container .auth-form > form div.message {
   font-size: 12px;
   height: 18px;
 }
+.modal-container .confirm_reg > form div.regServerMes,
 .modal-container .auth-form > form div.regServerMes {
   font-size: 12px;
   height: 12px;
   text-align: center;
   color: red;
 }
+.modal-container .confirm_reg > form input,
 .modal-container .auth-form > form input {
   border-bottom: 1px solid #bac4d7;
   width: 100%;
@@ -120,9 +127,11 @@
   padding: 10px;
   padding-left: 0;
 }
+.modal-container .confirm_reg > form input[type="email"],
 .modal-container .auth-form > form input[type="email"] {
   height: 40px;
 }
+.modal-container .confirm_reg > form .or,
 .modal-container .auth-form > form .or {
   padding: 0;
   margin: 0;
@@ -132,6 +141,7 @@
   background-repeat: no-repeat;
   background-position: center center;
 }
+.modal-container .confirm_reg > form .or span,
 .modal-container .auth-form > form .or span {
   display: inline-block;
   background-color: #fff;
@@ -139,6 +149,7 @@
   font-size: 18px;
   line-height: 18px;
 }
+.modal-container .confirm_reg > form .reg-social,
 .modal-container .auth-form > form .reg-social {
   display: table;
   margin: 0 auto;
@@ -146,16 +157,20 @@
   margin-bottom: 35px;
   width: 202px;
 }
+.modal-container .confirm_reg > form .reg-social a,
 .modal-container .auth-form > form .reg-social a {
   display: table-cell;
   text-align: center;
 }
+.modal-container .confirm_reg > form .reg-social a:first-child,
 .modal-container .auth-form > form .reg-social a:first-child {
   text-align: left;
 }
+.modal-container .confirm_reg > form .reg-social a:last-child,
 .modal-container .auth-form > form .reg-social a:last-child {
   text-align: right;
 }
+.modal-container .confirm_reg > form button[type="submit"],
 .modal-container .auth-form > form button[type="submit"] {
   width: 202px;
   height: 45px;
@@ -163,35 +178,34 @@
   margin: 0 auto;
   box-sizing: border-box;
 }
+.modal-container .confirm_reg > form .reg-away,
 .modal-container .auth-form > form .reg-away {
   text-align: center;
   margin-top: 35px;
 }
+.modal-container .confirm_reg > form .reg-away > a,
 .modal-container .auth-form > form .reg-away > a {
   color: #352e59;
 }
+.modal-container .confirm_reg > form .reg-away > a:hover,
 .modal-container .auth-form > form .reg-away > a:hover,
+.modal-container .confirm_reg > form .forgot-link,
 .modal-container .auth-form > form .forgot-link {
   border-bottom: 1px solid #cccbd5;
 }
-.modal-container form.reg-form .ng-pristine,
-.modal-container form.enter-form .ng-pristine {
+.modal-container form .ng-pristine {
   border-bottom: 1px solid #bac4d7;
 }
-.modal-container form.reg-form .ng-valid.ng-dirty,
-.modal-container form.enter-form .ng-valid.ng-dirty {
+.modal-container form .ng-valid.ng-dirty {
   border-bottom-color: green;
 }
-.modal-container form.reg-form .ng-invalid.ng-dirty,
-.modal-container form.enter-form .ng-invalid.ng-dirty {
+.modal-container form .ng-invalid.ng-dirty {
   border-bottom-color: red;
 }
-.modal-container form.reg-form .mes-valid,
-.modal-container form.enter-form .mes-valid {
+.modal-container form .mes-valid {
   color: green;
 }
-.modal-container form.reg-form .mes-invalid,
-.modal-container form.enter-form .mes-invalid {
+.modal-container form .mes-invalid {
   color: red;
 }
 .modal-container .password-container {
