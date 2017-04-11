@@ -194,3 +194,19 @@
 .modal-container form.enter-form .mes-invalid {
   color: red;
 }
+.modal-container .password-container {
+  position: relative;
+}
+.modal-container .password-container .show-hide-pass > input {
+  display: none;
+}
+.modal-container .password-container .show-hide-pass {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  display: inline-block;
+  height: 15px;
+  width: 22px;
+  background: url("../images/icons/password-eye.png");
+}
