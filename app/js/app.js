@@ -1,4 +1,6 @@
 var tpApp = angular.module("tpApp", ["ngRoute"]);
+// "vcRecaptcha"
+// https://www.npmjs.com/package/ng-google-recaptcha
 
 // // SPA - pages
 tpApp.config(['$routeProvider', function($routeProvider) {

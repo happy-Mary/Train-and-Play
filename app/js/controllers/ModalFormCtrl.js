@@ -2,8 +2,6 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
 
     // partial views for diffrent modal content
 
-
-
     // управление переключением табов
     $scope.item = "registr";
 
@@ -15,7 +13,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
             } else if (error.email) {
                 return "Некорректный адрес электронной почты";
             } else if (error.pattern) {
-                // write function validation for each feald and replace text: 
+                // write function validation for each field and replace text: 
                 // Некорректный адрес электронной почты
                 return "Некорректное значение";
             } else if (error.minlength) {
@@ -42,7 +40,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     $scope.formRegData = {};
     $scope.formEnterData = {};
     $scope.recoverPassData = {};
-    $scope.PostDataResponse = "Server message";
+    $scope.PostRegisterResponse = "Server message";
 
     // registration data
     $scope.addNewUser = function() {
@@ -52,16 +50,16 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
         }
         delete $scope.postNewUser.confPass;
 
-        $http.post('/tnp/users/registration/', angular.toJson($scope.postNewUser)).then(function(response) {
-            $scope.PostDataResponse = response.data;
+        $http.post('/tnpapi/users', angular.toJson($scope.postNewUser)).then(function(response) {
+            $scope.PostRegisterResponse = response.data;
             console.log("Server had our data");
-            if ($scope.PostDataResponse.urlForMail !== "") {
+            if ($scope.PostRegisterResponse.urlForMail !== "") {
                 $scope.openRegFinish();
             }
 
         }, function(response) {
             console.log("Server is not happy");
-            $scope.PostDataResponse = response.status + " " + response.statusText;
+            console.log($scope.PostRegisterResponse = response.status + " " + response.statusText);
 
             // $scope.PostDataResponse = {};
             // $scope.PostDataResponse.urlForMail = "https://www.google.by";
@@ -72,28 +70,27 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
 
     //enter data
     $scope.enterUser = function() {
-        // data for server
-        // console.log($scope.formEnterData);
+        console.log($scope.formEnterData);
+        console.log(myFields.myRecaptchaResponse);
 
         $http.post('/tnp/users/login/', angular.toJson($scope.formEnterData)).then(function(response) {
-            $scope.PostDataResponse = response.data;
+            $scope.PostEnterResponse = response.data;
             console.log("Server had our data");
         }, function(response) {
             console.log("Server is not happy");
-            $scope.PostDataResponse = response.status + " " + response.statusText;
+            console.log($scope.PostEnterResponse = response.status + " " + response.statusText);
         });
     };
 
+    $scope.recoverPass = function() {
+        $http.post('/tnp/users/passrecovery/', angular.toJson($scope.recoverPassData)).then(function(response) {
+            console.log("Server had our data");
+            $scope.PostDataResponse = response.data;
+            if ($scope.PostDataResponse.urlForMail !== "") {
+                $scope.openPassRecoverFinish();
+            }
+        });
+    };
+
+
 });
-
-// TODO: write logic for register confirmation or error.message
-
-$scope.recoverPass = function() {
-    $http.post('/tnp/users/passrecovery/', angular.toJson($scope.recoverPassData)).then(function(response) {
-        console.log("Server had our data");
-        $scope.PostDataResponse = response.data;
-        if ($scope.PostDataResponse.urlForMail !== "") {
-            $scope.openPassRecoverFinish();
-        }
-    });
-}
