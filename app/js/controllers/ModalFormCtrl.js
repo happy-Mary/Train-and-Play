@@ -84,10 +84,8 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
         });
     };
 
+    $scope.recoverPass = function() {
+
+    };
+
 });
-
-// TODO: write logic for register confirmation or error.message
-
-$scope.recoverPass = function() {
-
-}
