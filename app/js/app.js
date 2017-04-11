@@ -1,4 +1,4 @@
-var tpApp = angular.module("tpApp", ["ngRoute"]);
+var tpApp = angular.module("tpApp", ["ngRoute", "vcRecaptcha"]);
 
 // // SPA - pages
 tpApp.config(['$routeProvider', function($routeProvider) {
