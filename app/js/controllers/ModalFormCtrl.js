@@ -15,7 +15,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
             } else if (error.email) {
                 return "Некорректный адрес электронной почты";
             } else if (error.pattern) {
-                // write function validation for each feald and replace text: 
+                // write function validation for each field and replace text: 
                 // Некорректный адрес электронной почты
                 return "Некорректное значение";
             } else if (error.minlength) {
@@ -42,7 +42,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     $scope.formRegData = {};
     $scope.formEnterData = {};
     $scope.recoverPassData = {};
-    $scope.PostDataResponse = "Server message";
+    $scope.PostRegisterResponse = "Server message";
 
     // registration data
     $scope.addNewUser = function() {
@@ -51,17 +51,17 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
             $scope.postNewUser[key] = $scope.formRegData[key];
         }
         delete $scope.postNewUser.confPass;
-        // '/tnp/users/registration/'
+
         $http.post('/tnpapi/users', angular.toJson($scope.postNewUser)).then(function(response) {
-            $scope.PostDataResponse = response.data;
+            $scope.PostRegisterResponse = response.data;
             console.log("Server had our data");
-            if ($scope.PostDataResponse.urlForMail !== "") {
+            if ($scope.PostRegisterResponse.urlForMail !== "") {
                 $scope.openRegFinish();
             }
 
         }, function(response) {
             console.log("Server is not happy");
-            $scope.PostDataResponse = response.status + " " + response.statusText;
+            console.log($scope.PostRegisterResponse = response.status + " " + response.statusText);
 
             // $scope.PostDataResponse = {};
             // $scope.PostDataResponse.urlForMail = "https://www.google.by";
@@ -72,21 +72,15 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
 
     //enter data
     $scope.enterUser = function() {
-        // data for server
-        $scope.postUser = {};
-        for (var key in $scope.formEnterData) {
-            $scope.postUser[key] = $scope.formEnterData[key];
-        }
-        delete $scope.postUser.confPass;
-        // console.log($scope.formEnterData);
-        // console.log(angular.toJson($scope.postUser));
+        console.log($scope.formEnterData);
+        console.log(myFields.myRecaptchaResponse);
 
-        $http.post('/tnp/users/login/', angular.toJson($scope.postUser)).then(function(response) {
-            $scope.PostDataResponse = response.data;
+        $http.post('/tnp/users/login/', angular.toJson($scope.formEnterData)).then(function(response) {
+            $scope.PostEnterResponse = response.data;
             console.log("Server had our data");
         }, function(response) {
             console.log("Server is not happy");
-            $scope.PostDataResponse = response.status + " " + response.statusText;
+            console.log($scope.PostEnterResponse = response.status + " " + response.statusText);
         });
     };
 
