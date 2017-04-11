@@ -24,6 +24,10 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
         }
     };
 
+    $scope.weakPass = "/^([a-z]{6}|\d{6}|[A-Z]{6})$/g";
+    $scope.strongPass = "/^[a-zA-Z0-9]{6,9}$/g"
+    $scope.strongPass = "/(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*_-]{9,20}/g";
+
     $scope.comparePass = function(error) {
         if (angular.isDefined(error) && error.pattern) {
             return "Введенные пароли не совпадают";
@@ -34,8 +38,8 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
 
 
     // regexp for password and email 
-    $scope.regexPass = '^[a-z0-9_-]+$';
-    // $scope.regexPass = '((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{5,20})';
+    // $scope.regexPass = '^[a-z0-9_-]+$';
+    $scope.regexPass = '^[0-9a-zA-Z@#$%_-]+$';
     $scope.regexEmail = '[a-zA-Z0-9_.-]+\@[a-zA-Z0-9_]+\.[a-zA-Z]{2,6}$';
     $scope.formRegData = {};
     $scope.formEnterData = {};
