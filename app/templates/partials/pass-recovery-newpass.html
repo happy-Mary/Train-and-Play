@@ -1,0 +1,34 @@
+<!--сделать копию этого окна в виде страницы, временно применить к route, эта часть останется до момента осознания мощи 
+    multiple views route-->
+
+<div class="mes_header">
+    <p>Восстановление пароля</p>
+</div>
+<div class="confirm_reg">
+    <form name="newPassForm" ng-submit="recoverNewPass(recoverNewPassData)" novalidate>
+        <div class="password-container">
+            <label>
+            <input type="{{showRegPassword?'text':'password'}}" placeholder="Пароль" name="recoverPass" ng-model="recoverNewPassData.password" 
+                        ng-pattern="regexPass" ng-minlength="6" ng-maxlength="20" required>
+            <div class="message" ng-class="newPassForm.recoverPass.$valid ? 'mes-valid' : 'mes-invalid'">
+            <span ng-if ="newPassForm.recoverPass.$invalid && newPassForm.recoverPass.$dirty">{{getError(newPassForm.recoverPass.$error)}}</span>
+            <span ng-style ="passStrColor" ng-if ="newPassForm.recoverPass.$valid && newPassForm.recoverPass.$dirty">{{passStrength(recoverNewPassData.password)}}</span>
+            </div>
+        </label>
+            <label class="show-hide-pass"><input type="checkbox" title="Show Password" ng-model="showRegPassword" ng-checked="showRegPassword"></label>
+        </div>
+
+        <div class="password-container">
+            <label>
+            <input type="{{showConfPassword?'text':'password'}}" placeholder="Подтвердите пароль" name="recoverConfPass"  ng-model="recoverNewPassData.confPass" ng-pattern="recoverNewPassData.password" required>
+            <div class="message" ng-class="newPassForm.recoverConfPass.$valid ? 'mes-valid' : 'mes-invalid'">
+            <span ng-if ="newPassForm.recoverConfPass.$dirty">{{comparePass(newPassForm.recoverConfPass.$error)}}</span>
+            </div>
+        </label>
+            <label class="show-hide-pass"><input type="checkbox" title="Show Password" ng-model="showConfPassword" ng-checked="showConfPassword"></label>
+        </div>
+
+        <button class="btn-pink" type="submit" ng-disabled="recoverPass.$invalid">отправить</button>
+    </form>
+</div>
+<div class="close-icon" ng-click="closeModal()"></div>

@@ -60,7 +60,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     $scope.formRegData = {};
     $scope.formEnterData = {};
     $scope.recoverPassData = {};
-    $scope.PostRegisterResponse = "Server message";
+    // $scope.PostRegisterResponse = "Server message";
 
     // registration data
     $scope.addNewUser = function() {
@@ -89,7 +89,6 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
 
     //log in data
     $scope.enterUser = function() {
-        console.log("CLICK");
         console.log($scope.formEnterData);
 
         // change address link
@@ -105,14 +104,43 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
         });
     };
 
-    $scope.recoverPass = function() {
+    $scope.recoverPassSendMail = function() {
+        console.log($scope.recoverPassData);
         // change address link
         $http.post('/tnp/users/passrecovery/', angular.toJson($scope.recoverPassData)).then(function(response) {
             console.log("Email for instruction was sent");
-            $scope.PostDataResponse = response.data;
-            if ($scope.PostDataResponse.urlForMail !== "") {
-                $scope.openPassRecoverFinish();
+            $scope.PostRecoverResponse = response.data;
+            if ($scope.PostRecoverResponse.urlForMail !== "") {
+                $scope.openPassRecoverSend();
             }
+        }, function(response) {
+            console.log("Server is not happy");
+            console.log($scope.PostRecoverResponse = response.status + " " + response.statusText);
+
+            // test
+            // $scope.PostRecoverResponse = {};
+            // $scope.PostRecoverResponse.urlForMail = "https://www.google.by";
+            // $scope.openPassRecoverSend();
+        });
+    };
+
+    $scope.recoverNewPass = function() {
+        console.log($scope.recoverNewPassData);
+        // change address link
+        $scope.postNewPass = {};
+        for (var key in $scope.recoverNewPassData) {
+            $scope.postNewPass[key] = $scope.recoverNewPassData[key];
+        }
+        delete $scope.postNewPass.confPass;
+        $http.post('/tnp/users/newpass/', angular.toJson($scope.postNewPass.confPass)).then(function(response) {
+            $scope.PostNewPassResponse = response.data;
+            // если успешно, а как мы это поймем?
+            // или это не надо понимать, просто отправлять пароль...?
+            // как сервер понимает кому менять парольпосле перехода по ссылке с почты?
+            $scope.openRecoverFinish();
+        }, function(response) {
+            console.log("Server is not happy");
+            console.log($scope.PostNewPassResponse = response.status + " " + response.statusText);
         });
     };
 
