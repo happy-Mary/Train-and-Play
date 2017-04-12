@@ -3,7 +3,7 @@ tpApp.controller("MainController", function($scope, $location) {
     $scope.getLoc = function() {
         $scope.location = window.location;
         $scope.pathHash = $scope.location.hash.substr(1);
-        console.log($scope.pathHash);
+        // console.log($scope.pathHash);
         if ($scope.pathHash === "/main") {
             return true;
         } else {
@@ -11,8 +11,12 @@ tpApp.controller("MainController", function($scope, $location) {
         }
     }
 
+    $scope.openPage = function(view) {
+        $location.path(view);
+    }
+
     // content for first showing modalwindow
-   $scope.authWindow = "../../templates/partials/reg-enter.html";
+    $scope.authWindow = "../../templates/partials/reg-enter.html";
 
     // open modal window and give it first view
     $scope.showModalWindow = function(content) {

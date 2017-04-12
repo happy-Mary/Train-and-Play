@@ -6,7 +6,7 @@
     <input type="radio" name="mod-radio" class="tab-radio" id="tab-enter" value="enter" ng-model="item">
     <label for="tab-enter">вход</label>
 </form>
-<!--content reg-->
+<!--content registration-->
 <div class="auth-form" ng-show="item == 'registr'">
     <form name="registerForm" class="reg-form" ng-submit="addNewUser(formRegData)" novalidate>
         <label>
@@ -24,6 +24,7 @@
                         ng-pattern="regexPass" ng-minlength="6" ng-maxlength="20" required>
             <div class="message" ng-class="registerForm.regPass.$valid ? 'mes-valid' : 'mes-invalid'">
             <span ng-if ="registerForm.regPass.$invalid && registerForm.regPass.$dirty">{{getError(registerForm.regPass.$error)}}</span>
+            <span ng-style ="passStrColor" ng-if ="registerForm.regPass.$valid && registerForm.regPass.$dirty">{{passStrength(formRegData.password)}}</span>
             </div>
         </label>
             <label class="show-hide-pass"><input type="checkbox" title="Show Password" ng-model="showRegPassword" ng-checked="showRegPassword"></label>
@@ -38,9 +39,7 @@
         </label>
             <label class="show-hide-pass"><input type="checkbox" title="Show Password" ng-model="showConfPassword" ng-checked="showConfPassword"></label>
         </div>
-
-
-        <div class="regServerMes">{{ PostRegisterResponse.message }}</div>
+        <div class="regServerMes">{{PostRegisterResponse.message}}</div>
         <p class="or"><span>или</span></p>
         <div class="reg-social">
             <a href="#"><img src="images/icons/vk.png" alt="social"></a>
@@ -81,17 +80,16 @@
         <!--<div vc-recaptcha key="'6LeokRwUAAAAAHgBi_mp85efvJpVZwEMZy4ewwfH'" ng-model="formEnterData.myRecaptchaResponse"></div>-->
         <!--CAPTHCA TEST-->
 
-        <div class=" regServerMes ">{{ PostEnterResponse.message }}</div>
+        <div class="regServerMes">{{PostEnterResponse.message}}</div>
         <p class="or "><span>или</span></p>
         <div class="reg-social ">
             <a href="# "><img src="images/icons/vk.png " alt="vkontakte "></a>
             <a href="# "><img src="images/icons/fb.png " alt="facebook "></a>
             <a href="# "><img src="images/icons/google.png " alt="google "></a>
         </div>
-
         <button class="btn-pink" type="submit" ng-disabled="enterForm.$invalid">войти</button>
         <p class="reg-away"><a ng-click="openPassRecover()" class="forgot-link">Забыли пароль?</a></p>
         <p class="reg-away">Hет учетной записи? <a href="#" ng-click="item = 'registr'">Зарегистрироваться</a></p>
     </form>
 </div>
-<div class="close-icon " ng-click="closeModal() "></div>
+<div class="close-icon" ng-click="closeModal()"></div>
