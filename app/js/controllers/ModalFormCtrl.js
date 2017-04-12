@@ -24,8 +24,6 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
         }
     };
 
-
-
     $scope.comparePass = function(error) {
         if (angular.isDefined(error) && error.pattern) {
             return "Введенные пароли не совпадают";
@@ -45,13 +43,13 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
 
         if (strongPass.test(value)) {
             $scope.passStrColor["color"] = "green";
-            return "STRONG PASSWORD";
+            return "СИЛЬНЫЙ ПАРОЛЬ";
         } else if (weakPass.test(value)) {
             $scope.passStrColor["color"] = "orange";
-            return "WEAK PASS";
+            return "НЕНАДЕЖНЫЙ ПАРОЛЬ";
         } else {
             $scope.passStrColor["color"] = "lightblue";
-            return "NORMAL PASSWORD";
+            return "СРЕДНИЙ ПАРОЛЬ";
         }
     }
 
@@ -93,7 +91,6 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     $scope.enterUser = function() {
         console.log("CLICK");
         console.log($scope.formEnterData);
-        // console.log($scope.formEnterData.myRecaptchaResponse);
 
         // change address link
         $http.post('/tnp/users/login/', angular.toJson($scope.formEnterData)).then(function(response) {
