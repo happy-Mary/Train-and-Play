@@ -23,11 +23,19 @@ tpApp.directive("modalWindow", function() {
                 $scope.modalPath = "../../templates/partials/pass-recovery.html";
             }
 
-            // ссылка должна идти с почты
+            $scope.openPassRecoverSend = function() {
+                    $scope.modalPath = "../../templates/partials/pass-recovery-send.html";
+                }
+                // сюда идем по ссылке с почты
+                // но мы перейдем через route, пока что
+            $scope.openNewPassRecover = function() {
+                $scope.modalPath = "../../templates/partials/pass-recovery-newpass.html";
+            }
 
-            // $scope.openPassRecoverFinish = function() {
-            //     $scope.modalPath = "../../templates/partials/pass-recovery-finish.html";
-            // }
+            $scope.openRecoverFinish = function() {
+                $scope.modalPath = "../../templates/partials/pass-recovery-finish.html";
+            }
+
         }
     }
 });

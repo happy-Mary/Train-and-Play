@@ -3,7 +3,7 @@
 </div>
 <div class="confirm_reg">
     <p>Введите Ваш зарегистрированный E-mail <br/>и Вы получите письмо с инструкциями</p>
-    <form name="recoverPass" ng-submit="recoverPass(recoverPassData)" novalidate>
+    <form name="recoverPass" ng-submit="recoverPassSendMail(recoverPassData)" novalidate>
         <label>
             <input type="email" placeholder="E-mail" name="recoverPassEmail"  ng-model="recoverPassData.email">
             <div class="message" ng-class="recoverPass.recoverPassEmail.$valid ? 'mes-valid' : 'mes-invalid'">
@@ -12,9 +12,9 @@
             </span>
             </div>
         </label>
-        <a ng-href="{{PostDataResponse.urlForMail}}" title="confirm registration" target="_blank">
-            <button class="btn-pink" ng-click="closeModal()">отправить</button>
-        </a>
+        <!--<a ng-href="{{PostDataResponse.urlForMail}}" title="confirm registration" target="_blank">-->
+        <button class="btn-pink" type="submit" ng-disabled="recoverPass.$invalid">отправить</button>
+        <!--</a>-->
     </form>
 </div>
 <div class="close-icon" ng-click="closeModal()" ng-disabled="recoverPass.$invalid"></div>
