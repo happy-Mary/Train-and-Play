@@ -111,31 +111,33 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     $scope.recoverPassSendMail = function() {
         console.log($scope.recoverPassData);
         $http.post('/tnpapi/users/passwordrecovery/', angular.toJson($scope.recoverPassData)).then(function(response) {
-            console.log("Email for instruction was sent");
+            console.log("Email for instructions was sent");
             $scope.PostRecoverResponse = response.data;
+            console.log(response.data);
             if ($scope.PostRecoverResponse.urlForMail !== "") {
                 $scope.openPassRecoverSend();
             }
         }, function(response) {
             console.log("Server is not happy");
             console.log($scope.PostRecoverResponse = response.status + " " + response.statusText);
-
-            // test
-            // $scope.PostRecoverResponse = {};
-            // $scope.PostRecoverResponse.urlForMail = "https://www.google.by";
-            // $scope.openPassRecoverSend();
         });
     };
 
     // sending new password
     $scope.recoverNewPass = function() {
         console.log($scope.recoverNewPassData);
-        // change address link
         $scope.postNewPass = {};
         for (var key in $scope.recoverNewPassData) {
             $scope.postNewPass[key] = $scope.recoverNewPassData[key];
         }
         delete $scope.postNewPass.confPass;
+        // change address link
+        /* Post /tnpapi/users/newpass/{username}/
+        запрос на ввод нового пароля (передается объект в котором 2 поля password и passwordAgain,
+        назад тоже возвращаю string "Пароль успешно восстановлен" или "Пользователя с таким именем не существует",
+        {username} - это имя пользователя до @)
+        */
+        // ??? {username} клиент получает с переходом по ссылке с почты?
         $http.post('/tnp/users/newpass/', angular.toJson($scope.postNewPass.confPass)).then(function(response) {
             $scope.PostNewPassResponse = response.data;
             // если успешно, а как мы это поймем?
