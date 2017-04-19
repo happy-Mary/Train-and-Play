@@ -76,7 +76,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
             // checking server response
             // console.log(response.data);
             if ($scope.PostRegisterResponse.urlForMail !== "") {
-                // clean registration fields and $scope.PostRegisterResponse.message = "";
+                // clean registration fields and  server message = "";
                 $scope.formRegData = {};
                 $scope.PostRegisterResponse.message = "";
                 // opening reg-finish window and redirect to mail link
@@ -108,10 +108,11 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     // recover sending an email
     $scope.recoverPassSendMail = function() {
         console.log($scope.recoverPassData);
-        $http.post('/tnpapi/users/passwordrecovery/', angular.toJson($scope.recoverPassData)).then(function(response) {
+
+        $http.post('/tnpapi/users/passwordrecovery', angular.toJson($scope.recoverPassData)).then(function(response) {
             console.log("Email for instructions was sent");
             $scope.PostRecoverResponse = response.data;
-            console.log(response.data);
+            console.log($scope.PostRecoverResponse);
             if ($scope.PostRecoverResponse.urlForMail !== "") {
                 $scope.openPassRecoverSend();
             }
