@@ -74,14 +74,12 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
             $scope.PostRegisterResponse = response.data;
             console.log("Registration data sent");
             // checking server response
-            console.log(response.data);
+            // console.log(response.data);
             if ($scope.PostRegisterResponse.urlForMail !== "") {
-                console.log("urlForMail:");
-                console.log($scope.PostRegisterResponse.urlForMail);
-                // clean fields for registration and $scope.PostRegisterResponse.message = "";
+                // clean registration fields and $scope.PostRegisterResponse.message = "";
                 $scope.formRegData = {};
                 $scope.PostRegisterResponse.message = "";
-                // opening reg-finish window ang go by link
+                // opening reg-finish window and redirect to mail link
                 $scope.openRegFinish();
             }
         }, function(response) {
