@@ -60,7 +60,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     $scope.formRegData = {};
     $scope.formEnterData = {};
     $scope.recoverPassData = {};
-    // $scope.PostRegisterResponse = "Server message";
+    // $scope.PostRecoverResponse = "Server message";
 
     // registration data
     $scope.addNewUser = function() {
