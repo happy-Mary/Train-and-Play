@@ -1,3 +1,18 @@
 #account {
   background-color: #e3e1eb;
+  padding: 10px 0;
+}
+
+#account .aside-info {
+  padding-right: 0;
+}
+
+#account .personal,
+#account .raiting,
+#account .awards,
+#account .in-process,
+#account .complited {
+  background-color: #fff;
+  height: 200px;
+  margin-bottom: 10px;
 }
