@@ -79,7 +79,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
                 console.log("urlForMail:");
                 console.log($scope.PostRegisterResponse.urlForMail);
                 // clean fields for registration and $scope.PostRegisterResponse.message = "";
-                $scope.postNewUser = {};
+                $scope.formRegData = {};
                 $scope.PostRegisterResponse.message = "";
                 // opening reg-finish window ang go by link
                 $scope.openRegFinish();
@@ -107,6 +107,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
         });
     };
 
+    // recover sending an email
     $scope.recoverPassSendMail = function() {
         console.log($scope.recoverPassData);
         $http.post('/tnpapi/users/passwordrecovery/', angular.toJson($scope.recoverPassData)).then(function(response) {
@@ -126,6 +127,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
         });
     };
 
+    // sending new password
     $scope.recoverNewPass = function() {
         console.log($scope.recoverNewPassData);
         // change address link
