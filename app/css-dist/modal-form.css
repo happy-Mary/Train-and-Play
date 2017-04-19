@@ -265,3 +265,11 @@
   width: 22px;
   background: url("../images/icons/password-eye.png");
 }
+
+.modal-container .serverMes {
+  margin-bottom: 10px;
+  height: 12px;
+  font-size: 12px;
+  line-height: 12px;
+  color: red;
+}
