@@ -73,7 +73,9 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
         $http.post('/tnpapi/users', angular.toJson($scope.postNewUser)).then(function(response) {
             $scope.PostRegisterResponse = response.data;
             console.log("Registration data sent");
+            console.log(response.data);
             if ($scope.PostRegisterResponse.urlForMail !== "") {
+                console.log($scope.PostRegisterResponse.urlForMail);
                 $scope.openRegFinish();
             }
         }, function(response) {
@@ -107,7 +109,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     $scope.recoverPassSendMail = function() {
         console.log($scope.recoverPassData);
         // change address link
-        $http.post('/tnp/users/passrecovery/', angular.toJson($scope.recoverPassData)).then(function(response) {
+        $http.post('/tnpapi/users/passwordrecovery/', angular.toJson($scope.recoverPassData)).then(function(response) {
             console.log("Email for instruction was sent");
             $scope.PostRecoverResponse = response.data;
             if ($scope.PostRecoverResponse.urlForMail !== "") {
