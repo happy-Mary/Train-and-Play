@@ -73,19 +73,20 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
         $http.post('/tnpapi/users', angular.toJson($scope.postNewUser)).then(function(response) {
             $scope.PostRegisterResponse = response.data;
             console.log("Registration data sent");
+            // checking server response
             console.log(response.data);
             if ($scope.PostRegisterResponse.urlForMail !== "") {
+                console.log("urlForMail:");
                 console.log($scope.PostRegisterResponse.urlForMail);
+                // clean fields for registration and $scope.PostRegisterResponse.message = "";
+                $scope.postNewUser = {};
+                $scope.PostRegisterResponse.message = "";
+                // opening reg-finish window ang go by link
                 $scope.openRegFinish();
             }
         }, function(response) {
             console.log("Server is not happy");
             console.log($scope.PostRegisterResponse = response.status + " " + response.statusText);
-
-            // test
-            // $scope.PostDataResponse = {};
-            // $scope.PostDataResponse.urlForMail = "https://www.google.by";
-            // $scope.openRegFinish();
         });
     };
 
@@ -108,7 +109,6 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
 
     $scope.recoverPassSendMail = function() {
         console.log($scope.recoverPassData);
-        // change address link
         $http.post('/tnpapi/users/passwordrecovery/', angular.toJson($scope.recoverPassData)).then(function(response) {
             console.log("Email for instruction was sent");
             $scope.PostRecoverResponse = response.data;
