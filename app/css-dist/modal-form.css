@@ -1,274 +1,275 @@
 .modal-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding-top: 5%;
-    background-color: rgba(35, 34, 50, 0.8);
-    font-family: "Proxima Nova Regular";
-    color: #696969;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding-top: 5%;
+  background-color: rgba(35, 34, 50, 0.8);
+  font-family: "Proxima Nova Regular";
+  color: #696969;
+  z-index: 1000;
+  /*common form styles*/
 }
 
 .modal-container .modal-mes {
-    width: 435px;
-    margin: 0 auto;
-    position: relative;
+  width: 435px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .modal-container .modal-mes .tabs {
-    height: 70px;
-    width: 100%;
+  height: 70px;
+  width: 100%;
 }
 
 .modal-container .modal-mes .tab-radio {
-    display: none;
+  display: none;
 }
 
-.modal-container .modal-mes .tab-radio+label {
-    box-sizing: border-box;
-    display: block;
-    float: left;
-    width: 50%;
-    height: 100%;
-    background-color: #352e59;
-    text-align: center;
-    color: #fff;
-    cursor: pointer;
-    font-family: "Proxima Nova Regular";
-    font-weight: 100;
-    font-size: 24px;
-    padding-top: 20px;
-    text-transform: capitalize;
+.modal-container .modal-mes .tab-radio + label {
+  box-sizing: border-box;
+  display: block;
+  float: left;
+  width: 50%;
+  height: 100%;
+  background-color: #352e59;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Proxima Nova Regular";
+  font-weight: 100;
+  font-size: 24px;
+  padding-top: 20px;
+  text-transform: capitalize;
 }
 
-.modal-container .modal-mes .tab-radio:checked+label {
-    background-color: #463c79;
-    font-family: "Proxima Nova Bold";
+.modal-container .modal-mes .tab-radio:checked + label {
+  background-color: #463c79;
+  font-family: "Proxima Nova Bold";
 }
 
 .modal-container .modal-mes .confirm_reg,
 .modal-container .modal-mes .auth-form {
-    width: 100%;
-    background-color: #fff;
+  width: 100%;
+  background-color: #fff;
 }
 
 .modal-container .modal-mes .mes_header {
-    background-color: #352e59;
-    color: #fff;
-    text-align: center;
-    height: 70px;
+  background-color: #352e59;
+  color: #fff;
+  text-align: center;
+  height: 70px;
 }
 
 .modal-container .modal-mes .mes_header p {
-    line-height: 70px;
-    font-size: 24px;
+  line-height: 70px;
+  font-size: 24px;
 }
 
 .modal-container .modal-mes .confirm_reg {
-    text-align: center;
-    padding: 30px 0;
+  text-align: center;
+  padding: 30px 0;
 }
 
 .modal-container .modal-mes .confirm_reg p {
-    font-size: 14px;
-    line-height: 24px;
-    text-align: center;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
 }
 
 .modal-container .modal-mes .confirm_reg form {
-    padding-bottom: 0;
+  padding-bottom: 0;
 }
 
 .modal-container .modal-mes button {
-    width: 202px;
-    height: 45px;
-    font-size: 18px;
-    margin: 0 auto;
-    margin-top: 30px;
-    box-sizing: border-box;
+  width: 202px;
+  height: 45px;
+  font-size: 18px;
+  margin: 0 auto;
+  margin-top: 30px;
+  box-sizing: border-box;
 }
 
 .modal-container .modal-mes .close-icon {
-    background-image: url("../images/icons/close-mod.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    right: -35px;
-    width: 35px;
-    height: 18px;
-    cursor: pointer;
+  background-image: url("../images/icons/close-mod.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  right: -35px;
+  width: 35px;
+  height: 18px;
+  cursor: pointer;
 }
 
-.modal-container .confirm_reg>form,
-.modal-container .auth-form>form {
-    width: 87%;
-    margin: 0 auto;
-    font-size: 16px;
-    padding-bottom: 30px;
-    padding-top: 13px;
+.modal-container .confirm_reg > form,
+.modal-container .auth-form > form {
+  width: 87%;
+  margin: 0 auto;
+  font-size: 16px;
+  padding-bottom: 30px;
+  padding-top: 13px;
 }
 
-.modal-container .confirm_reg>form label,
-.modal-container .auth-form>form label {
-    display: block;
+.modal-container .confirm_reg > form label,
+.modal-container .auth-form > form label {
+  display: block;
 }
 
-.modal-container .confirm_reg>form input,
-.modal-container .auth-form>form input,
-.modal-container .confirm_reg>form button,
-.modal-container .auth-form>form button,
-.modal-container .confirm_reg>form span,
-.modal-container .auth-form>form span {
-    display: block;
+.modal-container .confirm_reg > form input,
+.modal-container .auth-form > form input,
+.modal-container .confirm_reg > form button,
+.modal-container .auth-form > form button,
+.modal-container .confirm_reg > form span,
+.modal-container .auth-form > form span {
+  display: block;
 }
 
-.modal-container .confirm_reg>form div.message,
-.modal-container .auth-form>form div.message {
-    font-size: 12px;
-    height: 18px;
+.modal-container .confirm_reg > form div.message,
+.modal-container .auth-form > form div.message {
+  font-size: 12px;
+  height: 18px;
 }
 
-.modal-container .confirm_reg>form div.regServerMes,
-.modal-container .auth-form>form div.regServerMes {
-    font-size: 12px;
-    height: 12px;
-    text-align: center;
-    color: red;
+.modal-container .confirm_reg > form div.regServerMes,
+.modal-container .auth-form > form div.regServerMes {
+  font-size: 12px;
+  height: 12px;
+  text-align: center;
+  color: red;
 }
 
-.modal-container .confirm_reg>form input,
-.modal-container .auth-form>form input {
-    border-bottom: 1px solid #bac4d7;
-    width: 100%;
-    height: 35px;
-    padding: 7px;
-    padding-left: 0;
+.modal-container .confirm_reg > form input,
+.modal-container .auth-form > form input {
+  border-bottom: 1px solid #bac4d7;
+  width: 100%;
+  height: 35px;
+  padding: 7px;
+  padding-left: 0;
 }
 
-.modal-container .confirm_reg>form input[type="email"],
-.modal-container .auth-form>form input[type="email"] {
-    height: 40px;
+.modal-container .confirm_reg > form input[type="email"],
+.modal-container .auth-form > form input[type="email"] {
+  height: 40px;
 }
 
-.modal-container .confirm_reg>form .or,
-.modal-container .auth-form>form .or {
-    padding: 0;
-    margin: 0;
-    margin-top: 20px;
-    text-align: center;
-    background-image: url("../images/icons/or_line.svg");
-    background-repeat: no-repeat;
-    background-position: center center;
+.modal-container .confirm_reg > form .or,
+.modal-container .auth-form > form .or {
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+  text-align: center;
+  background-image: url("../images/icons/or_line.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
-.modal-container .confirm_reg>form .or span,
-.modal-container .auth-form>form .or span {
-    display: inline-block;
-    background-color: #fff;
-    padding: 0 7px;
-    font-size: 18px;
-    line-height: 18px;
+.modal-container .confirm_reg > form .or span,
+.modal-container .auth-form > form .or span {
+  display: inline-block;
+  background-color: #fff;
+  padding: 0 7px;
+  font-size: 18px;
+  line-height: 18px;
 }
 
-.modal-container .confirm_reg>form .reg-social,
-.modal-container .auth-form>form .reg-social {
-    display: table;
-    margin: 0 auto;
-    margin-top: 25px;
-    margin-bottom: 35px;
-    width: 202px;
+.modal-container .confirm_reg > form .reg-social,
+.modal-container .auth-form > form .reg-social {
+  display: table;
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 35px;
+  width: 202px;
 }
 
-.modal-container .confirm_reg>form .reg-social a,
-.modal-container .auth-form>form .reg-social a {
-    display: table-cell;
-    text-align: center;
+.modal-container .confirm_reg > form .reg-social a,
+.modal-container .auth-form > form .reg-social a {
+  display: table-cell;
+  text-align: center;
 }
 
-.modal-container .confirm_reg>form .reg-social a:first-child,
-.modal-container .auth-form>form .reg-social a:first-child {
-    text-align: left;
+.modal-container .confirm_reg > form .reg-social a:first-child,
+.modal-container .auth-form > form .reg-social a:first-child {
+  text-align: left;
 }
 
-.modal-container .confirm_reg>form .reg-social a:last-child,
-.modal-container .auth-form>form .reg-social a:last-child {
-    text-align: right;
+.modal-container .confirm_reg > form .reg-social a:last-child,
+.modal-container .auth-form > form .reg-social a:last-child {
+  text-align: right;
 }
 
-.modal-container .confirm_reg>form button[type="submit"],
-.modal-container .auth-form>form button[type="submit"] {
-    width: 202px;
-    height: 45px;
-    font-size: 18px;
-    margin: 0 auto;
-    box-sizing: border-box;
+.modal-container .confirm_reg > form button[type="submit"],
+.modal-container .auth-form > form button[type="submit"] {
+  width: 202px;
+  height: 45px;
+  font-size: 18px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
-.modal-container .confirm_reg>form .reg-away,
-.modal-container .auth-form>form .reg-away {
-    text-align: center;
-    margin-top: 35px;
+.modal-container .confirm_reg > form .reg-away,
+.modal-container .auth-form > form .reg-away {
+  text-align: center;
+  margin-top: 35px;
 }
 
-.modal-container .confirm_reg>form .reg-away>a,
-.modal-container .auth-form>form .reg-away>a {
-    color: #352e59;
+.modal-container .confirm_reg > form .reg-away > a,
+.modal-container .auth-form > form .reg-away > a {
+  color: #352e59;
 }
 
-.modal-container .confirm_reg>form .reg-away>a:hover,
-.modal-container .auth-form>form .reg-away>a:hover,
-.modal-container .confirm_reg>form .forgot-link,
-.modal-container .auth-form>form .forgot-link {
-    border-bottom: 1px solid #cccbd5;
+.modal-container .confirm_reg > form .reg-away > a:hover,
+.modal-container .auth-form > form .reg-away > a:hover,
+.modal-container .confirm_reg > form .forgot-link,
+.modal-container .auth-form > form .forgot-link {
+  border-bottom: 1px solid #cccbd5;
 }
 
 .modal-container form .ng-pristine {
-    border-bottom: 1px solid #bac4d7;
+  border-bottom: 1px solid #bac4d7;
 }
 
 .modal-container form .ng-valid.ng-dirty {
-    border-bottom-color: green;
+  border-bottom-color: green;
 }
 
 .modal-container form .ng-invalid.ng-dirty {
-    border-bottom-color: red;
+  border-bottom-color: red;
 }
 
 .modal-container form .mes-valid {
-    color: green;
+  color: green;
 }
 
 .modal-container form .mes-invalid {
-    color: red;
+  color: red;
 }
 
 .modal-container .password-container {
-    position: relative;
+  position: relative;
 }
 
-.modal-container .password-container .show-hide-pass>input {
-    display: none;
+.modal-container .password-container .show-hide-pass > input {
+  display: none;
 }
 
 .modal-container .password-container .show-hide-pass {
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 5px;
-    display: inline-block;
-    height: 15px;
-    width: 22px;
-    background: url("../images/icons/password-eye.png");
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  display: inline-block;
+  height: 15px;
+  width: 22px;
+  background: url("../images/icons/password-eye.png");
 }
 
 .modal-container .serverMes {
-    margin-bottom: 10px;
-    height: 12px;
-    font-size: 12px;
-    line-height: 12px;
-    color: red;
+  margin-bottom: 10px;
+  height: 12px;
+  font-size: 12px;
+  line-height: 12px;
+  color: red;
 }

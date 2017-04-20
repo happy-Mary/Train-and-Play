@@ -151,16 +151,26 @@ h4 {
 }
 h1 {
   margin-bottom: 4rem;
+  font-size: 38px;
 }
 h2 {
   margin-bottom: 4.5rem;
+  font-size: 30px;
 }
 h3 {
   margin-bottom: 1.6rem;
+  font-size: 18px;
+}
+h4 {
+  margin-bottom: .7rem;
+  font-size: 16px;
 }
 .pink_text {
   color: #eb5f8e;
   font-size: 1.8rem;
+}
+button {
+  box-sizing: border-box;
 }
 .btn-pink,
 .btn-pink:focus,
@@ -180,11 +190,13 @@ h3 {
 .btn-white,
 .btn-white:focus,
 .btn-white:active {
+  color: #463C79;
   height: 30px;
   padding: 6px 20px;
   background: white;
-  border: 1px solid #463C79;
+  border: 2px solid #463C79;
   font-size: 14px;
+  line-height: 14px;
   text-transform: uppercase;
 }
 .btn-white:hover,
