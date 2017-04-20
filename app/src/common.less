@@ -106,14 +106,24 @@ h1, h2, h3, h4 {
 }
 h1 {
     margin-bottom: 4rem;
+    font-size: 38px;
 }
 h2 {
     margin-bottom: 4.5rem;
+    font-size: 30px;
 }
 
 h3 {
     margin-bottom: 1.6rem;
+    font-size: 18px;
 }
+
+h4 {
+    margin-bottom: .7rem;
+    font-size: 16px;
+}
+
+
 
 .pink_text {
     color: @darkPink;
@@ -121,6 +131,7 @@ h3 {
 }
 
 // BUTTONS 
+button {box-sizing: border-box;}
 .btn-pink,
 .btn-pink:focus,
 .btn-pink:active {
@@ -142,11 +153,13 @@ h3 {
  .btn-white,
  .btn-white:focus,
  .btn-white:active {
+    color: @textBlue;
     height: 30px;
     padding: 6px 20px;
     background: white;
-    border: 1px solid @btnWhiteBorder; 
+    border: 2px solid @btnWhiteBorder; 
     font-size: 14px;
+    line-height: 14px;
     text-transform: uppercase;
     &:hover {
         border: 2px solid @btnWhiteHovBorder;

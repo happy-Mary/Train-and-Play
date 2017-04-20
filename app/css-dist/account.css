@@ -3,6 +3,15 @@
   padding: 10px 0;
 }
 
+#account h4 {
+  text-transform: capitalize;
+}
+
+#account button {
+  display: block;
+  margin: 0 auto;
+}
+
 #account .aside-info {
   padding-right: 0;
 }
@@ -13,6 +22,50 @@
 #account .in-process,
 #account .complited {
   background-color: #fff;
-  height: 200px;
   margin-bottom: 10px;
+  padding: 20px;
+  box-shadow: 3px 7px 6px rgba(0, 0, 0, 0.1);
+}
+
+#account .personal,
+#account .raiting,
+#account .awards {
+  display: 17px;
+}
+
+#account .personal {
+  text-align: center;
+}
+
+#account .personal img {
+  display: block;
+  width: 65%;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+#account .personal .user-name {
+  font-size: 1.7rem;
+  text-align: center;
+  margin-top: 1.3rem;
+  margin-bottom: 1.3rem;
+}
+
+#account .personal button {
+  margin-bottom: .5rem;
+}
+
+#account .personal a {
+  color: #463C79;
+  font-size: 12px;
+  line-height: 1;
+  border-bottom: 1px solid #cccbd5;
+}
+
+#account .raiting-num {
+  color: #eb5f8e;
+  font-size: 18px;
+  font-family: "Proxima Nova Bold", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
 }
