@@ -52,6 +52,48 @@
         text-align: center;
         text-transform: uppercase;
     }
+    .awards {
+        .award {
+            margin: 0;
+            padding: 0;
+            padding-top: 30px;
+            padding-bottom: 10px;
+            h3{
+                text-align: left;
+                text-transform: none;
+                color: @textBlue;
+                margin-bottom: .9rem;
+                padding-left: 50px;
+                background-image: url("@{pathImg}/award-icon.png");
+                background-repeat: no-repeat;
+                background-position: 0 0;
+                min-height: 55px;
+            }
+            p {
+                font-size: 1rem;
+                margin: 0;
+                padding: 0;
+            }
+        }
+        .show-content {
+            color: @grey;
+            width: 50%;
+            margin: 0 auto;
+            padding: 0;
+            padding-top: 2rem;
+            position: relative;
+            cursor: pointer;
+            &:after{
+                content:url("@{pathImg}/icons/arrow-more.svg");
+                position: absolute;
+                right: 0;
+                }
+            &:hover:after {
+                -webkit-transform: rotate(180deg);
+                        transform: rotate(180deg);
+                }
+        }
+    }
 
 }
 

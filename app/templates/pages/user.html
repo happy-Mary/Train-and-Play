@@ -1,4 +1,4 @@
-<div id="account" class="container-fluid">
+<div id="account" class="container-fluid" ng-controller="AccountCtrl">
     <div class="container">
         <div class="row">
             <div class="col-sm-3 aside-info">
@@ -16,6 +16,11 @@
                 </div>
                 <div class="awards">
                     <h4>награды</h4>
+                    <section class="award" ng-repeat="award in awards" award>
+                        <h3>{{award.header}}</h3>
+                        <p>{{award.descr}}</p>
+                    </section>
+                    <p class="show-content">{{swowHideLink}}</p>
                 </div>
             </div>
             <div class="col-sm-9 account-info">
