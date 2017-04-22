@@ -6,7 +6,7 @@ tpApp.directive("award", function() {
             var proc = angular.element(document.querySelectorAll(".award"));
             console.log(proc.length);
             for (var i = 3; i < proc.length; i++) {
-                proc[i]
+                proc[i];
             }
         }
     }
