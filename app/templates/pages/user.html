@@ -1,4 +1,4 @@
-<div id="account" class="container-fluid">
+<div id="account" class="container-fluid" ng-controller="AccountCtrl">
     <div class="container">
         <div class="row">
             <div class="col-sm-3 aside-info">
@@ -16,12 +16,14 @@
                 </div>
                 <div class="awards">
                     <h4>награды</h4>
+                    <award> </award>
+                    <p class="show-content" ng-click="toggleContent()" ng-class="{'hide-content': awardBlockVisible}">{{swowHideLink}}</p>
                 </div>
             </div>
-            <div class="col-sm-9 account-info">
-                <section class="in-process"></section>
-                <section class="complited"></section>
-                <button class="btn-pink">выбрать игротренинг</button>
+            <div class=" col-sm-9 account-info ">
+                <section class="in-process "></section>
+                <section class="complited "></section>
+                <button class="btn-pink ">выбрать игротренинг</button>
             </div>
         </div>
     </div>
