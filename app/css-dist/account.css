@@ -115,3 +115,70 @@
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
+
+#account .train-progress {
+  color: #463C79;
+}
+
+#account .train-progress h3 {
+  margin-top: 25px;
+  text-align: left;
+}
+
+#account .train-progress h2 {
+  font-size: 24px;
+  text-align: left;
+  color: #000;
+}
+
+#account .train-progress .progress-content {
+  margin: 30px 0 50px;
+  height: 40px;
+}
+
+#account .train-progress .progress {
+  margin: 0;
+  display: inline-block;
+  width: 78%;
+  height: 40px;
+  border-radius: 15px;
+  border: 2px solid #ced2d7;
+  box-shadow: none;
+  position: relative;
+}
+
+#account .train-progress .progress .progress-bar {
+  border-radius: 12px;
+  background-color: #af7cc5;
+  box-shadow: none;
+}
+
+#account .train-progress .progress .progress-bar span {
+  line-height: 36px;
+  font-size: 1.2rem;
+  font-family: "Proxima Nova Bold", sans-serif;
+  position: absolute;
+  left: 50%;
+  color: #463C79;
+}
+
+#account .train-progress button {
+  display: inline-block;
+  margin: 0 2rem 0 1.7rem;
+  vertical-align: top;
+}
+
+#account .train-progress a {
+  display: inline-block;
+  line-height: 40px;
+  vertical-align: top;
+}
+
+#account .train-progress a img {
+  vertical-align: middle;
+}
+
+#account .choose-trening {
+  display: block;
+  margin: 2.8rem auto;
+}

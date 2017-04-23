@@ -95,6 +95,55 @@
                 }
     }
 
+    .train-progress {
+        color: @textBlue;
+         h3 {margin-top: 25px; text-align: left;}
+         h2{font-size: 24px; text-align: left; color:@textBlack}
+        .progress-content { margin: 30px 0 50px; height: 40px;}
+        .progress {
+            margin: 0;
+            display: inline-block;
+            width: 78%;
+            height: 40px;
+            border-radius: 15px;
+            border: 2px solid @progressBorder;
+            box-shadow: none;
+            position: relative;
+            .progress-bar {
+                border-radius: 12px;
+                background-color: @progressBg;
+                box-shadow: none;
+                span {
+                    line-height: 36px;
+                    font-size: 1.2rem;
+                    font-family: @proximaNovaBold;
+                    position: absolute;
+                    left: 50%;
+                    color: @textBlue;
+                }
+            }
+        }
+
+        button{
+            display: inline-block;
+            margin: 0 2rem 0 1.7rem;
+            vertical-align: top;
+            }
+        a {
+            display: inline-block;
+            line-height: 40px;
+            vertical-align: top;
+            img{
+                vertical-align: middle;
+            }
+        }
+    }
+    
+    .choose-trening {
+        display: block;
+        margin: 2.8rem auto;
+    }
+
 }
 
 
