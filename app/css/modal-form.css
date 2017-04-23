@@ -73,7 +73,7 @@
 }
 .modal-container .modal-mes button {
   width: 202px;
-  height: 45px;
+  padding: 1rem 2.9rem;
   font-size: 18px;
   margin: 0 auto;
   margin-top: 30px;
@@ -176,7 +176,7 @@
 .modal-container .confirm_reg > form button[type="submit"],
 .modal-container .auth-form > form button[type="submit"] {
   width: 202px;
-  height: 45px;
+  padding: 1rem 2.9rem;
   font-size: 18px;
   margin: 0 auto;
   box-sizing: border-box;

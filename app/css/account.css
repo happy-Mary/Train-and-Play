@@ -1,0 +1,100 @@
+#account {
+  background-color: #e3e1eb;
+  padding: 10px 0;
+}
+#account h4 {
+  text-transform: capitalize;
+}
+#account button {
+  display: block;
+  margin: 0 auto;
+}
+#account .aside-info {
+  padding-right: 0;
+}
+#account .personal,
+#account .raiting,
+#account .awards,
+#account .in-process,
+#account .complited {
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 20px;
+  box-shadow: 3px 7px 6px rgba(0, 0, 0, 0.1);
+}
+#account .personal,
+#account .raiting,
+#account .awards {
+  display: 17px;
+}
+#account .personal {
+  text-align: center;
+}
+#account .personal img {
+  display: block;
+  width: 65%;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+#account .personal .user-name {
+  font-size: 1.7rem;
+  text-align: center;
+  margin-top: 1.3rem;
+  margin-bottom: 1.3rem;
+}
+#account .personal button {
+  margin-bottom: .5rem;
+}
+#account .personal a {
+  color: #463C79;
+  font-size: 12px;
+  line-height: 1;
+  border-bottom: 1px solid #cccbd5;
+}
+#account .raiting-num {
+  color: #eb5f8e;
+  font-size: 18px;
+  font-family: "Proxima Nova Bold", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+#account .awards .award {
+  margin: 0;
+  padding: 0;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+#account .awards .award h3 {
+  text-align: left;
+  text-transform: none;
+  color: #463C79;
+  margin-bottom: .9rem;
+  padding-left: 50px;
+  background-image: url("../images/award-icon.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  min-height: 55px;
+}
+#account .awards .award p {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+#account .awards .show-content {
+  color: #545454;
+  width: 50%;
+  margin: 0 auto;
+  padding: 0;
+  padding-top: 2rem;
+  position: relative;
+  cursor: pointer;
+}
+#account .awards .show-content:after {
+  content: url("../images/icons/arrow-more.svg");
+  position: absolute;
+  right: 0;
+}
+#account .awards .hide-content:after {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}

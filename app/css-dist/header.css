@@ -21,11 +21,14 @@ header .reg {
   text-align: right;
 }
 
-header .reg button {
-  padding: 0.5rem 0.7rem 0.5rem 2.8rem;
+header .reg button,
+header .reg button:hover,
+header .reg button:focus,
+header .reg button:active {
+  padding: 0.7rem 1rem 0.7rem 2.8rem;
   background-image: url("../images/enter.png");
   background-repeat: no-repeat;
-  background-position: .7rem center;
+  background-position: .9rem center;
   display: inline-block;
 }
 
@@ -49,6 +52,5 @@ header .reg button {
 }
 
 .intro button {
-  padding: 0.6rem 1.3rem;
   font-size: 1.1rem;
 }
