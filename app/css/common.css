@@ -81,6 +81,7 @@ body {
   line-height: 1.4;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  user-select: none;
 }
 ol,
 ul,
@@ -113,7 +114,8 @@ select {
   border-radius: 0;
 }
 a,
-button {
+button,
+button[disabled] {
   cursor: pointer;
 }
 a,
@@ -177,15 +179,15 @@ button {
 .btn-pink:active {
   background-color: #EB5F8E;
   border-radius: 0;
-  border: 2px solid transparent;
-  border-bottom: 2px solid #D1517C;
+  padding: 1rem 1.3rem;
+  box-shadow: 0 -3px #D1517C inset;
   color: #fff;
   text-transform: uppercase;
 }
 .btn-pink:hover {
   background-color: #FF71A1;
   color: #fff;
-  border-bottom: 2px solid #DC5F89;
+  box-shadow: 0 -3px #DC5F89 inset;
 }
 .btn-white,
 .btn-white:focus,

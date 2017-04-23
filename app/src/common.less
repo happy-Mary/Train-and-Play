@@ -36,6 +36,7 @@ body {
     line-height: 1.4; 
    -ms-text-size-adjust: 100%; 
    -webkit-text-size-adjust: 100%;
+    user-select: none;
 }
 
 ol, ul, li {
@@ -62,7 +63,7 @@ input, button, select {
     border-radius: 0;
 }
 
-a, button {
+a, button, button[disabled] {
     cursor: pointer;
 }
 
@@ -137,17 +138,16 @@ button {box-sizing: border-box;}
 .btn-pink:active {
     background-color: @btnPink;
     border-radius: 0;
-    border: 2px solid transparent;
-    border-bottom: 2px solid @btnPinkBorder;
+    padding: 1rem 1.3rem;
+    box-shadow: 0 -3px @btnPinkBorder inset;
     color: @textWhite;
     text-transform: uppercase;
-    }
+}
 
-.btn-pink:hover
- {
-    background-color: @btnPinkHov;
+.btn-pink:hover {
+    background-color:  @btnPinkHov;
     color: @textWhite;
-    border-bottom: 2px solid @btnPinkHovBorder;
+    box-shadow: 0 -3px  @btnPinkHovBorder inset;
 }
 
  .btn-white,
