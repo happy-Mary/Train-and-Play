@@ -1,4 +1,4 @@
-var tpApp = angular.module("tpApp", ["ngRoute"]);
+var tpApp = angular.module("tpApp", ["ngRoute", "ui.bootstrap"]);
 // "vcRecaptcha"
 // https://www.npmjs.com/package/ng-google-recaptcha
 
@@ -12,3 +12,9 @@ tpApp.config(['$routeProvider', function($routeProvider) {
             redirectTo: '/main'
         });
 }]);
+
+tpApp.controller('ProgressDemoCtrl', function($scope) {
+    $scope.max = 100;
+    $scope.value = $scope.traning.progress;
+    console.log($scope.value);
+});

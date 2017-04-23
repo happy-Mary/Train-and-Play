@@ -6,13 +6,13 @@
                     <!--loading img from db-->
                     <img src="images/avatar.jpg" alt="avatar">
                     <!--loading name from db-->
-                    <p class="user-name">Святослав Ингрибидзе</p>
+                    <p class="user-name">{{userData.name}}</p>
                     <button class="btn-white">редактировать</button>
                     <a href="{{link}}" title="exit">Выйти из аккаунта</a>
                 </div>
                 <div class="raiting">
                     <h4>рейтинг</h4>
-                    <p class="raiting-num">+100500</p>
+                    <p class="raiting-num">+{{userData.raiting}}</p>
                 </div>
                 <div class="awards">
                     <h4>награды</h4>
@@ -21,9 +21,31 @@
                 </div>
             </div>
             <div class=" col-sm-9 account-info ">
-                <section class="in-process "></section>
-                <section class="complited "></section>
-                <button class="btn-pink ">выбрать игротренинг</button>
+                <section class="in-process train-progress">
+                    <h2>в процессе</h2>
+                    <div ng-repeat="traning in inprogressArr" ng-controller="ProgressDemoCtrl" class="train-progress">
+                        <h3>{{traning.name}}</h3>
+                        <div class="progress-content">
+                            <uib-progressbar class="progress-striped" value='value'>{{traning.progress}}&#37;</uib-progressbar>
+                            <button class="btn-circle"></button>
+                            <!--изменить на svg-->
+                            <a href=""><img src="images/icons/icon-envelope.png" alt="envelope"></a>
+                        </div>
+                    </div>
+                </section>
+                <section class="complited train-progress">
+                    <h2>завершенные</h2>
+                    <div ng-repeat="traning in complitedArr" ng-controller="ProgressDemoCtrl" class="train-progress">
+                        <h3>{{traning.name}}</h3>
+                        <div class="progress-content">
+                            <uib-progressbar class="progress-striped" value='value'>{{traning.progress}}&#37;</uib-progressbar>
+                            <button class="btn-circle"></button>
+                            <!--изменить на svg-->
+                            <a href=""><img src="images/icons/icon-envelope.png" alt="envelope"></a>
+                        </div>
+                    </div>
+                </section>
+                <button class="btn-pink choose-trening">выбрать игротренинг</button>
             </div>
         </div>
     </div>
