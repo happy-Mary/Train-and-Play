@@ -23,7 +23,7 @@
             <div class=" col-sm-9 account-info ">
                 <section class="in-process train-progress">
                     <h2>в процессе</h2>
-                    <div ng-repeat="traning in inprogressArr" ng-controller="ProgressDemoCtrl" class="train-progress">
+                    <div ng-repeat="traning in inprogressArr|limitTo: countLimit" ng-controller="ProgressDemoCtrl" class="train-progress">
                         <h3>{{traning.name}}</h3>
                         <div class="progress-content">
                             <uib-progressbar class="progress-striped" value='value'>{{traning.progress}}&#37;</uib-progressbar>

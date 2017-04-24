@@ -9,8 +9,8 @@ tpApp.directive("award", function($compile) {
                     section.attr('ng-if', 'awardBlockVisible');
                 }
                 element.append(section);
-                section.append(angular.element('<h3>').text($scope.awards[i].header));
-                section.append(angular.element('<p>').text($scope.awards[i].descr));
+                section.append(angular.element('<h3>').text($scope.userData.awards[i].header));
+                section.append(angular.element('<p>').text($scope.userData.awards[i].descr));
                 $compile(section)($scope);
             }
 

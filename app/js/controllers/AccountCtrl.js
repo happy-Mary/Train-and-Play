@@ -36,6 +36,7 @@ tpApp.controller("AccountCtrl", function($scope, $http) {
         ]
     };
     // GETTING OBJECT//////////////////////////////////////////////////////////////////////////////
+
     // AWARDS
     $scope.swowHideLink = "Развернуть";
     $scope.awardBlockVisible = false;
@@ -57,5 +58,9 @@ tpApp.controller("AccountCtrl", function($scope, $http) {
     $scope.inprogressArr = $scope.userData.trainings.filter(function(obj) {
         return obj.progress < 100;
     });
+
+    // для свернуть показать по ng-repeat limitTo: countLimit 
+    // $scope.countLimit = 3;
+    $scope.countLimit = $scope.inprogressArr.length;
 
 });
