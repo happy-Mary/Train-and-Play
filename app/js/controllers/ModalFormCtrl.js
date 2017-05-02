@@ -15,6 +15,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
             } else if (error.pattern) {
                 // write function validation for each field and replace text: 
                 // Некорректный адрес электронной почты
+                // Используйте: A-Z, a-z, (~!@#$%^&*()_-+=/\|}{]["':;?.><)
                 return "Некорректное значение";
             } else if (error.minlength) {
                 return "Слишком короткий пароль"
@@ -55,7 +56,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
 
     // regexp for password and email 
     $scope.regexPass = '^[0-9a-zA-Z@#$%_-]+$'
-    $scope.regexEmail = '^[a-zA-Z0-9_.-]+\@[a-zA-Z0-9_]+\.[a-zA-Z]{2,6}$';
+    $scope.regexEmail = '^[a-zA-Z0-9_.-]+\@[a-zA-Z0-9_]+[.]{1}[a-zA-Z]{2,6}$';
     // forms data for sending
     $scope.formRegData = {};
     $scope.formEnterData = {};
