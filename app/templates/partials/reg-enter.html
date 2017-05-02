@@ -13,7 +13,7 @@
             <input type="email" placeholder="E-mail" name="regEmail" ng-model="formRegData.email" required ng-pattern="regexEmail">
             <div class="message" ng-class="registerForm.regEmail.$valid ? 'mes-valid' : 'mes-invalid'">
             <span ng-if ="registerForm.regEmail.$invalid && registerForm.regEmail.$dirty">
-            {{getError(registerForm.regEmail.$error)}}
+            {{getErrorEmail(registerForm.regEmail.$error)}}
             </span>
             </div>
         </label>
@@ -23,7 +23,7 @@
             <input type="{{showRegPassword?'text':'password'}}" placeholder="Пароль"  name="regPass" ng-model="formRegData.password" 
                         ng-pattern="regexPass" ng-minlength="6" ng-maxlength="20" required>
             <div class="message" ng-class="registerForm.regPass.$valid ? 'mes-valid' : 'mes-invalid'">
-            <span ng-if ="registerForm.regPass.$invalid && registerForm.regPass.$dirty">{{getError(registerForm.regPass.$error)}}</span>
+            <span ng-if ="registerForm.regPass.$invalid && registerForm.regPass.$dirty">{{getErrorPass(registerForm.regPass.$error)}}</span>
             <span ng-style ="passStrColor" ng-if ="registerForm.regPass.$valid && registerForm.regPass.$dirty">{{passStrength(formRegData.password)}}</span>
             </div>
         </label>
@@ -35,6 +35,7 @@
             <input type="{{showConfPassword?'text':'password'}}" placeholder="Подтвердите пароль"   name="regConfPass"  ng-model="formRegData.confPass" ng-pattern="formRegData.password" required>
             <div class="message" ng-class="registerForm.regConfPass.$valid ? 'mes-valid' : 'mes-invalid'">
             <span ng-if ="registerForm.regConfPass.$dirty">{{comparePass(registerForm.regConfPass.$error)}}</span>
+            <span ng-if ="registerForm.regPass.$dirty && registerForm.regConfPass.$pristine && registerForm.regConfPass.$error.required">Подтвердите пароль</span>
             </div>
         </label>
             <label class="show-hide-pass"><input type="checkbox" title="Show Password" ng-model="showConfPassword" ng-checked="showConfPassword"></label>
@@ -58,7 +59,7 @@
             <input type="email" placeholder="E-mail" name="enterEmail" ng-model="formEnterData.email" required ng-pattern="regexEmail">
             <div class="message" ng-class="enterForm.enterEmail.$valid ? 'mes-valid' : 'mes-invalid'">
                 <span ng-if ="enterForm.enterEmail.$invalid && enterForm.enterEmail.$dirty">
-                            {{getError(enterForm.enterEmail.$error)}}
+                            {{getErrorEmail(enterForm.enterEmail.$error)}}
                 </span>
             </div>
         </label>
@@ -69,7 +70,7 @@
                         ng-pattern="regexPass" ng-minlength="6" ng-maxlength="20" required>
             <div class="message" ng-class="enterForm.enterPass.$valid ? 'mes-valid' : 'mes-invalid'">
                 <span ng-if ="enterForm.enterPass.$invalid && enterForm.enterPass.$dirty">
-                            {{getError(enterForm.enterPass.$error)}}
+                            {{getErrorPass(enterForm.enterPass.$error)}}
                 </span>
             </div>
             </label>
