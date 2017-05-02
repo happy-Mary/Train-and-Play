@@ -6,20 +6,26 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     $scope.item = "registr";
 
     // validation functions
-    $scope.getError = function(error) {
+    $scope.getErrorPass = function(error) {
         if (angular.isDefined(error)) {
             if (error.required) {
                 return "Обязательно для заполнения";
-            } else if (error.email) {
-                return "Некорректный адрес электронной почты";
             } else if (error.pattern) {
-                // write function validation for each field and replace text: 
-                // Некорректный адрес электронной почты
-                return "Некорректное значение";
+                return "Используйте: A-Z,a-z,(~!@#%^&*_-)"
             } else if (error.minlength) {
                 return "Слишком короткий пароль"
             } else if (error.maxlength) {
                 return "Слишком длинный пароль"
+            }
+        }
+    };
+
+    $scope.getErrorEmail = function(error) {
+        if (angular.isDefined(error)) {
+            if (error.required) {
+                return "Обязательно для заполнения";
+            } else if (error.email || error.pattern) {
+                return "Некорректный адрес электронной почты";
             }
         }
     };
@@ -38,8 +44,8 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     };
     // method for strength password message
     $scope.passStrength = function(value) {
-        var weakPass = new RegExp("^([a-z]{6,20}|\d{6,20}|[A-Z]{6,20}|[!@#$%^&*_-]{6,20})$");
-        var strongPass = new RegExp("(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*_-]{6,20}");
+        var weakPass = new RegExp("^([a-z]{6,20}|\d{6,20}|[A-Z]{6,20}|[~!@#%^&*_-]{6,20})$");
+        var strongPass = new RegExp("(?=.*[0-9])(?=.*[~!@#%^&*_-])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z~!@#%^&*_-]{6,20}");
 
         if (strongPass.test(value)) {
             $scope.passStrColor["color"] = "green";
@@ -54,8 +60,8 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     }
 
     // regexp for password and email 
-    $scope.regexPass = '^[0-9a-zA-Z@#$%_-]+$'
-    $scope.regexEmail = '^[a-zA-Z0-9_.-]+\@[a-zA-Z0-9_]+\.[a-zA-Z]{2,6}$';
+    $scope.regexPass = '^[0-9a-zA-Z~!@#%^&*_-]{6,20}$'
+    $scope.regexEmail = '^[a-zA-Z0-9_.-]+\@[a-zA-Z0-9_]+[.]{1}[a-zA-Z]{2,6}$';
     // forms data for sending
     $scope.formRegData = {};
     $scope.formEnterData = {};
