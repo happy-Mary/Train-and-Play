@@ -1,0 +1,163 @@
+#landing-page .landing-intro img {
+  padding-left: 0;
+}
+
+#landing-page .landing-intro h3 {
+  color: #292941;
+  margin-bottom: 4.5rem;
+}
+
+#landing-page .landing-intro p {
+  font-size: 1.28rem;
+}
+
+#landing-page .landing-intro button {
+  margin-top: 4rem;
+  padding: 14px 20px;
+}
+
+#landing-page .advantage {
+  background: url("../images/bg-header.jpg") no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+#landing-page .advantage h3 {
+  text-transform: none;
+  text-align: left;
+  margin-left: 0;
+  height: 35px;
+  margin-bottom: 1.8rem;
+}
+
+#landing-page .advantage ul {
+  margin: 0;
+  padding-top: 1px;
+}
+
+#landing-page .advantage ul li {
+  margin-top: 20px;
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+#landing-page .train-process {
+  background: url("../images/dashes.png") no-repeat;
+  background-size: 1100px;
+  background-position: center 25%;
+}
+
+#landing-page .train-process .row:first-child {
+  background: url("../images/airplane.png") no-repeat;
+  background-size: 70px;
+  background-position: 89% -1%;
+}
+
+#landing-page .train-process .icon {
+  margin-bottom: 50px;
+}
+
+#landing-page .train-process .indenting {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#landing-page .train-process button {
+  margin-top: 4.5rem;
+}
+
+#landing-page .author {
+  background: url("../images/bg-header.jpg") no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
+#landing-page .author .auth-img {
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+#landing-page .author .auth-img img {
+  width: 100%;
+}
+
+#landing-page .author .auth-descr {
+  margin-left: 1.25rem;
+}
+
+#landing-page .author .auth-descr h3 {
+  text-align: left;
+  text-transform: none;
+  font-family: "Proxima Nova Regular", "Times New Roman", sans-serif;
+}
+
+#landing-page .author .auth-descr h3:first-child {
+  margin-bottom: 2.28rem;
+}
+
+#landing-page .author .auth-descr h3:last-child {
+  margin-bottom: 1.92rem;
+  font-size: 22px;
+}
+
+#landing-page .author .auth-descr p {
+  font-size: 1.14rem;
+}
+
+#landing-page .trainings .train-item {
+  position: relative;
+  background-color: white;
+}
+
+#landing-page .trainings .train-item img {
+  width: 100%;
+}
+
+#landing-page .advantage div:first-child > h3 {
+  background: url("../images/icons/head12.png") no-repeat 0 center;
+  padding-left: 40px;
+  line-height: 2;
+}
+
+#landing-page .advantage div:last-child > h3 {
+  background: url("../images/icons/skills.png") no-repeat 0 center;
+  padding-left: 50px;
+  line-height: 2.2;
+}
+
+#landing-page .reviews .slider-item {
+  position: relative;
+}
+
+#landing-page .reviews .slider-item .userimage {
+  position: absolute;
+  border-radius: 50%;
+  display: block;
+  top: 0px;
+  left: 20px;
+}
+
+#landing-page .reviews .slider-item .username {
+  color: #555;
+  font-family: "Proxima Nova";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 20px;
+  padding-left: 100px;
+  padding-bottom: 10px;
+}
+
+#landing-page .reviews .slider-item .review-text {
+  width: 220px;
+  height: 320px;
+  padding: 40px 20px 20px 20px;
+  background-color: #463c79;
+  border-radius: 3px;
+  box-shadow: 1.5px 2.6px 4.8px 0.3px rgba(0, 0, 0, 0.2);
+  color: #fffefe;
+  font-family: "Proxima Nova";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}

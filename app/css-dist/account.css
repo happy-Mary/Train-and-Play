@@ -65,7 +65,7 @@
 #account .raiting-num {
   color: #eb5f8e;
   font-size: 18px;
-  font-family: "Proxima Nova Bold", sans-serif;
+  font-family: "Proxima Nova Bold", "Times New Roman", sans-serif;
   text-align: center;
   text-transform: uppercase;
 }
@@ -156,7 +156,7 @@
 #account .train-progress .progress .progress-bar span {
   line-height: 36px;
   font-size: 1.2rem;
-  font-family: "Proxima Nova Bold", sans-serif;
+  font-family: "Proxima Nova Bold", "Times New Roman", sans-serif;
   position: absolute;
   left: 50%;
   color: #463C79;

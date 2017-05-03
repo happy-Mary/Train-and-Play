@@ -10,6 +10,12 @@
   .howitworks .row:first-child {
     background: none;
   }
+  #landing-page .landing-intro,
+  #landing-page .landing-intro .container,
+  #landing-page .landing-intro img {
+    margin: 0;
+    padding: 0;
+  }
 }
 @media (max-width: 1200px) {
   .howitworks .adv {
