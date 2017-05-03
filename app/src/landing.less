@@ -1,0 +1,143 @@
+@import url("var.less");
+
+#landing-page {
+    .landing-intro{
+        img {padding-left: 0;}
+        h3 {
+            color: @textDarkViolet;
+            margin-bottom: 4.5rem;
+            }
+        p {font-size: 1.28rem;}
+        button {
+            margin-top: 4rem;
+            padding: 14px 20px;
+        }
+    }
+   .advantage {
+        background: url("@{pathImg}/bg-header.jpg") no-repeat;
+        background-size: cover;
+        color: #fff;
+
+       h3 {
+        text-transform: none;
+        text-align: left;
+        margin-left: 0;
+        height: 35px;
+        margin-bottom: 1.8rem;
+        }
+        ul {
+            margin: 0;
+            padding-top: 1px;
+            li {
+                margin-top: 20px;
+                list-style-type: disc;
+                list-style-position: inside;
+            }
+        }
+    }
+
+    .train-process {
+         background: url("@{pathImg}/dashes.png") no-repeat; 
+         background-size: 1100px;  
+        background-position: center 25%; 
+
+     .row:first-child  {
+           background: url("@{pathImg}/airplane.png") no-repeat; 
+           background-size: 70px;  
+           background-position: 89% -1%; 
+       }
+
+       .icon {margin-bottom: 50px;}
+
+       .indenting {
+	        padding-left: 30px;
+	        padding-right: 30px;
+        }
+        button {
+            margin-top: 4.5rem;
+        }
+    }
+
+    .author {
+	    background: url("@{pathImg}/bg-header.jpg") no-repeat;
+	    background-size: cover;
+	    color: @textWhite;
+        .auth-img {
+            padding-left: 0;
+            padding-right: 0;
+            margin-right: 0;
+            img{width: 100%;}
+        }
+        .auth-descr {
+            margin-left: 1.25rem;
+             h3 {
+                text-align: left;
+                text-transform: none;
+                font-family: @proximaNova;
+                    &:first-child{margin-bottom: 2.28rem;}
+                    &:last-child{margin-bottom: 1.92rem; font-size: 22px;}
+                }
+                p {font-size: 1.14rem;}
+        }
+    }
+
+    .trainings {
+         .train-item {
+             position: relative;
+             background-color: white;
+             img{width: 100%;}
+         }
+       
+    }
+
+}
+
+#landing-page .advantage div:first-child>h3 {
+    background: url("../images/icons/head12.png") no-repeat 0 center;
+    padding-left: 40px;
+    line-height: 2;
+}
+#landing-page .advantage div:last-child>h3 {
+    background: url("../images/icons/skills.png") no-repeat 0 center;
+    padding-left: 50px;
+     line-height: 2.2;
+}
+
+#landing-page {  
+.reviews {
+    .slider-item {
+        position: relative;
+        .userimage {
+            position: absolute;
+            border-radius: 50%;
+            display: block;
+            top:0px;
+            left:20px;
+        }
+        .username {
+            color: #555;
+            font-family: "Proxima Nova";
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 20px;
+            padding-left: 100px;
+            padding-bottom: 10px;
+        }
+        .review-text {
+            width: 220px;
+            height: 320px;
+            padding: 40px 20px 20px 20px;
+            background-color: #463c79;
+            border-radius: 3px;
+            box-shadow: 1.5px 2.6px 4.8px 0.3px rgba(0, 0, 0, 0.2);
+            color: #fffefe;
+            font-family: "Proxima Nova";
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20px;
+            }
+        }
+    }
+}
+
+
