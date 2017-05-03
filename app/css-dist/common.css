@@ -78,7 +78,7 @@ body {
   height: 100%;
   color: black;
   background: white;
-  font-family: "Proxima Nova Regular", sans-serif;
+  font-family: "Proxima Nova Regular", "Times New Roman", sans-serif;
   font-size: 100%;
   line-height: 1.4;
   -ms-text-size-adjust: 100%;
@@ -161,7 +161,7 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: "Proxima Nova Regular", sans-serif;
+  font-family: "Proxima Nova Bold", "Times New Roman", sans-serif;
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
@@ -186,6 +186,10 @@ h3 {
 h4 {
   margin-bottom: .7rem;
   font-size: 16px;
+}
+
+.h3_big {
+  font-size: 1.7rem;
 }
 
 .pink_text {
