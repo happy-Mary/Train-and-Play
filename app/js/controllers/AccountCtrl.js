@@ -1,6 +1,5 @@
-tpApp.controller("AccountCtrl", function($scope, $http) {
-    // GETTING OBJECT
-    // http get function
+tpApp.controller("AccountCtrl", function($scope, $http, $stateParams) {
+    // TEST USEER OBJECT
     $scope.userData = {
         name: "Святослав Ингрибидзе",
         avatar: "url",
@@ -35,6 +34,22 @@ tpApp.controller("AccountCtrl", function($scope, $http) {
             { name: "основные принципы дизайна ордена дизайниеров", progress: 98, input: 0 }
         ]
     };
+    // GETTING OBJECT
+    // http get function
+    // maybe this codegoes to ui-route resolve before template loaded ?????
+    $http({
+        url: "/tnp/users/profile/" + $stateParams.id,
+        method: "get",
+    }).then(function(response) {
+        $scope.userData = response.data;
+        console.log("Got user data " + $stateParams.id);
+    }, function(response) {
+        console.log("Can't find " + $stateParams.id);
+        $http.get('templates/pages/user.json').success(function(data) {
+            console.log(data.name);
+            $scope.userData = data;
+        });
+    });
     // GETTING OBJECT//////////////////////////////////////////////////////////////////////////////
 
     // AWARDS
@@ -44,7 +59,7 @@ tpApp.controller("AccountCtrl", function($scope, $http) {
     $scope.toggleContent = function() {
         $scope.awardBlockVisible = $scope.awardBlockVisible === false ? true : false;
         $scope.swowHideLink = $scope.swowHideLink === "Развернуть" ? "Свернуть" : "Развернуть";
-        console.log($scope.awardBlockVisible);
+        // console.log($scope.awardBlockVisible);
     };
     // сортируем тренинги по завершенности
     $scope.userData.trainings.sort(function(obj1, obj2) {

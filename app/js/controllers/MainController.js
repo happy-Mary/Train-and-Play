@@ -24,4 +24,6 @@ tpApp.controller("MainController", function($scope, $location) {
         // calling modalDirective.js 
         $scope.openModal(content);
     }
+
+     $scope.user = { id: 334, name: 'Jone' };
 });
