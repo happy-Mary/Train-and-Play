@@ -4,8 +4,8 @@ tpApp.directive("modalWindow", function() {
         scope: false,
         templateUrl: 'templates/pages/modal.html',
         controller: function($scope) {
-            $scope.modalOpen = false;
-            // $scope.modalOpen = true;
+            // $scope.modalOpen = false;
+            $scope.modalOpen = true;
 
             $scope.closeModal = function() {
                 $scope.modalOpen = false;

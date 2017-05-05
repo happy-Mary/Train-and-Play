@@ -1,46 +1,74 @@
 // var tpApp = angular.module("tpApp", ["ngRoute", "ui.bootstrap"]);
-var tpApp = angular.module("tpApp", ["ui.router", "ui.bootstrap"]);
+var tpApp = angular.module("tpApp", ["ui.router", "ct.ui.router.extras", "ui.bootstrap"]);
 // "vcRecaptcha"
 // https://www.npmjs.com/package/ng-google-recaptcha
 
+tpApp.run(function($state, $rootScope, $location) {
+    $state.transitionTo('app.main');
+    $rootScope.$state = $state;
+    $rootScope.$location = $location;
+});
+
+
 // UI-ROUTE
-tpApp.config(['$stateProvider', '$urlMatcherFactoryProvider', '$urlRouterProvider', function($stateProvider, $urlMatcherFactoryProvider, $urlRouterProvider) {
+tpApp.config(function($stateProvider, $stickyStateProvider, $urlMatcherFactoryProvider, $urlRouterProvider, $locationProvider) {
     $urlMatcherFactoryProvider.caseInsensitive(true);
+
     $urlRouterProvider.otherwise("/main");
+
     $stateProvider
-        .state("main", {
-            url: "/main",
+        .state("modal", {
+            url: "/modal",
+            views: {
+                "modal": {
+                    template: "<modal-window></modal-window>",
+                    controller: "ModalFormCtrl",
+                    controllerAs: "ModalFormCtrl"
+                }
+            }
+        })
+        .state('modal.welcom', {
+            url: '/substate',
+            templateUrl: "templates/partials/reg-enter.html"
+        })
+        .state('app', {
+            url: '',
+            views: {
+                'app': {
+                    templateUrl: "templates/pages/app.html"
+                }
+
+            },
+            sticky: true,
+            dsr: true
+        })
+        .state('app.main', {
+            url: '/main',
             templateUrl: "templates/pages/main.html"
         })
-        .state("landing", {
-            url: "/landing",
+        .state('app.landing', {
+            url: '/landing',
             templateUrl: "templates/pages/landing.html"
         })
-        .state("trainings", {
+        .state("app.trainings", {
             url: "/trainings",
             templateUrl: "templates/pages/trainings.html"
         })
-        .state("userDetails", {
+        .state("app.user", {
             url: "/user/:id",
             templateUrl: "templates/pages/user.html",
             controller: "AccountCtrl",
             controllerAs: "MainController"
-                // ??? resolve: here we get hhtp user-data
-        })
-}]);
+        });
+
+    $stickyStateProvider.enableDebug(true);
+
+    // $urlRouterProvider.otherwise("/main");
 
 
-// NG_ROUTE (Angular default)
-// tpApp.config(['$routeProvider', function($routeProvider) {
-//     $routeProvider.caseInsensitiveMatch = true;
-//     $routeProvider
-//         .when("/main", { templateUrl: "templates/pages/main.html" })
-//         .when("/landing", { templateUrl: "templates/pages/landing.html" })
-//         .when("/user", { templateUrl: "templates/pages/user.html" })
-//         .otherwise({
-//             redirectTo: '/main'
-//         });
-// }]);
+    // $locationProvider.html5Mode(true);
+});
+
 
 // progressbar controller
 tpApp.controller('ProgressDemoCtrl', function($scope) {

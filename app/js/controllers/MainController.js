@@ -2,10 +2,11 @@ tpApp.controller("MainController", function($scope, $location) {
 
     $scope.getLoc = function() {
         $scope.location = window.location;
+        // $scope.pathHash = $scope.location.hash;
         $scope.pathHash = $scope.location.hash.substr(1);
-        if ($scope.pathHash === "/main") {
+        // console.log($scope.pathHash);
+        if ($scope.pathHash === "/main" || $scope.pathHash === "/modal") {
             return true;
-            // console.log($scope.pathHash);
         } else {
             return false;
         }
@@ -25,5 +26,7 @@ tpApp.controller("MainController", function($scope, $location) {
         $scope.openModal(content);
     }
 
-     $scope.user = { id: 334, name: 'Jone' };
+    $scope.user = { id: 334, name: 'Jone' };
+
+    $scope.hello = function() { $scope.modalPath = "../../templates/partials/reg-finish.html"; }
 });

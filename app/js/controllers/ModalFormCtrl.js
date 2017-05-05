@@ -1,5 +1,4 @@
 tpApp.controller("ModalFormCtrl", function($scope, $http) {
-
     // partial views for diffrent modal content
 
     // управление переключением табов
