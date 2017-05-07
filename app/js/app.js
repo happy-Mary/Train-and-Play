@@ -31,16 +31,20 @@ tpApp.config(function($stateProvider, $stickyStateProvider, $urlMatcherFactoryPr
             url: '/substate',
             templateUrl: "templates/partials/reg-enter.html"
         })
-        .state('app', {
+
+    .state('app', {
             url: '',
             views: {
                 'app': {
                     templateUrl: "templates/pages/app.html"
-                }
-
+                },
             },
+            // abstract: function() {
+            //     return 'app.main'
+            // }, // Function redirects on default child state
             sticky: true,
-            dsr: true
+            dsr: true,
+            deepStateRedirect: true
         })
         .state('app.main', {
             url: '/main',
@@ -62,9 +66,6 @@ tpApp.config(function($stateProvider, $stickyStateProvider, $urlMatcherFactoryPr
         });
 
     $stickyStateProvider.enableDebug(true);
-
-    // $urlRouterProvider.otherwise("/main");
-
 
     // $locationProvider.html5Mode(true);
 });
