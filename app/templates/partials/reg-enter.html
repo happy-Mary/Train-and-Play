@@ -48,7 +48,7 @@
             <a href="#"><img src="images/icons/google.png" alt="social"></a>
         </div>
         <button class="btn-pink" type="submit" ng-disabled="registerForm.$invalid">регистрация</button>
-        <p class="reg-away">Уже есть учетная запись? <a href="#" ng-click="item = 'enter'">Войти</a></p>
+        <p class="reg-away">Уже есть учетная запись? <a ng-click="item = 'enter'">Войти</a></p>
     </form>
 </div>
 
@@ -84,8 +84,7 @@
             <a href="# "><img src="images/icons/google.png " alt="google "></a>
         </div>
         <button class="btn-pink" type="submit" ng-disabled="enterForm.$invalid">войти</button>
-        <p class="reg-away"><a ng-click="openPassRecover()" class="forgot-link">Забыли пароль?</a></p>
-        <p class="reg-away">Hет учетной записи? <a href="#" ng-click="item = 'registr'">Зарегистрироваться</a></p>
+        <p class="reg-away"><a ng-click="changeTempl('modal.passrecover')" class="forgot-link">Забыли пароль?</a></p>
+        <p class="reg-away">Hет учетной записи? <a ng-click="item = 'registr'">Зарегистрироваться</a></p>
     </form>
 </div>
-<!--<div class="close-icon" ng-click="closeModal()"></div>-->

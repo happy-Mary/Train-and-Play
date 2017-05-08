@@ -1,16 +1,8 @@
-<!--<div class="modal-container" ng-show="modalOpen">-->
 <div class="modal-container">
-    <!--<div class="modal-mes" ng-controller="ModalFormCtrl" ng-include="modalPath">-->
     <div class="modal-mes" ng-controller="ModalFormCtrl">
         <!--modal content loads here-->
-
-        <!--эта часть через nested views-->
-        <a ui-sref=".substate">Activate it</a>
         <div ui-view></div>
-        <!-- + div ng-include для подгрузки контента без урла ??? наверное его в окошки с роутами-->
-        <div ng-include="modalPath">
-            <!--in MainController temporarily in hello()-->
-        </div>
+
         <div class="close-icon" ng-click="closeModal()" ui-sref="app"></div>
     </div>
 </div>

@@ -3,16 +3,14 @@
         <!--permanent header-->
         <nav class="header row">
             <div class="logo uppercase col-xs-12 col-sm-6">
-                <!--<a ui-sref="main">TRAINANDPLAY</a>-->
                 <a ui-sref=".main">TRAINANDPLAY</a>
             </div>
             <div class="reg col-xs-12 col-sm-6">
-                <!--<button class="btn-pink" ng-click="showModalWindow(authWindow)">войти</button>-->
-                <button ui-sref="modal.welcom" class="btn-pink" ng-click="hello()">войти</button>
+                <button ui-sref="modal.welcom" class="btn-pink">войти</button>
             </div>
         </nav>
         <!--remove div.intro when page's not main-->
-        <div class="row intro" ng-if=getLoc()>
+        <div class="row intro" ng-if="($state.includes('modal')&&previousState.url=='/main')||$state.includes('app.main')">
             <h1 class="uppercase">train and play</h1>
             <p>Наш проект нацелен на тех, кто хочет учиться и быть лучше.<br/> Если у Вас есть свободное время и желание, чтобы прокачать свои навыки или попробовать себя в чем-то новом - наш проект для Вас. Вы можете учиться самостоятельно или с помощью
                 компетентного тренера.<br/>Удачи!</p>
@@ -23,9 +21,7 @@
     </div>
 </header>
 
-<!--<div ui-view></div>-->
-<div ui-view="data"></div>
-
+<div ui-view></div>
 
 <footer class="footer container-fluid">
     <div class="container">

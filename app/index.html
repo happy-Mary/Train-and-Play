@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="css/modal-form.css">
     <link rel="stylesheet" href="css/landing.css">
     <link rel="stylesheet" href="css/account.css">
-    <!--     <link rel="stylesheet" href="css-dist/bundle2.css"> -->
+    <!--<link rel="stylesheet" href="css-dist/bundle2.css">-->
 
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Nova+Flat" rel="stylesheet">
@@ -50,34 +50,35 @@
 <body ng-controller="MainController">
     <!--SHOWS BROWSER LOCATION-->
     <!--<div style="width: 100%; position:fixed; top: 0;">
-      <pre>Browser location: {{$location.absUrl()}}</pre>
+        <pre>Browser location: {{$location.absUrl()}}</pre>
+        <pre>Browser location: {{$location.path()}}</pre>
+        <div ng-show="$location.path()===''">"I'm shown'"</div>
     </div>-->
 
     <div ui-view="app"></div>
     <div ui-view="modal"></div>
 
     <!--SCRIPTS-->
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js "></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js "></script>
     <!--slick slider-->
-    <script type="text/javascript" src="libs/slick/slick.min.js"></script>
+    <script type="text/javascript " src="libs/slick/slick.min.js "></script>
     <!--angular files-->
-    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular/angular.min.js "></script>
     <!--UI ROUTER-->
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-    <script src="bower_components/ui-router-extras/release/ct-ui-router-extras.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js "></script>
+    <script src="bower_components/ui-router-extras/release/ct-ui-router-extras.min.js "></script>
     <!--progressbar-->
-    <script src="libs/ui-bootstrap-progressbar/ui-bootstrap-custom-2.5.0.min.js"></script>
-    <script src="libs/ui-bootstrap-progressbar/ui-bootstrap-custom-tpls-2.5.0.min.js"></script>
+    <script src="libs/ui-bootstrap-progressbar/ui-bootstrap-custom-2.5.0.min.js "></script>
+    <script src="libs/ui-bootstrap-progressbar/ui-bootstrap-custom-tpls-2.5.0.min.js "></script>
     <!--native js-->
     <script src="js/app.js "></script>
 
     <script src="js/controllers/MainController.js "></script>
-    <script src="js/controllers/ModalFormCtrl.js"></script>
-    <script src="js/controllers/AccountCtrl.js"></script>
+    <script src="js/controllers/ModalFormCtrl.js "></script>
+    <script src="js/controllers/AccountCtrl.js "></script>
 
-    <script src="js/directives/modalDirective.js"></script>
-    <script src="js/directives/awardDirective.js"></script>
+    <script src="js/directives/awardDirective.js "></script>
 
 </body>
 

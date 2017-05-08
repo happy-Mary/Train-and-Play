@@ -1,32 +1,15 @@
-tpApp.controller("MainController", function($scope, $location) {
+tpApp.controller("MainController", function($rootScope, $scope, $location) {
 
-    $scope.getLoc = function() {
-        $scope.location = window.location;
-        // $scope.pathHash = $scope.location.hash;
-        $scope.pathHash = $scope.location.hash.substr(1);
-        // console.log($scope.pathHash);
-        if ($scope.pathHash === "/main" || $scope.pathHash === "/modal") {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    $rootScope.$on('$stateChangeSuccess', function(event, to, toParams, from, fromParams) {
+        //save the previous state in a rootScope variable so that it's accessible from everywhere
+        $rootScope.previousState = from;
+    });
 
-    $scope.openPage = function(view) {
-        $location.path(view);
-    }
+    // $scope.openPage = function(view) {
+    //     $location.path(view);
+    // }
 
-    // content for first showing modalwindow
-    $scope.authWindow = "../../templates/partials/reg-enter.html";
-
-    // open modal window and give it first view
-    $scope.showModalWindow = function(content) {
-        $scope.modalOpen = true;
-        // calling modalDirective.js 
-        $scope.openModal(content);
-    }
-
+    // TEST DATA
     $scope.user = { id: 334, name: 'Jone' };
-
-    $scope.hello = function() { $scope.modalPath = "../../templates/partials/reg-finish.html"; }
+     $scope.userPR = '^[0-9]{2,10}$'
 });
