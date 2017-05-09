@@ -118,18 +118,31 @@
             </div>
         </div>
     </section>
-
-    <section class="section container trainings">
+    <!--Taking data from object with trainings, adding classes .train-active, .train-closed dynamically-->
+    <section class="section container trainings text-center">
         <h2 class="sectiontitle">другие игротренинги</h2>
-        <div class="col-md-4 train-item">
-            <img class="slider-img" src="images/slider/batman.png" alt="batman">
+        <div class="row">
+            <div class="col-md-4 train-item">
+                <img class="slider-img" src="images/slider/batman.png" alt="batman">
+                <div class="item-text">
+                    <p>Основные принципы дизайна в Готем Сити</p>
+                </div>
+            </div>
+            <div class="col-md-4 train-item">
+                <img class="slider-img" src="images/slider/batman.png" alt="batman">
+                <div class="item-text">
+                    <p>Основные принципы дизайна в Готем Сити</p>
+                </div>
+            </div>
+            <div class="col-md-4 train-item">
+                <img class="slider-img" src="images/slider/batman.png" alt="batman">
+                <div class="item-text">
+                    <p>Основные принципы дизайна в Готем Сити</p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4 train-item">
-            <img class="slider-img" src="images/slider/batman.png" alt="batman">
-        </div>
-        <div class="col-md-4 train-item">
-            <img class="slider-img" src="images/slider/batman.png" alt="batman">
-        </div>
+        <button class="btn-white" ui-sref="app.trainings">смотреть все</button>
+        <div>Data: {{posts.heading}}</div>
     </section>
 
 </div>

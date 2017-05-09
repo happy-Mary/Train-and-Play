@@ -1,4 +1,4 @@
-tpApp.controller("MainController", function($scope, $location) {
+tpApp.controller("MainController", function($scope, $location, $http) {
 
     $scope.getLoc = function() {
         $scope.location = window.location;
@@ -24,4 +24,14 @@ tpApp.controller("MainController", function($scope, $location) {
         // calling modalDirective.js 
         $scope.openModal(content);
     }
+
+    $http.get('templates/pages/test.json').
+    success(function(data, status, headers, config) {
+        $scope.posts = data.records[0];
+        // console.log($scope.posts);
+    }).
+    error(function(data, status, headers, config) {
+        // log error
+    });
+
 });
