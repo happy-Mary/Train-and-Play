@@ -131,14 +131,12 @@ tpApp.factory('objectFactory', function($http) {
                 method: 'GET',
                 url: urlString
             }).success(function(data, status, headers, config) {
-                console.log(data);
                 return data;
             });
 
             return promise;
         }
     };
-
-    console.log(factoryResult.getObject());
+    // console.log(factoryResult.getObject());
     return factoryResult;
 });

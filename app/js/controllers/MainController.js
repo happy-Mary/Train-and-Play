@@ -7,15 +7,6 @@ tpApp.controller("MainController", function($scope, $rootScope, trainList, $loca
     // getting trains object in ui-router
     $scope.trainings = trainList.data;
 
-    // content for first showing modalwindow
-    $scope.authWindow = "../../templates/partials/reg-enter.html";
-
-    // open modal window and give it first view
-    $scope.showModalWindow = function(content) {
-        $scope.modalOpen = true;
-        // calling modalDirective.js 
-        $scope.openModal(content);
-    }
 
     // random numbers
     function getRandNumArray(n, arr, min, max) {
