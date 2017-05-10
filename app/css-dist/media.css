@@ -1,0 +1,120 @@
+@media (min-width: 1300px) {
+  body {
+    font-size: 120%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .howitworks {
+    background: none;
+  }
+
+  .howitworks .row:first-child {
+    background: none;
+  }
+
+  #landing-page .landing-intro,
+  #landing-page .landing-intro .container,
+  #landing-page .landing-intro img {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .howitworks .adv {
+    padding-bottom: 4rem;
+  }
+
+  .howitworks .adv:last-child {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 1023px) {
+  body {
+    font-size: 95%;
+  }
+
+  body h1 {
+    margin-bottom: 2.5rem;
+  }
+
+  body p {
+    margin-bottom: 2rem!important;
+    font-size: 102%;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 90%;
+  }
+
+  body h1 {
+    margin-bottom: 2.5rem;
+  }
+
+  body p {
+    margin-bottom: 2rem!important;
+    font-size: 102%;
+  }
+
+  .header {
+    text-align: center;
+  }
+
+  .header .reg button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 1rem;
+    padding: .7rem 2rem .7rem 3.8rem;
+    font-size: 1.1rem;
+  }
+
+  .intro {
+    padding-top: 1rem;
+  }
+
+  .intro p {
+    width: 85%;
+    padding-bottom: 2rem;
+  }
+
+  .intro button {
+    margin: 0 auto;
+    display: block;
+  }
+
+  .section,
+  footer {
+    text-align: center;
+  }
+
+  .advantage h3 {
+    padding-left: 1.5rem!important;
+  }
+
+  .startnow {
+    text-align: center;
+  }
+
+  .startnow h2 {
+    margin-bottom: 3rem;
+  }
+
+  .startnow p {
+    width: 85%;
+    margin: 0 auto;
+    padding-bottom: 0;
+    font-size: 1.5rem;
+  }
+
+  .startnow .pink-text {
+    font-size: 1.6rem;
+  }
+
+  .footer-links div {
+    padding-bottom: 1rem;
+  }
+}
