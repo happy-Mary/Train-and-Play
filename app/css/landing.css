@@ -87,9 +87,60 @@
 #landing-page .trainings .train-item {
   position: relative;
   background-color: white;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-family: "Proxima Nova Bold", "Times New Roman", sans-serif;
 }
-#landing-page .trainings .train-item img {
+#landing-page .trainings .train-item .img-cont {
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 3px 4.75px 0.25px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 3px 4.75px 0.25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 3px 4.75px 0.25px rgba(0, 0, 0, 0.2);
+}
+#landing-page .trainings .train-item .train-img {
   width: 100%;
+}
+#landing-page .trainings .train-item .item-text,
+#landing-page .trainings .train-item .hover-data {
+  width: inherit;
+  position: absolute;
+  width: 60%;
+  left: 20%;
+  top: 35%;
+  color: #fff;
+}
+#landing-page .trainings .train-item .hover-data {
+  top: 25%;
+  display: none;
+}
+#landing-page .trainings .train-item .hover-data .btn-circle,
+#landing-page .trainings .train-item .hover-data img {
+  margin-top: 35px;
+  margin-bottom: 10px;
+}
+#landing-page .trainings .train-item .train-open {
+  color: #000;
+}
+#landing-page .trainings .train-item .train-close {
+  color: #757575;
+}
+#landing-page .trainings .train-item:hover .train-img {
+  opacity: .3;
+}
+#landing-page .trainings .train-item:hover > .hover-data {
+  display: block;
+}
+#landing-page .trainings .train-item:hover > .item-text {
+  display: none;
+}
+#landing-page .trainings button.btn-white {
+  display: block;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 12px 50px;
+  font-size: 16px;
+  color: #757575;
+  font-family: "Proxima Nova Regular", "Times New Roman", sans-serif;
 }
 #landing-page .advantage div:first-child > h3 {
   background: url("../images/icons/head12.png") no-repeat 0 center;

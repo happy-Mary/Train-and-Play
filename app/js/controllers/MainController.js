@@ -1,4 +1,4 @@
-tpApp.controller("MainController", function($scope, $location) {
+tpApp.controller("MainController", function($scope, $location, $http) {
 
     $scope.getLoc = function() {
         $scope.location = window.location;
@@ -24,4 +24,60 @@ tpApp.controller("MainController", function($scope, $location) {
         // calling modalDirective.js 
         $scope.openModal(content);
     }
+
+    // test object for trainings
+    $scope.trainings = [{ name: "Основные принципы дизайна в Готем Сити", status: "open", url: "", mainImg: "images/slider/batman.png" },
+        { name: "Основные принципы дизайна в Готем Сити", status: "open", url: "", mainImg: "images/slider/batman.png" },
+        { name: "Основные принципы дизайна в Готем Сити", status: "close", url: "", mainImg: "images/slider/batman.png" },
+        { name: "Основные принципы дизайна в Готем Сити", status: "close", url: "", mainImg: "images/slider/batman.png" },
+        { name: "Основные принципы дизайна в Готем Сити", status: "close", url: "", mainImg: "images/slider/batman.png" },
+        { name: "Основные принципы дизайна в Готем Сити", status: "open", url: "", mainImg: "images/slider/batman.png" }
+    ];
+
+    // random numbers
+    function getRandNumArray(n, arr, min, max) {
+        // make random number
+        function RandomDiap(N, M) {
+            return Math.floor(Math.random() * (M - N + 1)) + N;
+        }
+        // cleaning arr
+        function clean(arr) {
+            for (var i = 0; i < arr.length; i++)
+                for (var j = i + 1; j < arr.length; j++)
+                    if (arr[i] == arr[j])
+                        arr.splice(j, 1);
+            return arr;
+        }
+        // result array
+        function checkArray(n, arr, min, max) {
+            if (arr.length < n) {
+                // makeArray(n, arr, min, max);
+                getRandNumArray(n, arr, min, max);
+            } else {
+                return arr;
+            }
+        }
+        // main code
+        var num = n;
+        var mass = arr;
+        for (var i = mass.length; mass.length < num; i++) {
+            mass.push(RandomDiap(min, max));
+        }
+        clean(mass);
+        checkArray(num, mass, min, max);
+    }
+    // getting random amount of objects from all
+    function getRandObjects(arr) {
+        for (var i = 0; i < indexArr.length; i++) {
+            var k = indexArr[i];
+            arr.push($scope.trainings[k]);
+        }
+        return arr;
+    }
+    // getting 3 random trainings for landing page
+    var indexArr = [];
+    getRandNumArray(3, indexArr, 0, $scope.trainings.length - 1);
+    $scope.randTrainings = [];
+    getRandObjects($scope.randTrainings);
+
 });
