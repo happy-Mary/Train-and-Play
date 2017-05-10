@@ -66,7 +66,8 @@ tpApp.config(function($stateProvider, $stickyStateProvider, $urlMatcherFactoryPr
             templateUrl: "templates/pages/trainings.html"
         })
         .state("app.user", {
-            url: "/user/:id",
+            // url: "/user/:id",
+            url: "/user/{id:[0-9a-fA-F]{1,8}}",
             templateUrl: "templates/pages/user.html",
             controller: "AccountCtrl",
             controllerAs: "MainController"
