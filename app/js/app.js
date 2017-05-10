@@ -63,8 +63,7 @@ tpApp.config(function($stateProvider, $stickyStateProvider, $urlMatcherFactoryPr
         })
         .state('app.main', {
             url: '/main',
-            templateUrl: "templates/pages/main.html",
-            controller: "MainController"
+            templateUrl: "templates/pages/main.html"
         })
         .state('app.landing', {
             url: '/landing',
