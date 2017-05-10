@@ -1,4 +1,4 @@
-// rewrite as ng-repeat later
+// rewrite as ng - repeat later
 tpApp.directive("award", function($compile) {
     return {
         restrict: "E",

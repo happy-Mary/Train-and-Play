@@ -1,19 +1,10 @@
-tpApp.controller("MainController", function($scope, $location, $http) {
+tpApp.controller("MainController", function($rootScope, $scope, $location) {
 
-    $scope.getLoc = function() {
-        $scope.location = window.location;
-        $scope.pathHash = $scope.location.hash.substr(1);
-        if ($scope.pathHash === "/main") {
-            return true;
-            // console.log($scope.pathHash);
-        } else {
-            return false;
-        }
-    }
 
-    $scope.openPage = function(view) {
-        $location.path(view);
-    }
+    $rootScope.$on('$stateChangeSuccess', function(event, to, toParams, from, fromParams) {
+        //save the previous state in a rootScope variable so that it's accessible from everywhere
+        $rootScope.previousState = from;
+    });
 
     // content for first showing modalwindow
     $scope.authWindow = "../../templates/partials/reg-enter.html";
@@ -79,5 +70,8 @@ tpApp.controller("MainController", function($scope, $location, $http) {
     getRandNumArray(3, indexArr, 0, $scope.trainings.length - 1);
     $scope.randTrainings = [];
     getRandObjects($scope.randTrainings);
+
+    // TEST DATA
+    $scope.user = { id: 334, name: 'Jone' };
 
 });

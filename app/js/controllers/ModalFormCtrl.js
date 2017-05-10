@@ -1,5 +1,4 @@
 tpApp.controller("ModalFormCtrl", function($scope, $http) {
-
     // partial views for diffrent modal content
 
     // управление переключением табов
@@ -86,7 +85,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
                 $scope.formRegData = {};
                 $scope.PostRegisterResponse.message = "";
                 // opening reg-finish window and redirect to mail link
-                $scope.openRegFinish();
+                $scope.changeTempl('modal.regfinish');
             }
         }, function(response) {
             console.log("Server is not happy");
@@ -103,8 +102,8 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
             $scope.PostEnterResponse = response.data;
             console.log("Login data sent");
             // ?получаем id пользователя и переводим его туда????
-            $scope.openPage("/user");
-            $scope.closeModal();
+            // реализовать через ui-router
+            // $scope.openPage("/user");
         }, function(response) {
             console.log("Server is not happy");
             console.log($scope.PostEnterResponse = response.status + " " + response.statusText);
@@ -120,7 +119,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
             $scope.PostRecoverResponse = response.data;
             console.log($scope.PostRecoverResponse);
             if ($scope.PostRecoverResponse.urlForMail !== "") {
-                $scope.openPassRecoverSend();
+                $scope.changeTempl('modal.recoversend');
             }
         }, function(response) {
             console.log("Server is not happy");
@@ -142,18 +141,13 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
         назад тоже возвращаю string "Пароль успешно восстановлен" или "Пользователя с таким именем не существует",
         {username} - это имя пользователя до @)
         */
-        // ??? {username} клиент получает с переходом по ссылке с почты?
         $http.post('/tnp/users/newpass/', angular.toJson($scope.postNewPass.confPass)).then(function(response) {
             $scope.PostNewPassResponse = response.data;
-            // если успешно, а как мы это поймем?
-            // или это не надо понимать, просто отправлять пароль...?
-            // как сервер понимает кому менять парольпосле перехода по ссылке с почты?
-            $scope.openRecoverFinish();
+            $scope.changeTempl('modal.recoverfinish');
         }, function(response) {
             console.log("Server is not happy");
             console.log($scope.PostNewPassResponse = response.status + " " + response.statusText);
+            $scope.changeTempl('modal.recoverfinish');
         });
     };
-
-
 });

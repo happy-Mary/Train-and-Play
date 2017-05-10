@@ -8,6 +8,7 @@
     <![endif]-->
     <meta charset="UTF-8">
     <title>Train&Play</title>
+    <!--<base href="/">-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--favicon-->
@@ -38,7 +39,7 @@
     <link rel="stylesheet" href="css/modal-form.css">
     <link rel="stylesheet" href="css/landing.css">
     <link rel="stylesheet" href="css/account.css">
-    <!--     <link rel="stylesheet" href="css-dist/bundle2.css"> -->
+    <!--<link rel="stylesheet" href="css-dist/bundle2.css">-->
 
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Nova+Flat" rel="stylesheet">
@@ -47,85 +48,37 @@
 </head>
 
 <body ng-controller="MainController">
-    <header class="container-fluid">
-        <div class="container">
-            <!--permanent header-->
-            <nav class="header row">
-                <div class="logo uppercase col-xs-12 col-sm-6">
-                    <a href="#main">TRAINANDPLAY</a>
-                </div>
-                <div class="reg col-xs-12 col-sm-6">
-                    <button class="btn-pink" ng-click="showModalWindow(authWindow)">войти</button>
-                </div>
-            </nav>
-            <!--remove div.intro when page's not main-->
-            <div class="row intro" ng-if=getLoc()>
-                <h1 class="uppercase">train and play</h1>
-                <p>Наш проект нацелен на тех, кто хочет учиться и быть лучше.<br/> Если у Вас есть свободное время и желание, чтобы прокачать свои навыки или попробовать себя в чем-то новом - наш проект для Вас. Вы можете учиться самостоятельно или с помощью
-                    компетентного тренера.<br/>Удачи!</p>
-                <a href="#landing"><button class="btn-pink uppercase">начать обучение</button></a>
-            </div>
-        </div>
-    </header>
-    <!--modal-window-->
-    <modal-window></modal-window>
+    <!--SHOWS BROWSER LOCATION-->
+    <!--<div style="width: 100%; position:fixed; top: 0;">
+        <pre>Browser location: {{$location.absUrl()}}</pre>
+        <pre>Browser location: {{$location.path()}}</pre>
+        <div ng-show="$location.path()===''">"I'm shown'"</div>
+    </div>-->
 
-    <!--MAIN CONTAINER-->
-    <div ng-view>
-        <!-- CONTENT -->
-    </div>
-
-    <footer class="footer container-fluid">
-        <div class="container">
-            <div class="row footer-links">
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"><a href="#main">trainandplay</a></div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-lg-offset-2 col-md-offset-0 col-sm-offset-0 col-xs-12"><a href="#">О проекте</a></div>
-                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"><a href="#landing">Игротренинги</a></div>
-                <div class="col-lg-3 col-md-5 col-sm-5 col-xs-12 col-md-offset-1 col-sm-offset-1"><a href="">Ваши идеи и предложения</a></div>
-            </div>
-            <div class="row footer-like">
-                <div class="col-lg-4 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
-                    <p class="text-center">Нравится? Поделись с друзьями</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-2 col-lg-offset-5 col-md-2 col-md-offset-5 col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
-                    <div class="footer-social">
-                        <a href=""><img class="img-responsive" src="images/social-vk.png"></a>
-                        <a href=""><img class="img-responsive" src="images/social-fb.png"></a>
-                        <a href=""><img class="img-responsive" src="images/social-gl.png"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row footer-copyright">
-                <div class="col-lg-3 col-lg-offset-9 col-md-4 col-md-offset-8 col-sm-4 col-sm-offset-8 col-xs-10 col-xs-offset-1">
-                    <p class="text-center">© 2017. Train and Play. Все права защищены</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div ui-view="app"></div>
+    <div ui-view="modal"></div>
 
     <!--SCRIPTS-->
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js "></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js "></script>
     <!--slick slider-->
-    <script type="text/javascript" src="libs/slick/slick.min.js"></script>
-
+    <script type="text/javascript " src="libs/slick/slick.min.js "></script>
     <!--angular files-->
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="libs/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/angular/angular.min.js "></script>
+    <!--UI ROUTER-->
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js "></script>
+    <script src="bower_components/ui-router-extras/release/ct-ui-router-extras.min.js "></script>
     <!--progressbar-->
-    <script src="libs/ui-bootstrap-progressbar/ui-bootstrap-custom-2.5.0.min.js"></script>
-    <script src="libs/ui-bootstrap-progressbar/ui-bootstrap-custom-tpls-2.5.0.min.js"></script>
+    <script src="libs/ui-bootstrap-progressbar/ui-bootstrap-custom-2.5.0.min.js "></script>
+    <script src="libs/ui-bootstrap-progressbar/ui-bootstrap-custom-tpls-2.5.0.min.js "></script>
     <!--native js-->
     <script src="js/app.js "></script>
 
     <script src="js/controllers/MainController.js "></script>
-    <script src="js/controllers/ModalFormCtrl.js"></script>
-    <script src="js/controllers/AccountCtrl.js"></script>
+    <script src="js/controllers/ModalFormCtrl.js "></script>
+    <script src="js/controllers/AccountCtrl.js "></script>
 
-    <script src="js/directives/modalDirective.js"></script>
-    <script src="js/directives/awardDirective.js"></script>
+    <script src="js/directives/awardDirective.js "></script>
 
 </body>
 

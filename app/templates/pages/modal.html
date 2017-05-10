@@ -1,5 +1,8 @@
-<div class="modal-container" ng-show="modalOpen">
-    <div class="modal-mes"  ng-controller="ModalFormCtrl"  ng-include="modalPath">
+<div class="modal-container">
+    <div class="modal-mes" ng-controller="ModalFormCtrl">
         <!--modal content loads here-->
+        <div ui-view></div>
+
+        <div class="close-icon" ng-click="closeModal()" ui-sref="app"></div>
     </div>
 </div>
