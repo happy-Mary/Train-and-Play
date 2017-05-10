@@ -1,4 +1,3 @@
-// var tpApp = angular.module("tpApp", ["ngRoute", "ui.bootstrap"]);
 var tpApp = angular.module("tpApp", ["ui.router", "ct.ui.router.extras", "ui.bootstrap"]);
 // "vcRecaptcha"
 // https://www.npmjs.com/package/ng-google-recaptcha
@@ -26,11 +25,20 @@ tpApp.config(function($stateProvider, $stickyStateProvider, $urlMatcherFactoryPr
         .state('app', {
             url: '',
             views: {
-                'app': { templateUrl: "templates/pages/app.html" }
+                'app': {
+                    templateUrl: "templates/pages/app.html",
+                    controller: "MainController",
+                    resolve: {
+                        trainList: function(objectFactory) {
+                            return objectFactory.getObject('templates/pages/trainings.json');
+                        }
+                    }
+                }
             },
             sticky: true,
             deepStateRedirect: { default: { state: 'app.main' } },
-            dsr: true
+            dsr: true,
+
         })
         .state("modal", {
             url: "/modal",
@@ -55,7 +63,8 @@ tpApp.config(function($stateProvider, $stickyStateProvider, $urlMatcherFactoryPr
         })
         .state('app.main', {
             url: '/main',
-            templateUrl: "templates/pages/main.html"
+            templateUrl: "templates/pages/main.html",
+            controller: "MainController"
         })
         .state('app.landing', {
             url: '/landing',
@@ -70,7 +79,11 @@ tpApp.config(function($stateProvider, $stickyStateProvider, $urlMatcherFactoryPr
             url: "/user/{id:[0-9a-fA-F]{1,8}}",
             templateUrl: "templates/pages/user.html",
             controller: "AccountCtrl",
-            controllerAs: "MainController"
+            resolve: {
+                userList: function(objectFactory) {
+                    return objectFactory.getObject('templates/pages/user-data.json');
+                }
+            }
         })
         // states for modal without changing url
         .state({
@@ -108,4 +121,25 @@ tpApp.controller('ProgressDemoCtrl', function($scope) {
     $scope.max = 100;
     $scope.value = $scope.traning.progress;
     // console.log($scope.value);
+});
+
+// TESTING DATA
+tpApp.factory('objectFactory', function($http) {
+    var factoryResult = {
+        getObject: function(url) {
+            var urlString = String(url);
+            var promise = $http({
+                method: 'GET',
+                url: urlString
+            }).success(function(data, status, headers, config) {
+                console.log(data);
+                return data;
+            });
+
+            return promise;
+        }
+    };
+
+    console.log(factoryResult.getObject());
+    return factoryResult;
 });
