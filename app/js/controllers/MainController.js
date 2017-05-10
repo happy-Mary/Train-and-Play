@@ -5,11 +5,7 @@ tpApp.controller("MainController", function($rootScope, $scope, $location) {
         $rootScope.previousState = from;
     });
 
-    // $scope.openPage = function(view) {
-    //     $location.path(view);
-    // }
 
     // TEST DATA
     $scope.user = { id: 334, name: 'Jone' };
-     $scope.userPR = '^[0-9]{2,10}$'
 });

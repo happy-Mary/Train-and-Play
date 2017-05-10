@@ -101,10 +101,10 @@
 
 .slick-prev {
   left: -63px;
-  background: url("..images/icons/left-arrow.png") no-repeat;
+  background: url("../images/icons/left-arrow.png") no-repeat;
 }
 
 .slick-next {
   right: -50px;
-  background: url("..images/icons/left-arrow.png") no-repeat;
+  background: url("../images/icons/left-arrow.png") no-repeat;
 }
