@@ -1,10 +1,11 @@
-tpApp.controller("MainController", function($rootScope, $scope, $location) {
-
+tpApp.controller("MainController", function($scope, $rootScope, trainList, $location) {
 
     $rootScope.$on('$stateChangeSuccess', function(event, to, toParams, from, fromParams) {
         //save the previous state in a rootScope variable so that it's accessible from everywhere
         $rootScope.previousState = from;
     });
+    // getting trains object in ui-router
+    $scope.trainings = trainList.data;
 
     // content for first showing modalwindow
     $scope.authWindow = "../../templates/partials/reg-enter.html";
@@ -15,15 +16,6 @@ tpApp.controller("MainController", function($rootScope, $scope, $location) {
         // calling modalDirective.js 
         $scope.openModal(content);
     }
-
-    // test object for trainings
-    $scope.trainings = [{ name: "Основные принципы дизайна в Готем Сити", status: "open", url: "", mainImg: "images/slider/batman.png" },
-        { name: "Основные принципы дизайна в Готем Сити", status: "open", url: "", mainImg: "images/slider/batman.png" },
-        { name: "Основные принципы дизайна в Готем Сити", status: "close", url: "", mainImg: "images/slider/batman.png" },
-        { name: "Основные принципы дизайна в Готем Сити", status: "close", url: "", mainImg: "images/slider/batman.png" },
-        { name: "Основные принципы дизайна в Готем Сити", status: "close", url: "", mainImg: "images/slider/batman.png" },
-        { name: "Основные принципы дизайна в Готем Сити", status: "open", url: "", mainImg: "images/slider/batman.png" }
-    ];
 
     // random numbers
     function getRandNumArray(n, arr, min, max) {
