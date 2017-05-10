@@ -118,18 +118,31 @@
             </div>
         </div>
     </section>
-
-    <section class="section container trainings">
+    <!--Taking data from object with trainings (MainController.js)-->
+    <section class="section container trainings text-center">
         <h2 class="sectiontitle">другие игротренинги</h2>
-        <div class="col-md-4 train-item">
-            <img class="slider-img" src="images/slider/batman.png" alt="batman">
+        <div class="row">
+            <div class="col-sm-4 train-item" ng-repeat="train in randTrainings">
+                <div class="img-cont">
+                    <img class="train-img" src="{{train.mainImg}}" alt="batman">
+                </div>
+                <div class="item-text">
+                    <p>{{train.name}}</p>
+                </div>
+                <div class="hover-data train-open" ng-if="train.status=='open'">
+                    <p>{{train.name}}</p>
+                    <!--here will be link for training-->
+                    <!--global link or ui-sref? how will we get ui-sref from server?-->
+                    <button class="btn-circle"></button>
+                </div>
+                <div class="hover-data train-close" ng-if="train.status=='close'">
+                    <p>{{train.name}}</p>
+                    <img src="images/icons/lock.png" alt="closed train"><br>
+                    <span>В разработке...</span>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4 train-item">
-            <img class="slider-img" src="images/slider/batman.png" alt="batman">
-        </div>
-        <div class="col-md-4 train-item">
-            <img class="slider-img" src="images/slider/batman.png" alt="batman">
-        </div>
+        <button class="btn-white" ui-sref="app.trainings">смотреть все</button>
     </section>
 
 </div>

@@ -10,12 +10,12 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
         if (angular.isDefined(error)) {
             if (error.required) {
                 return "Обязательно для заполнения";
-            } else if (error.pattern) {
-                return "Используйте: A-Z,a-z,(~!@#%^&*_-)"
             } else if (error.minlength) {
                 return "Слишком короткий пароль"
             } else if (error.maxlength) {
                 return "Слишком длинный пароль"
+            } else if (error.pattern) {
+                return "Используйте: A-Z,a-z,(~!@#%&_-)"
             }
         }
     };
@@ -44,8 +44,8 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     };
     // method for strength password message
     $scope.passStrength = function(value) {
-        var weakPass = new RegExp("^([a-z]{6,20}|\d{6,20}|[A-Z]{6,20}|[~!@#%^&*_-]{6,20})$");
-        var strongPass = new RegExp("(?=.*[0-9])(?=.*[~!@#%^&*_-])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z~!@#%^&*_-]{6,20}");
+        var weakPass = new RegExp("^([a-z]{6,20}|\d{6,20}|[A-Z]{6,20}|[~!@#%&_-]{6,20})$");
+        var strongPass = new RegExp("(?=.*[0-9])(?=.*[~!@#%&_-])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z~!@#%&_-]{6,20}");
 
         if (strongPass.test(value)) {
             $scope.passStrColor["color"] = "green";
