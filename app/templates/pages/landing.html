@@ -119,12 +119,12 @@
         </div>
     </section>
     <!--Taking data from object with trainings (MainController.js)-->
-    <section class="section container trainings text-center">
+    <section class="section container trainings text-center" ng-if="trainings">
         <h2 class="sectiontitle">другие игротренинги</h2>
         <div class="row">
             <div class="col-sm-4 train-item" ng-repeat="train in randTrainings">
                 <div class="img-cont">
-                    <img class="train-img" src="{{train.mainImg}}" alt="batman">
+                    <img class="train-img" ng-src="{{train.mainImg}}" alt="batman">
                 </div>
                 <div class="item-text">
                     <p>{{train.name}}</p>
