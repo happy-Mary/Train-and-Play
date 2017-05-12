@@ -7,7 +7,8 @@
     <label for="tab-enter">вход</label>
 </form>
 <!--content registration-->
-<div class="auth-form" ng-if="item == 'registr'">
+<!--<div class="auth-form" ng-if="item == 'registr'">-->
+<div class="auth-form" ng-show="item == 'registr'">
     <form name="registerForm" class="reg-form" ng-submit="addNewUser(formRegData)" novalidate>
         <label>
             <input type="email" placeholder="E-mail" name="regEmail" ng-model="formRegData.email" required ng-pattern="regexEmail">
@@ -53,7 +54,8 @@
 </div>
 
 <!--content enter-->
-<div class="auth-form" ng-if="item == 'enter'">
+<!--<div class="auth-form" ng-if="item == 'enter'">-->
+<div class="auth-form" ng-show="item == 'enter'">
     <form name="enterForm" class="enter-form" ng-submit="enterUser(formEnterData)" novalidate>
         <label>
             <input type="email" placeholder="E-mail" name="enterEmail" ng-model="formEnterData.email" required ng-pattern="regexEmail">
