@@ -8,7 +8,7 @@
 </form>
 <!--content registration-->
 <div ng-switch="item.tab">
-    <div class="auth-form" ng-switch-default='registr'>
+    <div class="auth-form" ng-switch-when='registr'>
         <form name="registerForm" class="reg-form" ng-submit="addNewUser(formRegData)" novalidate>
             <label>
                     <input type="email" placeholder="E-mail" name="regEmail" ng-model="formRegData.email" required ng-pattern="regexEmail">
@@ -54,7 +54,7 @@
     </div>
 
     <!--content enter-->
-    <div class="auth-form" ng-switch-when='enter'>
+    <div class="auth-form" ng-switch-default='enter'>
         <form name="enterForm" class="enter-form" ng-submit="enterUser(formEnterData)" novalidate>
             <label>
                     <input type="email" placeholder="E-mail" name="enterEmail" ng-model="formEnterData.email" required ng-pattern="regexEmail">

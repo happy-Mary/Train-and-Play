@@ -3,7 +3,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
 
     // управление переключением табов
     // $scope.item = "registr";
-    $scope.item = { tab: 'registr' }
+    $scope.item = { tab: 'enter' }
 
     // validation functions
     $scope.getErrorPass = function(error) {
