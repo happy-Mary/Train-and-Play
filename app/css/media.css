@@ -37,7 +37,7 @@
     font-size: 102%;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   body {
     font-size: 90%;
   }
@@ -51,9 +51,13 @@
   .header {
     text-align: center;
   }
-  .header .reg button {
-    display: block;
-    margin: 0 auto;
+  .header .reg {
+    text-align: center;
+  }
+  .header .reg button,
+  .header .reg button:hover,
+  .header .reg button:focus,
+  .header .reg button:active {
     margin-top: 1rem;
     padding: .7rem 2rem .7rem 3.8rem;
     font-size: 1.1rem;
