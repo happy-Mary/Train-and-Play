@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	console.log("okok");
 	$( ".slider-item" ).hover(
 	  function() {
 	    $(this).find('.slider-img').fadeTo(5, 0.3);

@@ -1,6 +1,6 @@
-var tpApp = angular.module("tpApp", ["ui.router", "ct.ui.router.extras", "ui.bootstrap"]);
-// "vcRecaptcha"
-// https://www.npmjs.com/package/ng-google-recaptcha
+
+var tpApp = angular.module("tpApp", 
+            ["ui.router", "ct.ui.router.extras", "ui.bootstrap"]);
 
 tpApp.run(function($state, $rootScope, $location) {
     // $state.transitionTo('app.main');
@@ -12,15 +12,12 @@ tpApp.run(function($state, $rootScope, $location) {
         $state.go(stateName, {}, { location: false });
     };
 });
-// "modal.regfinish"
 
-
-// UI-ROUTE
-tpApp.config(function($stateProvider, $stickyStateProvider, $urlMatcherFactoryProvider, $urlRouterProvider, $locationProvider) {
+// UI-ROUTER
+tpApp.config(function($stateProvider, $stickyStateProvider, 
+                      $urlMatcherFactoryProvider, $urlRouterProvider, $locationProvider) {
     $urlMatcherFactoryProvider.caseInsensitive(true);
-
     $urlRouterProvider.otherwise("/");
-
     $stateProvider
         .state('app', {
             url: '',
@@ -48,7 +45,6 @@ tpApp.config(function($stateProvider, $stickyStateProvider, $urlMatcherFactoryPr
                     controller: "ModalFormCtrl",
                     controllerAs: "ModalFormCtrl"
                 },
-                // 'app': { templateUrl: "templates/pages/app.html" }
             },
 
         })
@@ -57,7 +53,6 @@ tpApp.config(function($stateProvider, $stickyStateProvider, $urlMatcherFactoryPr
             templateUrl: "templates/partials/reg-enter.html"
         })
         .state('modal.newpass', {
-            // which regExp should I use here
             url: '/newpass/{id:[0-9a-fA-F]{1,8}}',
             templateUrl: "templates/partials/pass-recovery-newpass.html"
         })
@@ -140,3 +135,6 @@ tpApp.factory('objectFactory', function($http) {
     // console.log(factoryResult.getObject());
     return factoryResult;
 });
+
+// "vcRecaptcha"
+// https://www.npmjs.com/package/ng-google-recaptcha
