@@ -4,8 +4,8 @@
             <div class="row">
                 <img class='col-md-6' src="images/captain.jpg" alt="Капитан америка с командой">
                 <div class='col-md-6 text-center section'>
-                    <h3 class="h3_big">основные принципы дизайна <br> ордена дизайниеров</h3>
-                    <p>Вступай в Орден Дизайниеров.<br> Пройди школу выживания, выполняя различные задания.<br> Развивай в себе супергоройские способности <br> и прокачивай дизайнерские навыки для борьбы <br> с Вселенским Отстоем. <br> Да пребудет с тобой
+                    <h3 class="h3_big">основные принципы дизайна <br> ордена Дизайнеров</h3>
+                    <p>Вступай в Орден Дизайнеров.<br> Пройди школу выживания, выполняя различные задания.<br> Развивай в себе супергеройские способности <br> и прокачивай дизайнерские навыки для борьбы <br> с Вселенским Отстоем. <br> Да пребудет с тобой
                         Удача!
                         <br>
                     </p>
@@ -18,7 +18,7 @@
     <section class="container-fluid advantage">
         <div class="container section">
             <div class="col-md-6">
-                <h3 class="h3_big up nav">Для кого проходит тренинг</h3>
+                <h3 class="h3_big up nav">для кого подходит тренинг</h3>
                 <ul class="grid">
                     <li class="line">Для начинающих дизайнеров </li>
                     <li class="line">Для опытных дизайнеров</li>
@@ -52,7 +52,7 @@
                 <img class="icon" src="images/icons/icon-2.png">
                 <h3>Отправляешь <br>на проверку</br>
                 </h3>
-                <p>Выполненное задание отправляете на проверку, после чего его смогут оценить Ваши коллеги по игротренингу</p>
+                <p>Выполненное задание отправляешьна проверку, после чего его смогут оценить Ваши коллеги по игротренингу</p>
             </div>
             <div class="indenting col-md-3">
                 <img class="icon" src="images/icons/icon-3.png">
@@ -64,7 +64,7 @@
                 <img class="icon" src="images/icons/icon-4.png">
                 <h3>Радуешься своему <br>level up</br>
                 </h3>
-                <p>Получаете знания и практические навыки, совершенствуетесь в области дизайна</p>
+                <p>получаешь знания и практические навыки, совершенствуешься в области дизайна</p>
             </div>
         </div>
         <div class="text-center">
@@ -131,9 +131,8 @@
                 </div>
                 <div class="hover-data train-open" ng-if="train.status=='open'">
                     <p>{{train.name}}</p>
-                    <!--here will be link for training-->
-                    <!--global link or ui-sref? how will we get ui-sref from server?-->
-                    <button class="btn-circle"></button>
+                    <!--here will be link for training from server-->
+                    <button class="btn-circle" ui-sref="train/(num:train.num)"></button>
                 </div>
                 <div class="hover-data train-close" ng-if="train.status=='close'">
                     <p>{{train.name}}</p>

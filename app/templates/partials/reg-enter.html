@@ -56,8 +56,9 @@
     <!--content enter-->
     <div class="auth-form" ng-switch-default='enter'>
         <form name="enterForm" class="enter-form" ng-submit="enterUser(formEnterData)" novalidate>
-            <label>
-                    <input type="email" placeholder="E-mail" name="enterEmail" ng-model="formEnterData.email" required ng-pattern="regexEmail">
+                <label>
+                    <input type="email" placeholder="E-mail" name="enterEmail" 
+                           ng-model="formEnterData.email" required ng-pattern="regexEmail">
                     <div class="message" ng-class="enterForm.enterEmail.$valid ? 'mes-valid' : 'mes-invalid'">
                         <span ng-if ="enterForm.enterEmail.$invalid && enterForm.enterEmail.$dirty">
                                     {{getErrorEmail(enterForm.enterEmail.$error)}}
@@ -67,14 +68,15 @@
 
             <div class="password-container">
                 <label>
-                    <input type="{{showPassword?'text':'password'}}" placeholder="Пароль"  name="enterPass" ng-model="formEnterData.password" 
+                    <input type="{{showPassword?'text':'password'}}" placeholder="Пароль"  name="enterPass" 
+                           ng-model="formEnterData.password" 
                                 ng-pattern="regexPass" ng-minlength="6" ng-maxlength="20" required>
                     <div class="message" ng-class="enterForm.enterPass.$valid ? 'mes-valid' : 'mes-invalid'">
                         <span ng-if ="enterForm.enterPass.$invalid && enterForm.enterPass.$dirty">
                                     {{getErrorPass(enterForm.enterPass.$error)}}
                         </span>
                     </div>
-                    </label>
+                </label>
                 <label class="show-hide-pass"><input type="checkbox" ng-model="showPassword" ng-checked="showPassword"></label>
             </div>
             <div class="regServerMes">{{PostEnterResponse.message}}</div>

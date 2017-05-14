@@ -1,8 +1,6 @@
 tpApp.controller("ModalFormCtrl", function($scope, $http) {
-    // partial views for diffrent modal content
 
-    // управление переключением табов
-    // $scope.item = "registr";
+    // switching tabs object
     $scope.item = { tab: 'enter' }
 
     // validation functions
@@ -62,6 +60,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     // regexp for password and email 
     $scope.regexPass = '^[0-9a-zA-Z~!@#%^&*_-]{6,20}$'
     $scope.regexEmail = '^[a-zA-Z0-9_.-]+\@[a-zA-Z0-9_]+[.]{1}[a-zA-Z]{2,6}$';
+
     // forms data for sending
     $scope.formRegData = {};
     $scope.formEnterData = {};
@@ -114,7 +113,8 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
 
     // recover sending an email
     $scope.recoverPassSendMail = function() {
-        $http.post('/tnpapi/users/passwordrecovery', angular.toJson($scope.recoverPassData)).then(function(response) {
+        $http.post('/tnpapi/users/passwordrecovery', angular.toJson($scope.recoverPassData))
+        .then(function(response) {
             console.log("Email for instructions was sent");
             $scope.PostRecoverResponse = response.data;
             console.log($scope.PostRecoverResponse);
@@ -127,6 +127,13 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
         });
     };
 
+// change address link
+        /* Post /tnpapi/users/newpass/{username}/
+        запрос на ввод нового пароля (передается объект в котором 2 поля password и passwordAgain,
+        назад тоже возвращаю string "Пароль успешно восстановлен" или "Пользователя с таким именем не существует",
+        {username} - это имя пользователя до @)
+        */
+
     // sending new password
     $scope.recoverNewPass = function() {
         console.log($scope.recoverNewPassData);
@@ -135,12 +142,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
             $scope.postNewPass[key] = $scope.recoverNewPassData[key];
         }
         delete $scope.postNewPass.confPass;
-        // change address link
-        /* Post /tnpapi/users/newpass/{username}/
-        запрос на ввод нового пароля (передается объект в котором 2 поля password и passwordAgain,
-        назад тоже возвращаю string "Пароль успешно восстановлен" или "Пользователя с таким именем не существует",
-        {username} - это имя пользователя до @)
-        */
+        
         $http.post('/tnp/users/newpass/', angular.toJson($scope.postNewPass.confPass)).then(function(response) {
             $scope.PostNewPassResponse = response.data;
             $scope.changeTempl('modal.recoverfinish');

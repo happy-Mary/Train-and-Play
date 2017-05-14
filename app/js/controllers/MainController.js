@@ -6,8 +6,6 @@ tpApp.controller("MainController", function($scope, $rootScope, trainList, $loca
     });
     // getting trains object in ui-router
     $scope.trainings = trainList.data;
-
-
     // random numbers
     function getRandNumArray(n, arr, min, max) {
         // make random number
@@ -40,6 +38,7 @@ tpApp.controller("MainController", function($scope, $rootScope, trainList, $loca
         clean(mass);
         checkArray(num, mass, min, max);
     }
+    
     // getting random amount of objects from all
     function getRandObjects(arr) {
         for (var i = 0; i < indexArr.length; i++) {

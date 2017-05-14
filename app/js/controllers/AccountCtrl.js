@@ -45,8 +45,4 @@ tpApp.controller("AccountCtrl", function($scope, userList, $http, $stateParams) 
     // $scope.countLimit = 3;
     $scope.countLimit = $scope.inprogressArr.length;
 
-
-
-
-
 });
