@@ -5,10 +5,10 @@
     <p>Введите Ваш зарегистрированный E-mail <br/>и Вы получите письмо с инструкциями</p>
     <form name="recoverPass" ng-submit="recoverPassSendMail(recoverPassData)" novalidate>
         <label>
-            <input type="email" placeholder="E-mail" name="recoverPassEmail"  ng-model="recoverPassData.email">
+            <input type="email" placeholder="E-mail" name="recoverPassEmail"  ng-model="recoverPassData.email" required ng-pattern="regexEmail">
             <div class="message" ng-class="recoverPass.recoverPassEmail.$valid ? 'mes-valid' : 'mes-invalid'">
             <span ng-if ="recoverPass.recoverPassEmail.$invalid && recoverPass.recoverPassEmail.$dirty">
-                {{getError(recoverPass.recoverPassEmail.$error)}}
+                {{getErrorEmail(recoverPass.recoverPassEmail.$error)}}
             </span>
             </div>
         </label>

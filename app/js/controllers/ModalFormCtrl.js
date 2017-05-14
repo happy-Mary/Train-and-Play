@@ -2,7 +2,8 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     // partial views for diffrent modal content
 
     // управление переключением табов
-    $scope.item = "registr";
+    // $scope.item = "registr";
+    $scope.item = { tab: 'registr' }
 
     // validation functions
     $scope.getErrorPass = function(error) {
@@ -96,13 +97,14 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     //log in data
     $scope.enterUser = function() {
         console.log($scope.formEnterData);
-
         // change address link
         $http.post('/tnp/users/login/', angular.toJson($scope.formEnterData)).then(function(response) {
             $scope.PostEnterResponse = response.data;
             console.log("Login data sent");
-            // ?получаем id пользователя и переводим его туда????
-            // реализовать через ui-router
+            // получаем id пользователя 
+            // делаем с этим id http запрос за данными пользователя
+            // сохраняем данные в локальное хранилище
+            // загружаем страницу юзера
             // $scope.openPage("/user");
         }, function(response) {
             console.log("Server is not happy");
@@ -112,8 +114,6 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
 
     // recover sending an email
     $scope.recoverPassSendMail = function() {
-        console.log($scope.recoverPassData);
-
         $http.post('/tnpapi/users/passwordrecovery', angular.toJson($scope.recoverPassData)).then(function(response) {
             console.log("Email for instructions was sent");
             $scope.PostRecoverResponse = response.data;

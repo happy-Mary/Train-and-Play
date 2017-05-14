@@ -8,7 +8,7 @@
             <input type="{{showRegPassword?'text':'password'}}" placeholder="Пароль" name="recoverPass" ng-model="recoverNewPassData.password" 
                         ng-pattern="regexPass" ng-minlength="6" ng-maxlength="20" required>
             <div class="message" ng-class="newPassForm.recoverPass.$valid ? 'mes-valid' : 'mes-invalid'">
-            <span ng-if ="newPassForm.recoverPass.$invalid && newPassForm.recoverPass.$dirty">{{getError(newPassForm.recoverPass.$error)}}</span>
+            <span ng-if ="newPassForm.recoverPass.$invalid && newPassForm.recoverPass.$dirty">{{getErrorPass(newPassForm.recoverPass.$error)}}</span>
             <span ng-style ="passStrColor" ng-if ="newPassForm.recoverPass.$valid && newPassForm.recoverPass.$dirty">{{passStrength(recoverNewPassData.password)}}</span>
             </div>
         </label>
@@ -20,6 +20,7 @@
             <input type="{{showConfPassword?'text':'password'}}" placeholder="Подтвердите пароль" name="recoverConfPass"  ng-model="recoverNewPassData.confPass" ng-pattern="recoverNewPassData.password" required>
             <div class="message" ng-class="newPassForm.recoverConfPass.$valid ? 'mes-valid' : 'mes-invalid'">
             <span ng-if ="newPassForm.recoverConfPass.$dirty">{{comparePass(newPassForm.recoverConfPass.$error)}}</span>
+            <span ng-if ="newPassForm.recoverPass.$dirty && newPassForm.recoverConfPass.$pristine && newPassForm.recoverConfPass.$error.required">Подтвердите пароль</span>
             </div>
         </label>
             <label class="show-hide-pass"><input type="checkbox" title="Show Password" ng-model="showConfPassword" ng-checked="showConfPassword"></label>
