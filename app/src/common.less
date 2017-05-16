@@ -55,7 +55,8 @@ q:before, q:after {
     content: "";
 }
 
-input, button, select {
+input,
+ button, select {
     background: none;
     border: none;
     outline: none;
@@ -214,4 +215,18 @@ button {box-sizing: border-box;}
 
 .uppercase {
     text-transform: uppercase;
+}
+
+
+/* Change the webkit autofill */
+@-webkit-keyframes autofill {
+    to {
+        color: #666;
+        background: transparent;
+    }
+}
+
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
 }

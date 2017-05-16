@@ -1,8 +1,8 @@
 
 var tpApp = angular.module("tpApp", 
-            ["ui.router", "ct.ui.router.extras", "ui.bootstrap"]);
+            ["ui.router", "ct.ui.router.extras", "ui.bootstrap", 'ngStorage']);
 
-tpApp.run(function($state, $rootScope, $location) {
+tpApp.run(function($state, $rootScope, $location, $localStorage) {
     // $state.transitionTo('app.main');
     $rootScope.$state = $state;
     $rootScope.$location = $location;
@@ -11,6 +11,20 @@ tpApp.run(function($state, $rootScope, $location) {
         var stateName = stateName.toString();
         $state.go(stateName, {}, { location: false });
     };
+
+    // Оставляем пользователя авторизованным если страница перезагрузится 
+        if ($localStorage.currentUser) {
+            $http.defaults.headers.common.Authorization = 'Bearer ' + $localStorage.currentUser.token;
+        }
+     // Выкидываем пользователя на страницу авторизации если он не авторизован 
+    $rootScope.$on('$locationChangeStart', function (event, next, current) {
+            var publicPages = ['/modal'];
+            var restrictedPage = publicPages.indexOf($location.path()) === -1;
+            if (restrictedPage && !$localStorage.currentUser) {
+                $location.path('/modal');
+            }
+        });
+    //////////////////////////////////////////////////////////////////////////////////////////////////
 });
 
 // UI-ROUTER
@@ -43,7 +57,7 @@ tpApp.config(function($stateProvider, $stickyStateProvider,
                 "modal": {
                     templateUrl: 'templates/pages/modal.html',
                     controller: "ModalFormCtrl",
-                    controllerAs: "ModalFormCtrl"
+                    controllerAs: "vm"
                 },
             },
 
@@ -118,24 +132,60 @@ tpApp.controller('ProgressDemoCtrl', function($scope) {
     // console.log($scope.value);
 });
 
-// // TESTING DATA
-// tpApp.factory('objectFactory', function($http) {
-//     var factoryResult = {
-//         getObject: function(url) {
-//             var urlString = String(url);
-//             var promise = $http({
-//                 method: 'GET',
-//                 url: urlString
-//             }).success(function(data, status, headers, config) {
-//                 return data;
-//             });
+// TESTING DATA
+tpApp.factory('objectFactory', function($http) {
+    var factoryResult = {
+        getObject: function(url) {
+            var urlString = String(url);
+            var promise = $http({
+                method: 'GET',
+                url: urlString
+            }).success(function(data, status, headers, config) {
+                return data;
+            });
 
-//             return promise;
-//         }
-//     };
-//     // console.log(factoryResult.getObject());
-//     return factoryResult;
-// });
+            return promise;
+        }
+    };
+    // console.log(factoryResult.getObject());
+    return factoryResult;
+});
 
 // "vcRecaptcha"
 // https://www.npmjs.com/package/ng-google-recaptcha
+
+tpApp.factory('AuthenticationService', Service);
+
+function Service($http, $localStorage) {
+    var service = {};
+    service.Login = Login;
+    service.Logout = Logout;
+    return service;
+
+        function Login(username, password, callback) {
+            $http.post('/tnpapi/oauth/token',  { username: username, password: password })
+                .success(function (response) {
+                    // Авторизация пройдет если в запросе мы получим авторизационный токен
+                    if (response.token) {
+                        // Сохраняем данные пользователя в локальное хранилище браузера и оставляем его таким если он перезагрузится или сменится страница
+                        $localStorage.currentUser = { username: username, token: response.token };
+
+                        // Добавляем jwt token в авторизационный заголовок для всех запросов
+                        $http.defaults.headers.common.Authorization = 'Bearer ' + response.token;
+ 
+                        // отправляем кэлбек при удачной авторизации для подтверждения авторизации
+                        callback(true);
+                    } else {
+                        // не отправляем кэлбек если авторизация не удалась 
+                        callback(false);
+                    }
+                });
+            }
+        }
+        function Logout() {
+            // Удаляем пользователя из локального хранилища
+            delete $localStorage.currentUser;
+            $http.defaults.headers.common.Authorization = '';
+        }
+    }
+};

@@ -1,4 +1,4 @@
-tpApp.controller("ModalFormCtrl", function($scope, $http) {
+tpApp.controller("ModalFormCtrl", function($scope, $http, $location, AuthenticationService) {
 
     // switching tabs object
     $scope.item = { tab: 'enter' }
@@ -94,23 +94,52 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     };
 
     //log in data
-    $scope.enterUser = function() {
-        console.log($scope.formEnterData);
-        // change address link
-        $http.post('/tnpapi/oauth/token', angular.toJson($scope.formEnterData)).then(function(response) {
-            $scope.PostEnterResponse = response.data;
-            console.log("Login data sent");
-            console.log(response.data);
-            // получаем id пользователя 
-            // делаем с этим id http запрос за данными пользователя
-            // сохраняем данные в локальное хранилище
-            // загружаем страницу юзера
-            // $scope.openPage("/user");
-        }, function(response) {
-            console.log("Server is not happy");
-            console.log($scope.PostEnterResponse = response.status + " " + response.statusText);
-        });
-    };
+    // $scope.enterUser = function() {
+    //     console.log($scope.formEnterData);
+
+    //     $http.post('/tnpapi/oauth/token', angular.toJson($scope.formEnterData)).then(function(response) {
+    //         $scope.PostEnterResponse = response.data;
+    //         console.log("Login data sent");
+    //         console.log(response.data);
+    //         // получаем id пользователя 
+    //         // делаем с этим id http запрос за данными пользователя
+    //         // сохраняем данные в локальное хранилище
+    //         // загружаем страницу юзера
+    //         // $scope.openPage("/user");
+    //     }, function(response) {
+    //         console.log("Server is not happy");
+    //         console.log($scope.PostEnterResponse = response.status + " " + response.statusText);
+    //     });
+    // };
+
+
+    ////////////////////////////////////////////////////////////////////
+    var vm = this;
+ 
+        vm.login = login;
+ 
+        initController();
+ 
+        function initController() {
+            // Выводим пользователя с сайта по средствам вызова данной функции
+            AuthenticationService.Logout();
+        };
+ 
+        function login() {
+            vm.loading = true; //Запускаем прелоадер между авторизации и переходом 
+            AuthenticationService.Login(vm.username, vm.password, function (result) {
+                if (result === true) {
+                    $location.path('/'); // Если пользователь авторизовался перекидываем его на главную страницу 
+                    console.log("AUTH SUCCESSFULL")
+                } else {
+                    vm.error = 'Username or password is incorrect'; // Вывод ошибки при не удачной авторизации 
+                    vm.loading = false; // отключаем прелоадер 
+                    console.log("AUTH NOT SUCCESSFULL");
+                }
+            });
+        };
+    }
+    ////////////////////////////////////////////////////////////////////
 
     // recover sending an email
     $scope.recoverPassSendMail = function() {
