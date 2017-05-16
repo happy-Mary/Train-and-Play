@@ -165,6 +165,7 @@ function Service($http, $localStorage) {
         function Login(username, password, callback) {
             $http.post('/tnpapi/oauth/token',  { username: username, password: password })
                 .success(function (response) {
+                    console.log(response);
                     // Авторизация пройдет если в запросе мы получим авторизационный токен
                     if (response.token) {
                         // Сохраняем данные пользователя в локальное хранилище браузера и оставляем его таким если он перезагрузится или сменится страница
@@ -172,6 +173,8 @@ function Service($http, $localStorage) {
 
                         // Добавляем jwt token в авторизационный заголовок для всех запросов
                         $http.defaults.headers.common.Authorization = 'Bearer ' + response.token;
+                        console.log("SUCCESS");
+                        console.log($localStorage.currentUser);
  
                         // отправляем кэлбек при удачной авторизации для подтверждения авторизации
                         callback(true);
