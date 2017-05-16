@@ -122,7 +122,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http, $location, Authenticat
  
         function initController() {
             // Выводим пользователя с сайта по средствам вызова данной функции
-            AuthenticationService.Logout();
+            // AuthenticationService.Logout();
         };
  
         function login() {
@@ -138,7 +138,6 @@ tpApp.controller("ModalFormCtrl", function($scope, $http, $location, Authenticat
                 }
             });
         };
-    }
     ////////////////////////////////////////////////////////////////////
 
     // recover sending an email

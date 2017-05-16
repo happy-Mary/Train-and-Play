@@ -18,10 +18,10 @@ tpApp.run(function($state, $rootScope, $location, $localStorage) {
         }
      // Выкидываем пользователя на страницу авторизации если он не авторизован 
     $rootScope.$on('$locationChangeStart', function (event, next, current) {
-            var publicPages = ['/modal'];
+            var publicPages = ['/'];
             var restrictedPage = publicPages.indexOf($location.path()) === -1;
             if (restrictedPage && !$localStorage.currentUser) {
-                $location.path('/modal');
+                // $location.path('/');
             }
         });
     //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -187,5 +187,4 @@ function Service($http, $localStorage) {
             delete $localStorage.currentUser;
             $http.defaults.headers.common.Authorization = '';
         }
-    }
-};
+// };
