@@ -1,4 +1,4 @@
-tpApp.controller("ModalFormCtrl", function($scope, $http, $location, AuthenticationService) {
+tpApp.controller("ModalFormCtrl", function($scope, $http, $location) {
 
     // switching tabs object
     $scope.item = { tab: 'enter' }
@@ -111,34 +111,6 @@ tpApp.controller("ModalFormCtrl", function($scope, $http, $location, Authenticat
     //         console.log($scope.PostEnterResponse = response.status + " " + response.statusText);
     //     });
     // };
-
-
-    ////////////////////////////////////////////////////////////////////
-    var vm = this;
- 
-        vm.login = login;
- 
-        initController();
- 
-        function initController() {
-            // Выводим пользователя с сайта по средствам вызова данной функции
-            // AuthenticationService.Logout();
-        };
- 
-        function login() {
-            vm.loading = true; //Запускаем прелоадер между авторизации и переходом 
-            AuthenticationService.Login(vm.username, vm.password, function (result) {
-                if (result === true) {
-                    $location.path('/'); // Если пользователь авторизовался перекидываем его на главную страницу 
-                    console.log("AUTH SUCCESSFULL")
-                } else {
-                    vm.error = 'Username or password is incorrect'; // Вывод ошибки при не удачной авторизации 
-                    vm.loading = false; // отключаем прелоадер 
-                    console.log("AUTH NOT SUCCESSFULL");
-                }
-            });
-        };
-    ////////////////////////////////////////////////////////////////////
 
     // recover sending an email
     $scope.recoverPassSendMail = function() {
