@@ -97,9 +97,10 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     $scope.enterUser = function() {
         console.log($scope.formEnterData);
         // change address link
-        $http.post('/tnp/users/login/', angular.toJson($scope.formEnterData)).then(function(response) {
+        $http.post('/tnpapi/oauth/token', angular.toJson($scope.formEnterData)).then(function(response) {
             $scope.PostEnterResponse = response.data;
             console.log("Login data sent");
+            console.log(response.data);
             // получаем id пользователя 
             // делаем с этим id http запрос за данными пользователя
             // сохраняем данные в локальное хранилище
