@@ -79,7 +79,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
             $scope.PostRegisterResponse = response.data;
             console.log("Registration data sent");
             // checking server response
-            // console.log(response.data);
+            console.log(response.data);
             if ($scope.PostRegisterResponse.urlForMail !== "") {
                 // clean registration fields and  server message = "";
                 $scope.formRegData = {};
@@ -114,25 +114,25 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
     // recover sending an email
     $scope.recoverPassSendMail = function() {
         $http.post('/tnpapi/users/passwordrecovery', angular.toJson($scope.recoverPassData))
-        .then(function(response) {
-            console.log("Email for instructions was sent");
-            $scope.PostRecoverResponse = response.data;
-            console.log($scope.PostRecoverResponse);
-            if ($scope.PostRecoverResponse.urlForMail !== "") {
-                $scope.changeTempl('modal.recoversend');
-            }
-        }, function(response) {
-            console.log("Server is not happy");
-            console.log($scope.PostRecoverResponse = response.status + " " + response.statusText);
-        });
+            .then(function(response) {
+                console.log("Email for instructions was sent");
+                $scope.PostRecoverResponse = response.data;
+                console.log($scope.PostRecoverResponse);
+                if ($scope.PostRecoverResponse.urlForMail !== "") {
+                    $scope.changeTempl('modal.recoversend');
+                }
+            }, function(response) {
+                console.log("Server is not happy");
+                console.log($scope.PostRecoverResponse = response.status + " " + response.statusText);
+            });
     };
 
-// change address link
-        /* Post /tnpapi/users/newpass/{username}/
-        запрос на ввод нового пароля (передается объект в котором 2 поля password и passwordAgain,
-        назад тоже возвращаю string "Пароль успешно восстановлен" или "Пользователя с таким именем не существует",
-        {username} - это имя пользователя до @)
-        */
+    // change address link
+    /* Post /tnpapi/users/newpass/{username}/
+    запрос на ввод нового пароля (передается объект в котором 2 поля password и passwordAgain,
+    назад тоже возвращаю string "Пароль успешно восстановлен" или "Пользователя с таким именем не существует",
+    {username} - это имя пользователя до @)
+    */
 
     // sending new password
     $scope.recoverNewPass = function() {
@@ -142,7 +142,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http) {
             $scope.postNewPass[key] = $scope.recoverNewPassData[key];
         }
         delete $scope.postNewPass.confPass;
-        
+
         $http.post('/tnp/users/newpass/', angular.toJson($scope.postNewPass.confPass)).then(function(response) {
             $scope.PostNewPassResponse = response.data;
             $scope.changeTempl('modal.recoverfinish');
