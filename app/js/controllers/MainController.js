@@ -1,4 +1,4 @@
-tpApp.controller("MainController", function($scope, $rootScope, trainList, $location) {
+tpApp.controller("MainController", function($scope, $rootScope, trainList, $location,  $resource, $cookies, $httpParamSerializer) {
 
     $rootScope.$on('$stateChangeSuccess', function(event, to, toParams, from, fromParams) {
         //save the previous state in a rootScope variable so that it's accessible from everywhere

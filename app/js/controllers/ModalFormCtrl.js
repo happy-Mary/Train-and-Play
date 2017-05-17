@@ -1,4 +1,4 @@
-tpApp.controller("ModalFormCtrl", function($scope, $http, $location) {
+tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location, $resource, $httpParamSerializer, $cookies) {
 
     // switching tabs object
     $scope.item = { tab: 'enter' }
@@ -63,7 +63,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $http, $location) {
 
     // forms data for sending
     $scope.formRegData = {};
-    $scope.formEnterData = {};
+    // $scope.formEnterData = {};
     $scope.recoverPassData = {};
     // $scope.PostRecoverResponse = "Server message";
 
@@ -93,24 +93,56 @@ tpApp.controller("ModalFormCtrl", function($scope, $http, $location) {
         });
     };
 
-    //log in data
-    // $scope.enterUser = function() {
-    //     console.log($scope.formEnterData);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // log in data
+    $scope.formEnterData = {
+        grant_type:"password", 
+        email: "", 
+        password: "", 
+        client_id: "clientid"
+    };
 
-    //     $http.post('/tnpapi/oauth/token', angular.toJson($scope.formEnterData)).then(function(response) {
-    //         $scope.PostEnterResponse = response.data;
-    //         console.log("Login data sent");
-    //         console.log(response.data);
-    //         // получаем id пользователя 
-    //         // делаем с этим id http запрос за данными пользователя
-    //         // сохраняем данные в локальное хранилище
-    //         // загружаем страницу юзера
-    //         // $scope.openPage("/user");
-    //     }, function(response) {
-    //         console.log("Server is not happy");
-    //         console.log($scope.PostEnterResponse = response.status + " " + response.statusText);
-    //     });
-    // };
+    $scope.encoded = btoa("clientid:clientsecret");
+
+
+    $scope.enterUser = function() {
+        console.log($scope.formEnterData);
+
+        var req = {
+            method: 'POST',
+            url: "/tnpapi/oauth/token",
+            headers: {
+                "Authorization": "Basic " + $scope.encoded,
+                "Content-type": "application/x-www-form-urlencoded; charset=utf-8"
+            },
+            data: $httpParamSerializer($scope.formEnterData)
+        }
+        $http(req).then(function(data){
+            $http.defaults.headers.common.Authorization = 
+              'Bearer ' + data.data.access_token;
+            $cookies.put("access_token", data.data.access_token);
+            window.location.href="index";
+        }, function(response) {
+            console.log("Server is not happy");
+            console.log($scope.PostEnterResponse = response.status + " " + response.statusText);
+        });   
+
+
+        // $http.post('/tnpapi/oauth/token', angular.toJson($scope.formEnterData)).then(function(response) {
+        //     $scope.PostEnterResponse = response.data;
+        //     console.log("Login data sent");
+        //     console.log(response.data);
+        // }, function(response) {
+        //     console.log("Server is not happy");
+        //     console.log($scope.PostEnterResponse = response.status + " " + response.statusText);
+        // });
+
+
+    };
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // recover sending an email
     $scope.recoverPassSendMail = function() {

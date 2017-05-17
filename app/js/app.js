@@ -1,6 +1,6 @@
 
 var tpApp = angular.module("tpApp", 
-            ["ui.router", "ct.ui.router.extras", "ui.bootstrap"]);
+            ["ui.router", "ct.ui.router.extras", "ui.bootstrap", "ngCookies", "ngResource"]);
 
 tpApp.run(function($state, $rootScope, $location) {
     // $state.transitionTo('app.main');
@@ -44,7 +44,7 @@ tpApp.config(function($stateProvider, $stickyStateProvider,
                 "modal": {
                     templateUrl: 'templates/pages/modal.html',
                     controller: "ModalFormCtrl",
-                    controllerAs: "vm"
+                    controllerAs: "MainController"
                 },
             },
 
