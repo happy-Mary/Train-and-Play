@@ -55,9 +55,10 @@
 
     <!--content enter-->
     <div class="auth-form" ng-switch-default='enter'>
-        <form name="enterForm" class="enter-form" ng-submit="enterUser(formEnterData)" novalidate>
+        <!-- <form name="enterForm" class="enter-form" ng-submit="enterUser(formEnterData)" novalidate> -->
+        <form name="enterForm" class="enter-form" ng-submit="enterUser()" novalidate>
                 <label>
-                    <input type="email" placeholder="E-mail" name="enterEmail" ng-model="formEnterData.email" required ng-pattern="regexEmail">
+                    <input type="email" placeholder="E-mail" name="enterEmail" ng-model="formEnterData.username" required ng-pattern="regexEmail">
                     <div class="message" ng-class="enterForm.enterEmail.$valid ? 'mes-valid' : 'mes-invalid'">
                         <span ng-if ="enterForm.enterEmail.$invalid && enterForm.enterEmail.$dirty">
                                     {{getErrorEmail(enterForm.enterEmail.$error)}}
@@ -83,7 +84,8 @@
                 <a href="# "><img src="images/icons/fb.png " alt="facebook "></a>
                 <a href="# "><img src="images/icons/google.png " alt="google "></a>
             </div>
-            <button class="btn-pink" type="submit" ng-disabled="enterForm.$invalid">войти</button>
+            <!-- <button class="btn-pink" type="submit" ng-disabled="enterForm.$invalid">войти</button> -->
+            <button class="btn-pink" type="submit">войти</button>
             <p class="reg-away"><a ng-click="changeTempl('modal.passrecover')" class="forgot-link">Забыли пароль?</a></p>
             <p class="reg-away">Hет учетной записи? <a ng-click="item.tab = 'registr'">Зарегистрироваться</a></p>
         </form>

@@ -106,10 +106,10 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
 
     // $scope.encoded = btoa("clientid:clientsecret");
 
-    $scope.formEnterData = {};
+    $scope.formEnterData = {grant_type:"password", username:"testuser", password:"password1"};
     $scope.enterUser = function() {
         
-        $scope.formEnterData.grant_type="password";
+        // $scope.formEnterData.grant_type="password";
         $scope.encoded = btoa("myclient:myclientsecret");
         console.log($scope.formEnterData);
 
