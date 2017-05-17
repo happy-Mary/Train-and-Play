@@ -97,17 +97,19 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // log in data
     console.log("Login start");
-    $scope.formEnterData = {
-        grant_type:"password", 
-        email: "", 
-        password: "", 
-        client_id: "clientid"
-    };
+    // $scope.formEnterData = {
+    //     grant_type:"password", 
+    //     email: "", 
+    //     password: "", 
+    //     client_id: "clientid"
+    // };
 
-    $scope.encoded = btoa("clientid:clientsecret");
+    // $scope.encoded = btoa("clientid:clientsecret");
 
 
     $scope.enterUser = function() {
+        // $scope.formEnterData.client_id = "clientid";
+        $scope.encoded = btoa("clientid:clientsecret");
         console.log($scope.formEnterData);
 
         var req = {
