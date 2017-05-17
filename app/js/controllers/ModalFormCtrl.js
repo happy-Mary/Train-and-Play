@@ -108,7 +108,8 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
 
     $scope.formEnterData = {};
     $scope.enterUser = function() {
-        $scope.formEnterData.clientId = "myclient";
+        
+        $scope.formEnterData.grant_type="password";
         $scope.encoded = btoa("myclient:myclientsecret");
         console.log($scope.formEnterData);
 
@@ -119,8 +120,8 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
                 "Authorization": "Basic " + $scope.encoded,
                 "Content-type": "application/x-www-form-urlencoded; charset=utf-8"
             },
-            // data: angular.toJson($httpParamSerializer($scope.formEnterData))
-            data: angular.toJson($scope.formEnterData)
+            data: $httpParamSerializer($scope.formEnterData)
+            // data: angular.toJson($scope.formEnterData)
         }
         $http(req).then(function(data){
             $http.defaults.headers.common.Authorization = 
@@ -135,7 +136,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
             $cookies.put("access_not_token", "data.data.access_token not ALLOWED");
             console.log($cookies.get("access_not_token"));
             if(response.status == 401){ // If you have set 401
-                    console.log("ohohoh");
+                    console.log("oh not again!");
                 }
             console.log($cookies.getAll());
         });   
