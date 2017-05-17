@@ -108,8 +108,8 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
 
     $scope.formEnterData = {};
     $scope.enterUser = function() {
-        // $scope.formEnterData.client_id = "clientid";
-        $scope.encoded = btoa("clientid:clientsecret");
+        $scope.formEnterData.clientId = "myclient";
+        $scope.encoded = btoa("myclient:myclientsecret");
         console.log($scope.formEnterData);
 
         var req = {
