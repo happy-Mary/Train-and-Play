@@ -131,6 +131,8 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
         }, function(response) {
             console.log("Server is not happy");
             console.log($scope.PostEnterResponse = response.status + " " + response.statusText);
+            $cookies.put("access_not_token", "data.data.access_token not ALLOWED");
+            console.log($cookies.get("access_not_token"));
             console.log($cookies.getAll());
         });   
 
