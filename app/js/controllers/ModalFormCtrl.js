@@ -119,7 +119,8 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
                 "Authorization": "Basic " + $scope.encoded,
                 "Content-type": "application/x-www-form-urlencoded; charset=utf-8"
             },
-            data: angular.toJson($httpParamSerializer($scope.formEnterData))
+            // data: angular.toJson($httpParamSerializer($scope.formEnterData))
+            data: angular.toJson($scope.formEnterData)
         }
         $http(req).then(function(data){
             $http.defaults.headers.common.Authorization = 
