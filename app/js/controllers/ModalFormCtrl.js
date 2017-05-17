@@ -96,6 +96,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // log in data
+    console.log("Login start");
     $scope.formEnterData = {
         grant_type:"password", 
         email: "", 
@@ -122,10 +123,13 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
             $http.defaults.headers.common.Authorization = 
               'Bearer ' + data.data.access_token;
             $cookies.put("access_token", data.data.access_token);
-            window.location.href="index";
+            console.log($cookies.getAll());
+            $scope.changeTempl('modal.regfinish');
+            // window.location.href="/";
         }, function(response) {
             console.log("Server is not happy");
             console.log($scope.PostEnterResponse = response.status + " " + response.statusText);
+            console.log($cookies.getAll());
         });   
 
 
