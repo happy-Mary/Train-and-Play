@@ -106,7 +106,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
 
     // $scope.encoded = btoa("clientid:clientsecret");
 
-
+    $scope.formEnterData = {};
     $scope.enterUser = function() {
         // $scope.formEnterData.client_id = "clientid";
         $scope.encoded = btoa("clientid:clientsecret");
@@ -133,6 +133,9 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
             console.log($scope.PostEnterResponse = response.status + " " + response.statusText);
             $cookies.put("access_not_token", "data.data.access_token not ALLOWED");
             console.log($cookies.get("access_not_token"));
+            if(response.status = 401){ // If you have set 401
+                    console.log("ohohoh");
+                }
             console.log($cookies.getAll());
         });   
 
