@@ -97,19 +97,13 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // log in data
     console.log("Login start");
-    // $scope.formEnterData = {
-    //     grant_type:"password", 
-    //     email: "", 
-    //     password: "", 
-    //     client_id: "clientid"
-    // };
+    $scope.formEnterData = {
+        grant_type:"password", 
+        email: "", 
+        password: ""
+    };
 
-    // $scope.encoded = btoa("clientid:clientsecret");
-
-    $scope.formEnterData = {grant_type:"password", username:"testuser", password:"password1"};
     $scope.enterUser = function() {
-        
-        // $scope.formEnterData.grant_type="password";
         $scope.encoded = btoa("myclient:myclientsecret");
         console.log($scope.formEnterData);
 
@@ -133,8 +127,8 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
         }, function(response) {
             console.log("Server is not happy");
             console.log($scope.PostEnterResponse = response.status + " " + response.statusText);
-            $cookies.put("access_not_token", "data.data.access_token not ALLOWED");
-            console.log($cookies.get("access_not_token"));
+            // $cookies.put("access_not_token", "data.data.access_token not ALLOWED");
+            // console.log($cookies.get("access_not_token"));
             if(response.status == 401){ // If you have set 401
                     console.log("oh not again!");
                 }
