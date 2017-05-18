@@ -53,7 +53,7 @@ tpApp.controller("MainController", function($scope, $rootScope, trainList, $loca
     $scope.randTrainings = [];
     getRandObjects($scope.randTrainings);
 
-    // TEST DATA
+    // TEST USER DATA for user page
     $scope.user = { id: 334, name: 'Jone' };
 
 });

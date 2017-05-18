@@ -73,7 +73,7 @@ tpApp.config(function($stateProvider, $stickyStateProvider,
             url: "/trainings",
             templateUrl: "templates/pages/trainings.html"
         })
-        // return objectFactory.getObject('/tnpapi/users/({id:user.id})');
+        // on authorisation return objectFactory.getObject('/tnpapi/users/({id:user.id})') from main;
         .state("app.user", {
             // url: "/user/:id",
             url: "/user/{id:[0-9a-fA-F]{1,8}}",
@@ -123,7 +123,7 @@ tpApp.controller('ProgressDemoCtrl', function($scope) {
     // console.log($scope.value);
 });
 
-// TESTING DATA
+// GETTING DATA FROM SERVER
 tpApp.factory('objectFactory', function($http) {
     var factoryResult = {
         getObject: function(url) {
