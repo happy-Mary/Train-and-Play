@@ -99,7 +99,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
     console.log("Login start");
     $scope.formEnterData = {
         grant_type:"password", 
-        email: "", 
+        username: "",
         password: ""
     };
 
