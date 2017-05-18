@@ -55,8 +55,8 @@
 
     <!--content enter-->
     <div class="auth-form" ng-switch-default='enter'>
-        <!-- <form name="enterForm" class="enter-form" ng-submit="enterUser(formEnterData)" novalidate> -->
-        <form name="enterForm" class="enter-form" ng-submit="enterUser()" novalidate>
+        <form name="enterForm" class="enter-form" ng-submit="enterUser(formEnterData)" novalidate>
+        <!-- <form name="enterForm" class="enter-form" ng-submit="enterUser()" novalidate> -->
                 <label>
                     <input type="email" placeholder="E-mail" name="enterEmail" ng-model="formEnterData.username" required ng-pattern="regexEmail">
                     <div class="message" ng-class="enterForm.enterEmail.$valid ? 'mes-valid' : 'mes-invalid'">
