@@ -9,7 +9,8 @@
                         Удача!
                         <br>
                     </p>
-                    <button class="btn-pink" ui-sref="app.trainings">начать игротренинг</button>
+                    <!-- change trains num -->
+                    <button class="btn-pink" ui-sref="app.train({num:1})">начать игротренинг</button>
                 </div>
             </div>
         </div>
@@ -68,7 +69,7 @@
             </div>
         </div>
         <div class="text-center">
-            <button ui-sref="app.trainings" class="btn-pink uppercase">начать игротренинг</button>
+            <button ui-sref="app.train({num:1})" class="btn-pink uppercase">начать игротренинг</button>
         </div>
     </section>
 
@@ -132,7 +133,7 @@
                 <div class="hover-data train-open" ng-if="train.status=='open'">
                     <p>{{train.name}}</p>
                     <!--here will be link for training from server-->
-                    <button class="btn-circle" ui-sref="train/(num:train.num)"></button>
+                    <button class="btn-circle" ui-sref="app.train({num:train.num})"></button>
                 </div>
                 <div class="hover-data train-close" ng-if="train.status=='close'">
                     <p>{{train.name}}</p>

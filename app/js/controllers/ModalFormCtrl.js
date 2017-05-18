@@ -84,6 +84,7 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
                 // clean registration fields and  server message = "";
                 $scope.formRegData = {};
                 $scope.PostRegisterResponse.message = "";
+                console.log($scope.PostRegisterResponse.urlForMail);
                 // opening reg-finish window and redirect to mail link
                 $scope.changeTempl('modal.regfinish');
             }
@@ -99,8 +100,6 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
     console.log("Login start");
     $scope.formEnterData = {
         grant_type:"password"
-        // username: "",
-        // password: ""
     };
 
     $scope.enterUser = function() {
@@ -112,10 +111,8 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
             url: "/tnpapi/oauth/token",
             headers: {
                 "Authorization": "Basic " + $scope.encoded,
-                // "Content-type": "application/x-www-form-urlencoded; charset=utf-8"
                 "Content-type": "application/x-www-form-urlencoded"
             },
-            // data: $httpParamSerializer($scope.formEnterData)
             data:  "username=" + encodeURIComponent($scope.formEnterData.username) +
                      "&password=" + encodeURIComponent($scope.formEnterData.password) +
                      "&grant_type=password"
@@ -126,30 +123,16 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
               'Bearer ' + data.data.access_token;
             $cookies.put("access_token", data.data.access_token);
             console.log($cookies.getAll());
-            $scope.changeTempl('modal.regfinish');
-            // window.location.href="/";
+            $location.path("/user/333");
+           
         }, function(response) {
             console.log("Server is not happy");
             console.log($scope.PostEnterResponse = response.status + " " + response.statusText);
-            // $cookies.put("access_not_token", "data.data.access_token not ALLOWED");
-            // console.log($cookies.get("access_not_token"));
-            if(response.status == 401){ // If you have set 401
-                    console.log("oh not again!");
+            if(response.status == 401){ 
+                    console.log("servise doesn't belive you!");
                 }
-            console.log($cookies.getAll());
+
         });   
-
-
-        // $http.post('/tnpapi/oauth/token', angular.toJson($scope.formEnterData)).then(function(response) {
-        //     $scope.PostEnterResponse = response.data;
-        //     console.log("Login data sent");
-        //     console.log(response.data);
-        // }, function(response) {
-        //     console.log("Server is not happy");
-        //     console.log($scope.PostEnterResponse = response.status + " " + response.statusText);
-        // });
-
-
     };
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////

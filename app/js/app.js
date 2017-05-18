@@ -65,6 +65,10 @@ tpApp.config(function($stateProvider, $stickyStateProvider,
             url: '/landing',
             templateUrl: "templates/pages/landing.html"
         })
+        .state("app.train", {
+            url: "/train/{num:[0-9]{1,8}}",
+            templateUrl: "templates/pages/train1-startpage.html"
+        })
         .state("app.trainings", {
             url: "/trainings",
             templateUrl: "templates/pages/trainings.html"
