@@ -112,11 +112,15 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
             url: "/tnpapi/oauth/token",
             headers: {
                 "Authorization": "Basic " + $scope.encoded,
-                "Content-type": "application/x-www-form-urlencoded; charset=utf-8"
+                // "Content-type": "application/x-www-form-urlencoded; charset=utf-8"
+                "Content-type": "application/x-www-form-urlencoded"
             },
-            data: $httpParamSerializer($scope.formEnterData)
-            // data: angular.toJson($scope.formEnterData)
+            // data: $httpParamSerializer($scope.formEnterData)
+            data:  "username=" + encodeURIComponent($scope.formEnterData.username) +
+                     "&password=" + encodeURIComponent($scope.formEnterData.password) +
+                     "&grant_type=password"
         }
+
         $http(req).then(function(data){
             $http.defaults.headers.common.Authorization = 
               'Bearer ' + data.data.access_token;
