@@ -1,0 +1,74 @@
+@import url("var.less");
+
+#train1-page {
+	background-color: #fff;
+	.container {position: relative}
+
+	.main-content, aside {display: inline-block;}
+	aside {
+		background-color: @bgAccount;
+		padding: 10px;
+		width: 15%;
+		height: 100%;
+		position: absolute;
+
+		.arrow {
+			cursor: pointer;
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			background-color: @bgAccount;
+			background-image: url("@{pathImg}/icons/arrow-train.png");
+			background-repeat: no-repeat;
+			background-position: center;
+			left: -30px;
+			top: 0;
+		}
+
+		section {
+			background-color: #fff;
+			padding: 20px;
+        	box-shadow: 3px 7px 6px rgba(0,0,0,0.1);
+        	margin: 0 auto;
+		}
+		.avatar, .progress-circle {padding: 10px;}
+		.tasks {padding: 20px;}
+		.progress-circle {
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+		.avatar img {width: 100%; border-radius: 50%;}
+		.progress-circle img {width: 100%; border-radius: 50%;}
+		.task-item {
+			width: 50px;
+			height: 50px;
+			border: 1px solid @textGrey;
+			border-radius: 50%;
+			margin: 0 auto;
+			color: @textGrey;
+			
+			text-align: center;
+			&:not(:first-child) {margin-top: 40px;}
+			span {line-height: 50px; font-size: 16px; font-family: @proximaNovaBold;}
+			}
+	}
+
+	.main-content {
+		width: 85%;
+		.descr {width: 85%}
+		h3 {text-align: left;
+			&:nth-of-type(1) {margin-bottom: 70px;}
+			&:nth-of-type(2){text-transform: none; color: @textDarkViolet;}
+			}
+		p {margin: 50px 0; padding-right: 30px;}
+		img {margin: 0 auto; display: block; width: 50%;}
+		iframe {margin: 0 auto; display: block}
+		button{
+			padding: 15px 40px; 
+			padding-bottom: 13px;
+			margin: 0 auto;
+			display: block;
+			}
+		
+	}
+}

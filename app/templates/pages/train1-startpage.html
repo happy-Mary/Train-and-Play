@@ -1,1 +1,40 @@
-<p>FIRST TRAIN HERE</p>
+<div id="train1-page" class="container-fluid">
+    <div class="container">
+        <section class="section main-content">
+            <div class="descr">
+                <h3 class="h3_big  uppercase">{{train1.name}}</h3>
+                <h3 class="h3_big">Предыстория</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin
+                    gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis
+                    tellus mollis orci, sed rhoncus sapien nunc eget.</p>
+                <img src="images/captain.jpg" alt="train-image">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin
+                    gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis
+                    tellus mollis orci, sed rhoncus sapien nunc eget.</p>
+                <!--width="560"-->
+                <iframe width="50%" height="315" src="https://www.youtube.com/embed/bZP8okOgK6w" frameborder="0" allowfullscreen></iframe>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient
+                    montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin
+                    gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis
+                    tellus mollis orci, sed rhoncus sapien nunc eget.</p>
+                <button class="btn-pink">вперед</button>
+            </div>
+        </section>
+
+        <aside>
+            <div class="arrow"></div>
+            <section class="avatar">
+                <img src="images/avatar.jpg" alt="avatar">
+            </section>
+            <section class="progress-circle">
+                <!--change to a real progressbar-->
+                <img src="images/progres-circle.png" alt="">
+            </section>
+            <section class="tasks">
+                <div class="task-item" ng-repeat="task in train1.tasks"><span>{{task.num}}</span></div>
+            </section>
+        </aside>
+    </div>
+</div>

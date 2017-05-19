@@ -1,55 +1,59 @@
 <!--users data loads from ui-router to AccountCtrl-->
 <div id="account" class="container-fluid">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3 aside-info">
-                <div class="personal">
-                    <!--loading img from db-->
-                    <img src="images/avatar.jpg" alt="avatar">
-                    <!--loading name from db-->
-                    <p class="user-name">{{userData.name}}</p>
-                    <button class="btn-white">редактировать</button>
-                    <a href="{{link}}" title="exit" ng-click="logOut()">Выйти из аккаунта</a>
-                </div>
-                <div class="raiting">
-                    <h4>рейтинг</h4>
-                    <p class="raiting-num">+{{userData.raiting}}</p>
-                </div>
-                <div class="awards">
-                    <h4>награды</h4>
-                    <award></award>
-                    <p class="show-content" ng-click="toggleContent()" 
-                        ng-class="{'hide-content': awardBlockVisible}">{{swowHideLink}}</p>
-                </div>
-            </div>
-            <div class=" col-sm-9 account-info ">
-                <section class="in-process train-progress">
-                    <h2>в процессе</h2>
-                    <div ng-repeat="traning in inprogressArr|limitTo: countLimit" ng-controller="ProgressDemoCtrl" class="train-progress">
-                        <h3>{{traning.name}}</h3>
-                        <div class="progress-content">
-                            <uib-progressbar class="progress-striped" value='value'>{{traning.progress}}&#37;</uib-progressbar>
-                            <button class="btn-circle"></button>
-                            <!--изменить на svg-->
-                            <a href=""><img src="images/icons/icon-envelope.png" alt="envelope"></a>
-                        </div>
+    <div ng-if="userStatus.status === 'commonUser'">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3 aside-info">
+                    <div class="personal">
+                        <!--loading img from db-->
+                        <img src="images/avatar.jpg" alt="avatar">
+                        <!--loading name from db-->
+                        <p class="user-name">{{userData.name}}</p>
+                        <button class="btn-white">редактировать</button>
+                        <a href="{{link}}" title="exit" ng-click="logOut()">Выйти из аккаунта</a>
                     </div>
-                </section>
-                <section class="complited train-progress">
-                    <h2>завершенные</h2>
-                    <div ng-repeat="traning in complitedArr" ng-controller="ProgressDemoCtrl" class="train-progress">
-                        <h3>{{traning.name}}</h3>
-                        <div class="progress-content">
-                            <uib-progressbar class="progress-striped" value='value'>{{traning.progress}}&#37;</uib-progressbar>
-                            <button class="btn-circle"></button>
-                            <!--изменить на svg-->
-                            <a href=""><img src="images/icons/icon-envelope.png" alt="envelope"></a>
-                        </div>
+                    <div class="raiting">
+                        <h4>рейтинг</h4>
+                        <p class="raiting-num">+{{userData.raiting}}</p>
                     </div>
-                </section>
-                <button ui-sref="app.trainings" class="btn-pink choose-trening">выбрать игротренинг</button>
+                    <div class="awards">
+                        <h4>награды</h4>
+                        <award></award>
+                        <p class="show-content" ng-click="toggleContent()" 
+                            ng-class="{'hide-content': awardBlockVisible}">{{swowHideLink}}</p>
+                    </div>
+                </div>
+                <div class=" col-sm-9 account-info ">
+                    <section class="in-process train-progress">
+                        <h2>в процессе</h2>
+                        <div ng-repeat="traning in inprogressArr|limitTo: countLimit" ng-controller="ProgressDemoCtrl" class="train-progress">
+                            <h3>{{traning.name}}</h3>
+                            <div class="progress-content">
+                                <uib-progressbar class="progress-striped" value='value'>{{traning.progress}}&#37;</uib-progressbar>
+                                <button class="btn-circle"></button>
+                                <!--изменить на svg-->
+                                <a href=""><img src="images/icons/icon-envelope.png" alt="envelope"></a>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="complited train-progress">
+                        <h2>завершенные</h2>
+                        <div ng-repeat="traning in complitedArr" ng-controller="ProgressDemoCtrl" class="train-progress">
+                            <h3>{{traning.name}}</h3>
+                            <div class="progress-content">
+                                <uib-progressbar class="progress-striped" value='value'>{{traning.progress}}&#37;</uib-progressbar>
+                                <button class="btn-circle"></button>
+                                <!--изменить на svg-->
+                                <a href=""><img src="images/icons/icon-envelope.png" alt="envelope"></a>
+                            </div>
+                        </div>
+                    </section>
+                    <button ui-sref="app.trainings" class="btn-pink choose-trening">выбрать игротренинг</button>
+                </div>
             </div>
         </div>
     </div>
-
+    <div class = "notauth" ng-if="userStatus.status === 'publicUser'">
+        Войдите используя логин и пароль
+    </div>
 </div>

@@ -1,0 +1,106 @@
+#train1-page {
+  background-color: #fff;
+}
+#train1-page .container {
+  position: relative;
+}
+#train1-page .main-content,
+#train1-page aside {
+  display: inline-block;
+}
+#train1-page aside {
+  background-color: #e3e1eb;
+  padding: 10px;
+  width: 15%;
+  height: 100%;
+  position: absolute;
+}
+#train1-page aside .arrow {
+  cursor: pointer;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: #e3e1eb;
+  background-image: url("../images/icons/arrow-train.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  left: -30px;
+  top: 0;
+}
+#train1-page aside section {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 3px 7px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+#train1-page aside .avatar,
+#train1-page aside .progress-circle {
+  padding: 10px;
+}
+#train1-page aside .tasks {
+  padding: 20px;
+}
+#train1-page aside .progress-circle {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#train1-page aside .avatar img {
+  width: 100%;
+  border-radius: 50%;
+}
+#train1-page aside .progress-circle img {
+  width: 100%;
+  border-radius: 50%;
+}
+#train1-page aside .task-item {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #757575;
+  border-radius: 50%;
+  margin: 0 auto;
+  color: #757575;
+  text-align: center;
+}
+#train1-page aside .task-item:not(:first-child) {
+  margin-top: 40px;
+}
+#train1-page aside .task-item span {
+  line-height: 50px;
+  font-size: 16px;
+  font-family: "Proxima Nova Bold", "Times New Roman", sans-serif;
+}
+#train1-page .main-content {
+  width: 85%;
+}
+#train1-page .main-content .descr {
+  width: 85%;
+}
+#train1-page .main-content h3 {
+  text-align: left;
+}
+#train1-page .main-content h3:nth-of-type(1) {
+  margin-bottom: 70px;
+}
+#train1-page .main-content h3:nth-of-type(2) {
+  text-transform: none;
+  color: #292941;
+}
+#train1-page .main-content p {
+  margin: 50px 0;
+  padding-right: 30px;
+}
+#train1-page .main-content img {
+  margin: 0 auto;
+  display: block;
+  width: 50%;
+}
+#train1-page .main-content iframe {
+  margin: 0 auto;
+  display: block;
+}
+#train1-page .main-content button {
+  padding: 15px 40px;
+  padding-bottom: 13px;
+  margin: 0 auto;
+  display: block;
+}

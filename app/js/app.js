@@ -1,6 +1,4 @@
-
-var tpApp = angular.module("tpApp", 
-            ["ui.router", "ct.ui.router.extras", "ui.bootstrap", "ngCookies", "ngResource"]);
+var tpApp = angular.module("tpApp", ["ui.router", "ct.ui.router.extras", "ui.bootstrap", "ngCookies", "ngResource"]);
 
 tpApp.run(function($state, $rootScope, $location) {
     // $state.transitionTo('app.main');
@@ -15,8 +13,8 @@ tpApp.run(function($state, $rootScope, $location) {
 });
 
 // UI-ROUTER
-tpApp.config(function($stateProvider, $stickyStateProvider, 
-                      $urlMatcherFactoryProvider, $urlRouterProvider, $locationProvider) {
+tpApp.config(function($stateProvider, $stickyStateProvider,
+    $urlMatcherFactoryProvider, $urlRouterProvider, $locationProvider) {
     $urlMatcherFactoryProvider.caseInsensitive(true);
     $urlRouterProvider.otherwise("/");
     $stateProvider
@@ -66,11 +64,13 @@ tpApp.config(function($stateProvider, $stickyStateProvider,
         })
         .state("app.train", {
             url: "/train/{num:[0-9]{1,8}}",
-            templateUrl: "templates/pages/train1-startpage.html"
+            templateUrl: "templates/pages/train1-startpage.html",
+            controller: "TrainCtrl"
         })
         .state("app.trainings", {
             url: "/trainings",
             templateUrl: "templates/pages/trainings.html"
+
         })
         // on authorisation return objectFactory.getObject('/tnpapi/users/({id:user.id})') from main;
         .state("app.user", {
@@ -144,5 +144,3 @@ tpApp.factory('objectFactory', function($http) {
 
 // "vcRecaptcha"
 // https://www.npmjs.com/package/ng-google-recaptcha
-
-

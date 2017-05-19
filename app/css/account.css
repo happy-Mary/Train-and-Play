@@ -16,11 +16,19 @@
 #account .raiting,
 #account .awards,
 #account .in-process,
-#account .complited {
+#account .complited,
+#account .notauth {
   background-color: #fff;
   margin-bottom: 10px;
   padding: 20px;
   box-shadow: 3px 7px 6px rgba(0, 0, 0, 0.1);
+}
+#account .notauth {
+  margin-right: 10px;
+  margin-left: 10px;
+  text-align: center;
+  height: 150px;
+  line-height: 100px;
 }
 #account .personal,
 #account .raiting,

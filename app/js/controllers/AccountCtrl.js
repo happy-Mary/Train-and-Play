@@ -2,7 +2,7 @@ tpApp.controller("AccountCtrl", function($scope, userList, $http, $stateParams, 
 
     $scope.userData = userList.data; //changes are made here
 
-     console.log($scope.userData.id);
+    console.log($scope.userData.id);
 
     $window.localStorage.setItem("currentUser", $scope.userData.name);
 
@@ -30,5 +30,6 @@ tpApp.controller("AccountCtrl", function($scope, userList, $http, $stateParams, 
     // для свернуть показать по ng-repeat limitTo: countLimit 
     // $scope.countLimit = 3;
     $scope.countLimit = $scope.inprogressArr.length;
+
 
 });
