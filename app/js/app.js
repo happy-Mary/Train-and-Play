@@ -43,15 +43,14 @@ tpApp.config(function($stateProvider, $stickyStateProvider,
             views: {
                 "modal": {
                     templateUrl: 'templates/pages/modal.html',
-                    controller: "ModalFormCtrl",
-                    controllerAs: "MainController"
+                    controller: "ModalFormCtrl"
                 },
             },
 
         })
         .state('modal.welcom', {
             url: '/welcom',
-            templateUrl: "templates/partials/reg-enter.html"
+            templateUrl: "templates/partials/reg-enter.html",
         })
         .state('modal.newpass', {
             url: '/newpass/{id:[0-9a-fA-F]{1,8}}',
@@ -141,6 +140,7 @@ tpApp.factory('objectFactory', function($http) {
     // console.log(factoryResult.getObject());
     return factoryResult;
 });
+
 
 // "vcRecaptcha"
 // https://www.npmjs.com/package/ng-google-recaptcha

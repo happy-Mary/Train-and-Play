@@ -1,23 +1,10 @@
-tpApp.controller("AccountCtrl", function($scope, userList, $http, $stateParams) {
+tpApp.controller("AccountCtrl", function($scope, userList, $http, $stateParams, $window) {
+
     $scope.userData = userList.data; //changes are made here
 
-    // GETTING OBJECT for user (TODO: change it in servise by sending user id to function)
-    // http get function
+     console.log($scope.userData.id);
 
-    // $http({
-    //     url: "/tnp/users/profile/" + $stateParams.id,
-    //     method: "get",
-    // }).then(function(response) {
-    //     $scope.userData = response.data;
-    //     console.log("Got user data " + $stateParams.id);
-    // }, function(response) {
-    //     console.log("Can't find " + $stateParams.id);
-    //     $http.get('templates/pages/user.json').success(function(data) {
-    //         console.log(data.name);
-    //         $scope.userData = data;
-    //     });
-    // });
-    // GETTING OBJECT//////////////////////////////////////////////////////////////////////////////
+    $window.localStorage.setItem("currentUser", $scope.userData.name);
 
     // AWARDS
     $scope.swowHideLink = "Развернуть";
@@ -26,7 +13,6 @@ tpApp.controller("AccountCtrl", function($scope, userList, $http, $stateParams) 
     $scope.toggleContent = function() {
         $scope.awardBlockVisible = $scope.awardBlockVisible === false ? true : false;
         $scope.swowHideLink = $scope.swowHideLink === "Развернуть" ? "Свернуть" : "Развернуть";
-        // console.log($scope.awardBlockVisible);
     };
     // сортируем тренинги по завершенности
     $scope.userData.trainings.sort(function(obj1, obj2) {

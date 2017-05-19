@@ -27,6 +27,14 @@ header .reg button:active {
   background-position: .9rem center;
   display: inline-block;
 }
+header .auth-header p {
+  color: white;
+  display: inline-block;
+}
+header .auth-header img {
+  width: 70px;
+  border-radius: 50%;
+}
 .intro {
   text-align: center;
   color: #fff;

@@ -5,8 +5,12 @@
             <div class="logo uppercase col-xs-12 col-sm-6">
                 <a ui-sref=".main">TRAINANDPLAY</a>
             </div>
-            <div class="reg col-xs-12 col-sm-6">
+            <div class="reg col-xs-12 col-sm-6" ng-if="userStatus.status === 'publicUser'">
                 <button ui-sref="modal.welcom" class="btn-pink">войти</button>
+            </div>
+            <div class="reg auth-header col-xs-12 col-sm-6" ng-if="userStatus.status === 'commonUser'">
+                <p>{{currentUser}}</p>
+                <img src="images/avatar.jpg" alt="avatar">
             </div>
         </nav>
         <!--remove div.intro when page's not main-->
@@ -15,8 +19,6 @@
             <p>Наш проект нацелен на тех, кто хочет учиться и быть лучше.<br/> Если у Вас есть свободное время и желание, чтобы прокачать свои навыки или попробовать себя в чем-то новом - наш проект для Вас. Вы можете учиться самостоятельно или с помощью
                 компетентного тренера.<br/>Удачи!</p>
             <a ui-sref=".landing"><button class="btn-pink uppercase">начать обучение</button></a>
-            <!--test user-routing page-->
-            <!-- <a ui-sref=".user({id:user.id})"><button class="btn-pink uppercase">{{user.name}}</button></a> -->
         </div>
     </div>
 </header>

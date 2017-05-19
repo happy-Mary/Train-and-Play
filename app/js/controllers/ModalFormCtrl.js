@@ -1,4 +1,4 @@
-tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location, $resource, $httpParamSerializer, $cookies) {
+tpApp.controller("ModalFormCtrl", function($scope, $http, $location, $resource, $cookies) {
 
     // switching tabs object
     $scope.item = { tab: 'enter' }
@@ -94,18 +94,14 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
         });
     };
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // log in data
-    console.log("Login start");
     $scope.formEnterData = {
         grant_type:"password"
     };
 
     $scope.enterUser = function() {
         $scope.encoded = btoa("myclient:myclientsecret");
-        console.log($scope.formEnterData);
-
+        // console.log($scope.formEnterData);
         var req = {
             method: 'POST',
             url: "/tnpapi/oauth/token",
@@ -121,17 +117,15 @@ tpApp.controller("ModalFormCtrl", function($scope, $rootScope, $http, $location,
         $http(req).then(function(data){
             $http.defaults.headers.common.Authorization = 
               'Bearer ' + data.data.access_token;
-            $cookies.put("access_token", data.data.access_token);
-            console.log($cookies.getAll());
-            $location.path("/user/333");
+            // $cookies.put("access_token", data.data.access_token);
+            $scope.logIn(data.data.access_token);
+            $location.path("/user/1");
            
         }, function(response) {
             console.log("Server is not happy");
             console.log($scope.PostEnterResponse = response.status + " " + response.statusText);
-            if(response.status == 401){ 
-                    console.log("servise doesn't belive you!");
-                }
-
+            // $scope.logIn("test-token1");
+            // $location.path("/user/1");
         });   
     };
 

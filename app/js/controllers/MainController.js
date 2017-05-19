@@ -1,4 +1,4 @@
-tpApp.controller("MainController", function($scope, $rootScope, trainList, $location,  $resource, $cookies, $httpParamSerializer) {
+tpApp.controller("MainController", function($scope, $rootScope, $window, trainList, $location) {
 
     $rootScope.$on('$stateChangeSuccess', function(event, to, toParams, from, fromParams) {
         //save the previous state in a rootScope variable so that it's accessible from everywhere
@@ -53,7 +53,6 @@ tpApp.controller("MainController", function($scope, $rootScope, trainList, $loca
     $scope.randTrainings = [];
     getRandObjects($scope.randTrainings);
 
-    // TEST USER DATA for user page
-    $scope.user = { id: 334, name: 'Jone' };
-
+    // user name for header from storage (add user image there after server side object is ready (AccountCtrl))
+    $scope.currentUser = $window.localStorage.getItem("currentUser");
 });
