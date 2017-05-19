@@ -1,6 +1,6 @@
 <!--users data loads from ui-router to AccountCtrl-->
 <div id="account" class="container-fluid">
-    <div ng-if="userStatus.status === 'commonUser'">
+    <div ng-if="userStatus.status ==='commonUser'">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3 aside-info">
@@ -19,8 +19,7 @@
                     <div class="awards">
                         <h4>награды</h4>
                         <award></award>
-                        <p class="show-content" ng-click="toggleContent()" 
-                            ng-class="{'hide-content': awardBlockVisible}">{{swowHideLink}}</p>
+                        <p class="show-content" ng-click="toggleContent()" ng-class="{'hide-content': awardBlockVisible}">{{swowHideLink}}</p>
                     </div>
                 </div>
                 <div class=" col-sm-9 account-info ">
@@ -53,7 +52,7 @@
             </div>
         </div>
     </div>
-    <div class = "notauth" ng-if="userStatus.status === 'publicUser'">
+    <div class="notauth" ng-if="userStatus.status === 'publicUser'">
         Войдите используя логин и пароль
     </div>
 </div>
