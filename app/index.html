@@ -7,7 +7,7 @@
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <meta charset="UTF-8">
-    <title>Train&Play</title>
+    <title>Train and Play</title>
     <!--<base href="/">-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,12 +48,6 @@
 </head>
 
 <body ng-controller="parentController">
-    <!--SHOWS BROWSER LOCATION-->
-    <!--<div style="width: 100%; position:fixed; top: 0;">
-        <pre>Browser location: {{$location.absUrl()}}</pre>
-        <pre>Browser location: {{$location.path()}}</pre>
-        <div ng-show="$location.path()===''">"I'm shown'"</div>
-    </div>-->
 
     <div ui-view="app"></div>
     <div ui-view="modal"></div>
@@ -67,7 +61,7 @@
     <!--UI ROUTER-->
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js "></script>
     <script src="bower_components/ui-router-extras/release/ct-ui-router-extras.min.js "></script>
-    <!-- //////////////////////////////// -->
+   
     <!-- COOKIE and SERVISE -->
     <script src="libs/angular-cookies/angular-cookies.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.5.8/angular-resource.js"></script>
