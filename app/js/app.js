@@ -23,7 +23,7 @@ tpApp.config(function($stateProvider, $stickyStateProvider,
             views: {
                 'app': {
                     templateUrl: "templates/pages/app.html",
-                    controller: "MainController",
+                    // controller: "MainController",
                     resolve: {
                         trainList: function(objectFactory) {
                             return objectFactory.getObject('templates/pages/trainings.json');
@@ -34,7 +34,6 @@ tpApp.config(function($stateProvider, $stickyStateProvider,
             sticky: true,
             deepStateRedirect: { default: { state: 'app.main' } },
             dsr: true,
-
         })
         .state("modal", {
             url: "/modal",
@@ -44,7 +43,6 @@ tpApp.config(function($stateProvider, $stickyStateProvider,
                     controller: "ModalFormCtrl"
                 },
             },
-
         })
         .state('modal.welcom', {
             url: '/welcom',

@@ -9,8 +9,8 @@
                 <button ui-sref="modal.welcom" class="btn-pink">войти</button>
             </div>
             <div class="reg auth-header col-xs-12 col-sm-6" ng-if="userStatus.status === 'commonUser'">
-                <a ui-sref=".user/1"><img src="images/avatar.jpg" alt="avatar"></a>
-                <p><a ui-sref=".user/1">{{currentUser}}</a></p>
+                <a ui-sref="app.user({id:1})"><img src="images/avatar.jpg" alt="avatar"></a>
+                <p><a ui-sref="app.user({id:1})">{{currentUser}}</a></p>
             </div>
         </nav>
         <!--remove div.intro when page's not main-->
