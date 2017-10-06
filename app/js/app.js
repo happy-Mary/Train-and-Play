@@ -116,7 +116,6 @@ tpApp.config(function($stateProvider, $stickyStateProvider,
 tpApp.controller('ProgressDemoCtrl', function($scope) {
     $scope.max = 100;
     $scope.value = $scope.traning.progress;
-    // console.log($scope.value);
 });
 
 // GETTING DATA FROM SERVER
@@ -134,10 +133,5 @@ tpApp.factory('objectFactory', function($http) {
             return promise;
         }
     };
-    // console.log(factoryResult.getObject());
     return factoryResult;
 });
-
-
-// "vcRecaptcha"
-// https://www.npmjs.com/package/ng-google-recaptcha
