@@ -23,7 +23,6 @@ tpApp.config(function($stateProvider, $stickyStateProvider,
             views: {
                 'app': {
                     templateUrl: "templates/pages/app.html",
-                    // controller: "MainController",
                     resolve: {
                         trainList: function(objectFactory) {
                             return objectFactory.getObject('templates/pages/trainings.json');
